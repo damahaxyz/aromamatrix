@@ -541,8 +541,10 @@
 
 /* Homepage Process */
 .home-process-section {
-  color: #ffffff;
-  background: var(--primary-blue);
+  color: var(--text-main);
+  background: #f1f3f5;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .home-process-header {
@@ -555,11 +557,11 @@
 
 .home-process-section .section-kicker,
 .home-process-header > p {
-  color: #a1a1aa;
+  color: var(--text-muted);
 }
 
 .home-process-section .section-title {
-  color: #ffffff;
+  color: var(--primary-blue);
 }
 
 .home-process-header > p {
@@ -571,7 +573,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   list-style: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid #cfd4da;
 }
 
 .home-process-step {
@@ -580,14 +582,14 @@
 }
 
 .home-process-step:not(:last-child) {
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid #d8dde2;
   margin-right: 22px;
 }
 
 .process-index {
   display: block;
   margin-bottom: 32px;
-  color: #71717a;
+  color: #8b949e;
   font-family: var(--font-title);
   font-size: 12px;
   font-weight: 700;
@@ -595,12 +597,12 @@
 
 .home-process-step h3 {
   margin-bottom: 10px;
-  color: #ffffff;
+  color: var(--primary-blue);
   font-size: 15px;
 }
 
 .home-process-step p {
-  color: #a1a1aa;
+  color: var(--text-muted);
   font-size: 12px;
   line-height: 1.65;
 }
@@ -610,13 +612,13 @@
 }
 
 .home-process-action .btn {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.42);
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
 }
 
 /* Fragrance Development */
 .fragrance-development-section {
-  background: var(--bg-secondary);
+  background: #ffffff;
 }
 
 .feature-split,
@@ -702,7 +704,8 @@
 
 /* Manufacturing Capability */
 .manufacturing-section {
-  background: #ffffff;
+  background: #f6f7f8;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .manufacturing-grid {
@@ -773,7 +776,7 @@
 
 /* Quality Control */
 .quality-section {
-  background: var(--bg-secondary);
+  background: #ffffff;
   border-top: 1px solid var(--border-light);
 }
 
@@ -827,7 +830,8 @@
 
 /* Representative Project */
 .case-study-section {
-  background: #ffffff;
+  background: #f6f7f8;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .case-study-grid {
@@ -902,8 +906,8 @@
 
 /* Global Export */
 .export-section {
-  color: #ffffff;
-  background: var(--primary-blue);
+  color: var(--text-main);
+  background: #ffffff;
 }
 
 .export-heading {
@@ -916,11 +920,11 @@
 
 .export-section .section-kicker,
 .export-heading > p {
-  color: #a1a1aa;
+  color: var(--text-muted);
 }
 
 .export-section .section-title {
-  color: #ffffff;
+  color: var(--primary-blue);
 }
 
 .export-heading > p {
@@ -933,13 +937,14 @@
   flex-wrap: wrap;
   gap: 9px;
   padding: 22px 0 34px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid var(--border-light);
 }
 
 .export-regions span {
   padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #d4d4d8;
+  background: #f6f7f8;
+  border: 1px solid #d8dde2;
+  color: var(--text-main);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.6px;
@@ -950,19 +955,20 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
 }
 
 .export-support-grid article {
   min-height: 210px;
   padding: 26px;
-  background: #171717;
+  background: #ffffff;
 }
 
 .export-support-grid article > span {
   display: block;
   margin-bottom: 34px;
-  color: #71717a;
+  color: #9aa2ab;
   font-family: var(--font-title);
   font-size: 11px;
   font-weight: 700;
@@ -970,26 +976,28 @@
 
 .export-support-grid h3 {
   margin-bottom: 10px;
-  color: #ffffff;
+  color: var(--primary-blue);
   font-size: 15px;
 }
 
 .export-support-grid p {
-  color: #a1a1aa;
+  color: var(--text-muted);
   font-size: 12px;
   line-height: 1.65;
 }
 
 .export-disclaimer {
   margin-top: 18px;
-  color: #71717a;
+  color: var(--text-light);
   font-size: 10px;
   line-height: 1.6;
 }
 
 /* Homepage FAQ */
 .home-faq-section {
-  background: var(--bg-secondary);
+  background: #f6f7f8;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .home-faq-grid {
@@ -1051,8 +1059,8 @@
 
 /* Homepage Inquiry */
 .home-inquiry-section {
-  color: #ffffff;
-  background: #0a0a0a;
+  color: var(--text-main);
+  background: #ffffff;
 }
 
 .home-inquiry-grid {
@@ -1063,25 +1071,25 @@
 }
 
 .home-inquiry-copy .section-kicker {
-  color: #a1a1aa;
+  color: var(--text-muted);
 }
 
 .home-inquiry-copy h2 {
   margin-bottom: 18px;
-  color: #ffffff;
+  color: var(--primary-blue);
   font-size: clamp(30px, 4vw, 44px);
   line-height: 1.15;
 }
 
 .home-inquiry-copy > p {
-  color: #a1a1aa;
+  color: var(--text-muted);
   font-size: 14px;
   line-height: 1.75;
 }
 
 .inquiry-expectations {
   margin: 30px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid var(--border-light);
 }
 
 .inquiry-expectations > div {
@@ -1089,32 +1097,34 @@
   grid-template-columns: 82px 1fr;
   gap: 18px;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid var(--border-light);
   font-size: 12px;
 }
 
 .inquiry-expectations strong {
-  color: #ffffff;
+  color: var(--primary-blue);
 }
 
 .inquiry-expectations span {
-  color: #a1a1aa;
+  color: var(--text-muted);
 }
 
 .inquiry-email-fallback a {
-  color: #ffffff;
+  color: var(--primary-blue);
   text-decoration: underline;
 }
 
 .home-inquiry-form-card {
   padding: 32px;
-  background: #ffffff;
-  border: 1px solid #27272a;
+  background: #f6f7f8;
+  border: 1px solid #d8dde2;
   border-radius: var(--border-radius);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
 }
 
 .home-inquiry-form-card .form-control {
-  background: #f4f4f5;
+  background: #ffffff;
+  border-color: #d8dde2;
 }
 
 .inquiry-services {
@@ -1971,7 +1981,7 @@
     margin: 0;
     padding: 22px 0;
     border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid #d8dde2;
   }
 
   .home-process-step:last-child {
