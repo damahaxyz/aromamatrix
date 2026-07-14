@@ -3,7 +3,7 @@ const path = require('path');
 
 const SRC_DIR = path.join(__dirname, 'src');
 const LAYOUT_DIR = path.join(__dirname, 'layout');
-const DIST_DIR = path.join(__dirname, 'build');
+const DIST_DIR = path.join(__dirname, 'docs');
 
 // 1. Helper to copy directories recursively
 function copyDirSync(src, dest) {
@@ -47,14 +47,14 @@ function runBuild() {
       const srcPath = path.join(SRC_DIR, filename);
       const distPath = path.join(DIST_DIR, filename);
       let content = fs.readFileSync(srcPath, 'utf8');
-      
+
       // Replace include tags: <!-- @include header --> or <!-- @include footer -->
       content = content.replace(/<!--\s*@include\s+header\s*-->/g, headerHtml);
       content = content.replace(/<!--\s*@include\s+footer\s*-->/g, footerHtml);
-      
+
       fs.writeFileSync(distPath, content, 'utf8');
     });
-    console.log(`✓ Compiled ${htmlFiles.length} HTML pages to build/.`);
+    console.log(`✓ Compiled ${htmlFiles.length} HTML pages to docs/.`);
   } catch (err) {
     console.error('❌ HTML compilation failed:', err.message);
   }
@@ -84,7 +84,7 @@ runBuild();
 // 4. Watch Mode
 if (process.argv.includes('--watch')) {
   console.log('👁️ Watch mode active. Monitoring file changes...');
-  
+
   let timer = null;
   function triggerRebuild() {
     if (timer) clearTimeout(timer);
@@ -99,8 +99,8 @@ if (process.argv.includes('--watch')) {
     const dirPath = path.join(__dirname, dir);
     if (fs.existsSync(dirPath)) {
       fs.watch(dirPath, { recursive: true }, (eventType, filename) => {
-        // Exclude self build folder loop
-        if (filename && (filename.startsWith('build') || filename.includes('build/'))) return;
+        // Exclude self docs folder loop
+        if (filename && (filename.startsWith('docs') || filename.includes('docs/'))) return;
         triggerRebuild();
       });
     }
