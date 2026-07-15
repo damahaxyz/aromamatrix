@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "how-to-launch-your-own-perfume-line",
+    "title": "How to Launch Your Own Perfume Line: A Step-by-Step Factory Guide",
+    "description": "Ready to start your fragrance brand? We map out the costs, formulation milestones, bottle decisions and production stages involved in your first factory run.",
+    "date": "2026-06-15",
+    "dateLabel": "June 15, 2026",
+    "category": "Sourcing Guide",
+    "author": "AROMAMATRIX Laboratory Team",
+    "coverImage": "assets/images/home-sections/fragrance-development.webp",
+    "coverAlt": "Fragrance development and perfume formula evaluation",
+    "seoTitle": "How to Launch Your Own Perfume Line | AROMAMATRIX",
+    "seoDescription": "A factory guide for launching a private label perfume line, covering fragrance briefs, packaging, compliance, samples and production stages.",
+    "published": true
+  },
+  {
+    "slug": "choosing-perfume-packaging",
+    "title": "Choosing the Right Perfume Packaging: Glass Bottles, Caps, & Sprays",
+    "description": "Explore practical packaging decisions for perfume projects, including bottles, pumps, caps, decoration routes and launch timing.",
+    "date": "2026-05-28",
+    "dateLabel": "May 28, 2026",
+    "category": "Packaging Studio",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/home-products/packaging-solutions.webp",
+    "coverAlt": "Perfume bottles, pumps, caps and packaging components",
+    "seoTitle": "Choosing Perfume Packaging | AROMAMATRIX",
+    "seoDescription": "Learn how fragrance brands can choose perfume bottles, pumps, caps and packaging routes for OEM and ODM production.",
+    "published": false
+  },
+  {
+    "slug": "shipping-alcohol-perfume-internationally",
+    "title": "Demystifying Scent Shipping: How to Safely Export Alcohol Perfumes",
+    "description": "Understand how dangerous-goods documents, export packing and destination-specific freight routes are reviewed for fragrance shipments.",
+    "date": "2026-04-12",
+    "dateLabel": "April 12, 2026",
+    "category": "DG Logistics",
+    "author": "AROMAMATRIX Logistics Team",
+    "coverImage": "assets/images/home-sections/manufacturing-facility.webp",
+    "coverAlt": "Perfume factory production and shipment preparation",
+    "seoTitle": "How to Ship Alcohol Perfume Internationally | AROMAMATRIX",
+    "seoDescription": "A practical guide to international alcohol perfume shipping, dangerous goods review and export packing for fragrance buyers.",
+    "published": false
+  }
+]

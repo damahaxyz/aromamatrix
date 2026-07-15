@@ -4,20 +4,47 @@
       AROMAMATRIX
       <span>Perfume Factory</span>
     </a>
-    <nav id="nav-menu">
-      <ul>
-        <li><a href="index.html" id="nav-index">Home</a></li>
-        <li><a href="about.html" id="nav-about">About Us</a></li>
-        <li><a href="process.html" id="nav-process">OEM/ODM Process</a></li>
-        <li><a href="qa.html" id="nav-qa">Q&amp;A</a></li>
-        <li><a href="blog.html" id="nav-blog">Blog</a></li>
-        <li><a href="contact.html" id="nav-contact" class="btn btn-outline" style="padding: 8px 18px; margin-left: 10px; border-color: var(--primary-blue); color: var(--primary-blue);">Inquire Now</a></li>
+    <nav id="nav-menu" aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li class="nav-item has-dropdown">
+          <div class="nav-link-group">
+            <a href="index.html#product-capabilities" id="nav-products">What We Make</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="products-menu">
+              <span class="sr-only">Toggle What We Make menu</span>
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <ul class="nav-dropdown" id="products-menu">
+            <li><a href="index.html#fine-fragrance">Fine Fragrance</a></li>
+            <li><a href="index.html#home-fragrance">Home Fragrance</a></li>
+            <li><a href="index.html#body-fragrance">Body &amp; Hair Mist</a></li>
+            <li><a href="index.html#packaging-solutions">Packaging Solutions</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <div class="nav-link-group">
+            <a href="process.html#service-models" id="nav-services">OEM / ODM Services</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="services-menu">
+              <span class="sr-only">Toggle OEM and ODM services menu</span>
+              <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <ul class="nav-dropdown" id="services-menu">
+            <li><a href="process.html#private-label">Private Label</a></li>
+            <li><a href="process.html#odm">ODM Development</a></li>
+            <li><a href="process.html#oem">OEM Manufacturing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="about.html" id="nav-about">Factory &amp; Certificates</a></li>
+        <li class="nav-item"><a href="process.html#customization-process" id="nav-process">How It Works</a></li>
+        <li class="nav-item"><a href="qa.html" id="nav-qa">FAQ</a></li>
+        <li class="nav-item"><a href="contact.html" id="nav-contact" class="nav-cta">Get a Quote</a></li>
       </ul>
     </nav>
-    <div class="menu-toggle" id="menu-toggle">
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </div>
 </header>

@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Initialize Interactive Components
   initMobileMenu();
   highlightActiveNav();
+  window.addEventListener('hashchange', highlightActiveNav);
   initAccordion();
+  initFaqExplorer();
   initInquiryForm(WHATSAPP_NUMBER);
 });
 
@@ -41,58 +43,90 @@ function initMobileMenu() {
   const toggleBtn = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
 
-  if (toggleBtn && navMenu) {
-    toggleBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      toggleBtn.classList.toggle('active');
-      
-      // Animate toggle bars
-      const spans = toggleBtn.querySelectorAll('span');
-      if (toggleBtn.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-      } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-      }
-    });
+  if (!toggleBtn || !navMenu) return;
 
-    // Close menu when link is clicked
-    const links = navMenu.querySelectorAll('a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        toggleBtn.classList.remove('active');
-        toggleBtn.querySelectorAll('span').forEach(s => s.style.transform = 'none');
-        toggleBtn.querySelector('span:nth-child(2)').style.opacity = '1';
-      });
+  const closeNavigation = () => {
+    navMenu.classList.remove('active');
+    toggleBtn.classList.remove('active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+    document.body.classList.remove('nav-open');
+
+    navMenu.querySelectorAll('.has-dropdown').forEach(item => {
+      item.classList.remove('submenu-open');
+      item.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded', 'false');
     });
-  }
+  };
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = !navMenu.classList.contains('active');
+    navMenu.classList.toggle('active', isOpen);
+    toggleBtn.classList.toggle('active', isOpen);
+    toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    toggleBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    document.body.classList.toggle('nav-open', isOpen);
+  });
+
+  navMenu.querySelectorAll('.dropdown-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.has-dropdown');
+      const isOpen = !item.classList.contains('submenu-open');
+
+      navMenu.querySelectorAll('.has-dropdown').forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('submenu-open');
+          otherItem.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      item.classList.toggle('submenu-open', isOpen);
+      button.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeNavigation);
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeNavigation();
+      toggleBtn.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeNavigation();
+  });
 }
 
 /**
  * Highlights Active Nav Link
  */
 function highlightActiveNav() {
+  document.querySelectorAll('#nav-menu a.active').forEach(link => link.classList.remove('active'));
+
   const path = window.location.pathname;
   const pageName = path.split('/').pop() || 'index.html';
   const cleanPageName = pageName.replace('.html', '');
-  
-  // Highlight matching id
-  const activeLink = document.getElementById(`nav-${cleanPageName}`);
-  if (activeLink) {
-    activeLink.classList.add('active');
-  } else if (cleanPageName === 'blog-detail') {
-    // If we're on blog-detail.html, highlight blog
-    const blogLink = document.getElementById('nav-blog');
-    if (blogLink) blogLink.classList.add('active');
-  } else {
-    // Default to home
-    const homeLink = document.getElementById('nav-index');
-    if (homeLink) homeLink.classList.add('active');
+  const hash = window.location.hash;
+  let activeId = null;
+
+  if (cleanPageName === 'about') activeId = 'nav-about';
+  if (cleanPageName === 'qa') activeId = 'nav-qa';
+  if (cleanPageName === 'contact') activeId = 'nav-contact';
+
+  if (cleanPageName === 'process') {
+    const serviceHashes = ['#service-models', '#private-label', '#odm', '#oem'];
+    activeId = serviceHashes.includes(hash) ? 'nav-services' : 'nav-process';
   }
+
+  if (cleanPageName === 'index' && hash.startsWith('#')) {
+    const productHashes = ['#product-capabilities', '#fine-fragrance', '#home-fragrance', '#body-fragrance', '#packaging-solutions'];
+    if (productHashes.includes(hash)) activeId = 'nav-products';
+  }
+
+  if (activeId) document.getElementById(activeId)?.classList.add('active');
 }
 
 /**
@@ -123,11 +157,82 @@ function initAccordion() {
 }
 
 /**
+ * Search and category filters for the FAQ knowledge base.
+ * The questions remain native details/summary elements for keyboard access.
+ */
+function initFaqExplorer() {
+  const directory = document.querySelector('[data-faq-directory]');
+  if (!directory) return;
+
+  const searchInput = document.getElementById('faq-search');
+  const clearButton = document.getElementById('faq-clear');
+  const resultCount = document.getElementById('faq-result-count');
+  const emptyState = document.getElementById('faq-empty');
+  const filterButtons = [...directory.querySelectorAll('[data-faq-filter]')];
+  const groups = [...directory.querySelectorAll('[data-faq-category]')];
+  let activeCategory = 'all';
+
+  const updateResults = () => {
+    const query = searchInput?.value.trim().toLocaleLowerCase() || '';
+    const queryTerms = query.split(/\s+/).filter(Boolean);
+    let visibleCount = 0;
+
+    groups.forEach(group => {
+      const categoryMatches = activeCategory === 'all' || group.dataset.faqCategory === activeCategory;
+      let visibleInGroup = 0;
+
+      group.querySelectorAll('.faq-item').forEach(item => {
+        const searchableText = item.textContent.toLocaleLowerCase();
+        const searchMatches = queryTerms.every(term => searchableText.includes(term));
+        const isVisible = categoryMatches && searchMatches;
+        item.hidden = !isVisible;
+        if (!isVisible) item.open = false;
+        if (isVisible) {
+          visibleCount += 1;
+          visibleInGroup += 1;
+        }
+      });
+
+      group.hidden = visibleInGroup === 0;
+    });
+
+    if (resultCount) {
+      resultCount.textContent = `Showing ${visibleCount} question${visibleCount === 1 ? '' : 's'}`;
+    }
+    if (emptyState) emptyState.hidden = visibleCount !== 0;
+    if (clearButton) clearButton.hidden = query.length === 0;
+  };
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      activeCategory = button.dataset.faqFilter || 'all';
+      filterButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      updateResults();
+    });
+  });
+
+  searchInput?.addEventListener('input', updateResults);
+  clearButton?.addEventListener('click', () => {
+    searchInput.value = '';
+    updateResults();
+    searchInput.focus();
+  });
+
+  updateResults();
+}
+
+/**
  * Handles B2B Inquiry Form submission and routes to WhatsApp
  */
 function initInquiryForm(waNumber) {
   const inquiryForm = document.getElementById('inquiry-form');
   if (!inquiryForm) return;
+
+  const requestType = new URLSearchParams(window.location.search).get('request');
+  if (requestType === 'samples') {
+    const sampleRequest = inquiryForm.querySelector('input[value="Free Fragrance Sample Request"]');
+    if (sampleRequest) sampleRequest.checked = true;
+  }
 
   inquiryForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -137,7 +242,10 @@ function initInquiryForm(waNumber) {
     const email = document.getElementById('inquiry-email')?.value || '';
     const company = document.getElementById('inquiry-company')?.value || 'Not Specified';
     const country = document.getElementById('inquiry-country')?.value || 'Not Specified';
+    const product = document.getElementById('inquiry-product')?.value || 'Not Specified';
     const quantity = document.getElementById('inquiry-qty')?.value || 'Not Specified';
+    const packaging = document.getElementById('inquiry-packaging')?.value || 'Not Specified';
+    const launchDate = document.getElementById('inquiry-launch')?.value || 'Not Specified';
     
     // Services
     let serviceTypes = [];
@@ -147,18 +255,26 @@ function initInquiryForm(waNumber) {
     const servicesStr = serviceTypes.length > 0 ? serviceTypes.join(', ') : 'Not Specified';
     
     const requirements = document.getElementById('inquiry-details')?.value || '';
+    const lowQuantityReview = quantity.startsWith('Below 500');
+    const reviewLine = lowQuantityReview
+      ? '\n🔎 *Low-Quantity Review:* Requested — factory feasibility confirmation required'
+      : '';
 
     // 2. Format a professional WhatsApp message
     const boldLine = '--------------------------------------------';
     const waText = 
-`💼 *New Inquiry for AROMAMATRIX Factory*
+`💼 *New Project Inquiry for AROMAMATRIX*
 ${boldLine}
 👤 *Name:* ${name}
 📧 *Email:* ${email}
 🏢 *Company:* ${company}
 🌍 *Country:* ${country}
+🧴 *Product Category:* ${product}
 📦 *Est. Quantity:* ${quantity}
+${reviewLine}
 🛠️ *Service Interest:* ${servicesStr}
+🎁 *Packaging Status:* ${packaging}
+📅 *Target Launch:* ${launchDate}
 📝 *Requirements:*
 "${requirements}"
 ${boldLine}
