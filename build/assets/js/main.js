@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // 1. WhatsApp Configuration
-  const WHATSAPP_NUMBER = '8618888888888'; // 显眼的临时号，前缀国家代码(如86为中国)
+  const WHATSAPP_NUMBER = '85257633378';
   const WHATSAPP_WELCOME_MSG = 'Hello AROMAMATRIX, I am interested in your perfume OEM/ODM services and would like to get a quote and samples.';
 
   // 2. Inject Shared Floating WhatsApp Button
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('hashchange', highlightActiveNav);
   initAccordion();
   initFaqExplorer();
+  initBlogExplorer();
   initInquiryForm(WHATSAPP_NUMBER);
 });
 
@@ -219,6 +220,53 @@ function initFaqExplorer() {
   });
 
   updateResults();
+}
+
+/**
+ * Client-side search and category filters for the static blog library.
+ */
+function initBlogExplorer() {
+  const directory = document.querySelector('[data-blog-directory]');
+  if (!directory) return;
+
+  const search = document.getElementById('blog-search');
+  const count = document.getElementById('blog-result-count');
+  const empty = document.getElementById('blog-empty');
+  const cards = [...document.querySelectorAll('[data-blog-card]')];
+  const filters = [...document.querySelectorAll('[data-blog-filter]')];
+  let category = 'all';
+
+  const update = () => {
+    const terms = (search?.value || '').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    let visible = 0;
+
+    cards.forEach(card => {
+      const matchesCategory = category === 'all' || card.dataset.blogCategory === category;
+      const searchable = card.dataset.blogSearch || card.textContent.toLocaleLowerCase();
+      const matchesSearch = terms.every(term => searchable.includes(term));
+      const show = matchesCategory && matchesSearch;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    if (count) count.textContent = `Showing ${visible} guide${visible === 1 ? '' : 's'}`;
+    if (empty) empty.hidden = visible !== 0;
+  };
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => {
+      category = button.dataset.blogFilter || 'all';
+      filters.forEach(filter => {
+        const active = filter === button;
+        filter.classList.toggle('is-active', active);
+        filter.setAttribute('aria-pressed', String(active));
+      });
+      update();
+    });
+  });
+
+  search?.addEventListener('input', update);
+  update();
 }
 
 /**

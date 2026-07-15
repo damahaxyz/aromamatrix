@@ -2,43 +2,1181 @@
   {
     "slug": "how-to-launch-your-own-perfume-line",
     "title": "How to Launch Your Own Perfume Line: A Step-by-Step Factory Guide",
-    "description": "Ready to start your fragrance brand? We map out the costs, formulation milestones, bottle decisions and production stages involved in your first factory run.",
+    "description": "Starting a perfume brand is less about finding one attractive scent and more about turning a customer idea into a repeatable product.",
     "date": "2026-06-15",
     "dateLabel": "June 15, 2026",
     "category": "Sourcing Guide",
     "author": "AROMAMATRIX Laboratory Team",
-    "coverImage": "assets/images/home-sections/fragrance-development.webp",
+    "coverImage": "assets/images/blog/brand-launch.webp",
     "coverAlt": "Fragrance development and perfume formula evaluation",
-    "seoTitle": "How to Launch Your Own Perfume Line | AROMAMATRIX",
-    "seoDescription": "A factory guide for launching a private label perfume line, covering fragrance briefs, packaging, compliance, samples and production stages.",
+    "seoTitle": "How to Launch Your Own Perfume Line",
+    "seoDescription": "Starting a perfume brand is less about finding one attractive scent and more about turning a customer idea into a repeatable product.",
+    "published": true,
+    "primaryKeyword": "how to start a perfume brand",
+    "secondaryKeywords": [
+      "start a perfume line",
+      "perfume brand startup"
+    ],
+    "dateModified": "2026-07-15"
+  },
+  {
+    "slug": "how-much-does-private-label-perfume-cost",
+    "title": "How Much Does Private Label Perfume Cost? A Factory Cost Breakdown",
+    "description": "There is no honest single answer to “how much does private label perfume cost?” until the product has been defined.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Cost & MOQ",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-cost-moq.webp",
+    "coverAlt": "Buyer planning perfume quantities and component costs at a worktable, relevant to how much does private label perfume cost",
+    "seoTitle": "Private Label Perfume Cost: Factory Breakdown",
+    "seoDescription": "There is no honest single answer to “how much does private label perfume cost?” until the product has been defined.",
+    "primaryKeyword": "how much does private label perfume cost",
+    "secondaryKeywords": [
+      "perfume manufacturing cost",
+      "private label perfume pricing"
+    ],
+    "dateModified": "2026-07-15",
     "published": true
   },
   {
-    "slug": "choosing-perfume-packaging",
-    "title": "Choosing the Right Perfume Packaging: Glass Bottles, Caps, & Sprays",
-    "description": "Explore practical packaging decisions for perfume projects, including bottles, pumps, caps, decoration routes and launch timing.",
-    "date": "2026-05-28",
-    "dateLabel": "May 28, 2026",
-    "category": "Packaging Studio",
+    "slug": "perfume-moq-explained",
+    "title": "Perfume MOQ Explained: Why Minimum Order Quantities Change",
+    "description": "Perfume MOQ is not always set by the filling line. In many projects the real minimum comes from a printed carton, decorated bottle, custom cap or fragrance development batch.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Cost & MOQ",
     "author": "AROMAMATRIX Project Team",
-    "coverImage": "assets/images/home-products/packaging-solutions.webp",
-    "coverAlt": "Perfume bottles, pumps, caps and packaging components",
-    "seoTitle": "Choosing Perfume Packaging | AROMAMATRIX",
-    "seoDescription": "Learn how fragrance brands can choose perfume bottles, pumps, caps and packaging routes for OEM and ODM production.",
-    "published": false
+    "coverImage": "assets/images/blog/packaging-components-detail.webp",
+    "coverAlt": "Perfume packaging components arranged for specification review, relevant to perfume MOQ",
+    "seoTitle": "Perfume MOQ Explained: Why Minimum Order Quantities Change",
+    "seoDescription": "Perfume MOQ is not always set by the filling line. Review the variables that change quantity, feasibility and landed cost.",
+    "primaryKeyword": "perfume MOQ",
+    "secondaryKeywords": [
+      "minimum order quantity perfume",
+      "low MOQ perfume manufacturer"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
   },
   {
-    "slug": "shipping-alcohol-perfume-internationally",
-    "title": "Demystifying Scent Shipping: How to Safely Export Alcohol Perfumes",
-    "description": "Understand how dangerous-goods documents, export packing and destination-specific freight routes are reviewed for fragrance shipments.",
-    "date": "2026-04-12",
-    "dateLabel": "April 12, 2026",
-    "category": "DG Logistics",
-    "author": "AROMAMATRIX Logistics Team",
-    "coverImage": "assets/images/home-sections/manufacturing-facility.webp",
-    "coverAlt": "Perfume factory production and shipment preparation",
-    "seoTitle": "How to Ship Alcohol Perfume Internationally | AROMAMATRIX",
-    "seoDescription": "A practical guide to international alcohol perfume shipping, dangerous goods review and export packing for fragrance buyers.",
-    "published": false
+    "slug": "how-to-find-perfume-bottle-suppliers",
+    "title": "How to Find and Compare Perfume Bottle Suppliers",
+    "description": "Good perfume bottle suppliers sell a working packaging system, not just attractive glass. Review the component and approval decisions that affect production.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Packaging",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-packaging-engineering.webp",
+    "coverAlt": "Perfume bottle, pump and carton components under engineering review, relevant to perfume bottle suppliers",
+    "seoTitle": "How to Find and Compare Perfume Bottle Suppliers",
+    "seoDescription": "Good perfume bottle suppliers sell a working packaging system, not just attractive glass. Review the component and approval decisions that affect production.",
+    "primaryKeyword": "perfume bottle suppliers",
+    "secondaryKeywords": [
+      "wholesale perfume bottles",
+      "glass perfume bottle supplier"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "how-to-import-perfume",
+    "title": "How to Import Perfume: A Buyer Checklist Before Shipping",
+    "description": "To import perfume successfully, decide who is responsible for product compliance, dangerous-goods transport and customs clearance before production starts.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Shipping & Import",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-dangerous-goods-logistics.webp",
+    "coverAlt": "Alcohol-based perfume cartons prepared for compliant international transport, relevant to how to import perfume",
+    "seoTitle": "How to Import Perfume: A Buyer Checklist Before Shipping",
+    "seoDescription": "To import perfume successfully, decide who is responsible for product compliance, dangerous-goods transport and customs clearance before production starts.",
+    "primaryKeyword": "how to import perfume",
+    "secondaryKeywords": [
+      "import perfume from China",
+      "perfume customs documents"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "ifra-certificate-guide",
+    "title": "IFRA Certificate Guide for Perfume Buyers",
+    "description": "An IFRA Certificate of Conformity is a statement issued by the supplier of a fragrance mixture for a defined intended use.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Compliance",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-regulatory-review.webp",
+    "coverAlt": "Regulatory specialist reviewing fragrance product documentation, relevant to IFRA Certificate",
+    "seoTitle": "IFRA Certificate Guide for Perfume Buyers",
+    "seoDescription": "An IFRA Certificate of Conformity is a statement issued by the supplier of a fragrance mixture for a defined intended use.",
+    "primaryKeyword": "IFRA Certificate",
+    "secondaryKeywords": [
+      "IFRA Certificate of Conformity",
+      "perfume compliance documents"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-packaging-ideas-that-can-be-manufactured",
+    "title": "Perfume Packaging Ideas That Can Actually Be Manufactured",
+    "description": "The best perfume packaging ideas are not the ones with the most finishes. Review the component and approval decisions that affect production.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Packaging",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/bottle-components-detail.webp",
+    "coverAlt": "Perfume bottles, pumps and caps prepared for compatibility evaluation, relevant to perfume packaging ideas",
+    "seoTitle": "Perfume Packaging Ideas That Can Actually Be Manufactured",
+    "seoDescription": "The best perfume packaging ideas are not the ones with the most finishes. Review the component and approval decisions that affect production.",
+    "primaryKeyword": "perfume packaging ideas",
+    "secondaryKeywords": [
+      "luxury perfume packaging",
+      "perfume box design ideas"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "free-perfume-samples-for-private-label-projects",
+    "title": "Perfume Samples: What to Approve Before Mass Production",
+    "description": "Perfume samples should answer a specific question: which fragrance direction is ready to move forward? Use evaluation samples to make a clear production decision.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Samples",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/sample-showroom.webp",
+    "coverAlt": "Fragrance evaluation samples displayed in the factory showroom, relevant to perfume samples",
+    "seoTitle": "Perfume Samples: What to Approve Before Mass Production",
+    "seoDescription": "Perfume samples should answer a specific question: which fragrance direction is ready to move forward?",
+    "primaryKeyword": "perfume samples",
+    "secondaryKeywords": [
+      "free perfume samples",
+      "fragrance evaluation sample kit"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "what-is-private-label-fragrance",
+    "title": "What Is Private Label Fragrance and Who Is It For?",
+    "description": "Private label fragrance lets a brand launch perfume using an existing or readily adaptable product foundation, then apply its own name, packaging and market positioning.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Business Models",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/brand-launch.webp",
+    "coverAlt": "Perfume brand team reviewing fragrance and packaging options, relevant to private label fragrance",
+    "seoTitle": "What Is Private Label Fragrance and Who Is It For?",
+    "seoDescription": "Learn how private label fragrance uses an adaptable product foundation to reduce development work while giving brands control over identity and positioning.",
+    "primaryKeyword": "private label fragrance",
+    "secondaryKeywords": [
+      "private label perfume manufacturer",
+      "own brand fragrance"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "how-to-choose-a-contract-fragrance-manufacturer",
+    "title": "How to Choose a Contract Fragrance Manufacturer",
+    "description": "A contract fragrance manufacturer should be evaluated by the evidence behind its process: what it controls in-house, how it approves materials, and how it connects your specification to the finished batch.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Supplier Selection",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/factory-exterior.webp",
+    "coverAlt": "AROMAMATRIX perfume factory exterior, relevant to contract fragrance manufacturer",
+    "seoTitle": "How to Choose a Contract Fragrance Manufacturer",
+    "seoDescription": "Evaluate a contract fragrance manufacturer by its real production scope, material controls, approval records, communication and repeat-order capability.",
+    "primaryKeyword": "contract fragrance manufacturer",
+    "secondaryKeywords": [
+      "fragrance contract manufacturing",
+      "perfume manufacturer checklist"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "oem-perfume-china-buyer-guide",
+    "title": "OEM Perfume in China: A Practical Buyer Guide",
+    "description": "Searching for “OEM perfume China” produces factories, traders and packaging suppliers using overlapping language. Buyers should verify the actual manufacturing scope before comparing prices.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Supplier Selection",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/manufacturing-wide.webp",
+    "coverAlt": "Wide view of the perfume manufacturing workshop, relevant to OEM perfume China",
+    "seoTitle": "OEM Perfume in China: A Practical Buyer Guide",
+    "seoDescription": "Searching for “OEM perfume China” produces factories, traders and packaging suppliers using overlapping language.",
+    "primaryKeyword": "OEM perfume China",
+    "secondaryKeywords": [
+      "China perfume manufacturer",
+      "perfume OEM factory"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "custom-perfume-bottle-guide",
+    "title": "Custom Perfume Bottle Guide: Stock Glass or a New Mold?",
+    "description": "A custom perfume bottle can mean decorating stock glass or developing a new glass mold. The first question is therefore not “Can this shape be made?”",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Packaging",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/fine-fragrance.webp",
+    "coverAlt": "Finished fine-fragrance products in varied bottle formats, relevant to custom perfume bottle",
+    "seoTitle": "Custom Perfume Bottle Guide: Stock Glass or a New Mold?",
+    "seoDescription": "A custom perfume bottle can mean decorating stock glass or developing a new glass mold. The first question is therefore not “Can this shape be made?”",
+    "primaryKeyword": "custom perfume bottle",
+    "secondaryKeywords": [
+      "custom glass perfume bottles",
+      "perfume bottle mold"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-filling-service-guide",
+    "title": "Perfume Filling Service: What Brands Should Specify",
+    "description": "A perfume filling service converts bulk liquid and packaging components into saleable units. Understand the control points from specification to release.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Production",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/filling-line.webp",
+    "coverAlt": "Perfume bottles moving through the filling and assembly line, relevant to perfume filling service",
+    "seoTitle": "Perfume Filling Service: What Brands Should Specify",
+    "seoDescription": "A perfume filling service converts bulk liquid and packaging components into saleable units. Understand the control points from specification to release.",
+    "primaryKeyword": "perfume filling service",
+    "secondaryKeywords": [
+      "contract perfume filling",
+      "perfume bottling service"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-formulation-process",
+    "title": "Perfume Formulation: From Brand Brief to Approved Scent",
+    "description": "Perfume formulation begins by translating brand language into an olfactory target. Practical guidance for B2B perfume buyers.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Fragrance Development",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-fragrance-brief.webp",
+    "coverAlt": "Perfumer translating an olfactory brief into evaluation directions, relevant to perfume formulation",
+    "seoTitle": "Perfume Formulation: From Brand Brief to Approved Scent",
+    "seoDescription": "Perfume formulation begins by translating brand language into an olfactory target. Practical guidance for B2B perfume buyers.",
+    "primaryKeyword": "perfume formulation",
+    "secondaryKeywords": [
+      "custom fragrance formulation",
+      "perfume development"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-startup-guide-budget-timeline",
+    "title": "Perfume Startup Guide: Budget, Timeline and First-SKU Decisions",
+    "description": "A perfume startup budget should protect the launch from two common failures: spending too much on components before the scent is validated, and reserving too little for freight, marketing and repeat inventory.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Startup Guide",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/brand-launch.webp",
+    "coverAlt": "Perfume brand team reviewing fragrance and packaging options, relevant to perfume startup guide",
+    "seoTitle": "Perfume Startup Guide: Budget, Timeline and First-SKU Decisions",
+    "seoDescription": "Plan a perfume startup budget and timeline around product development, inventory, freight, launch costs and a focused first collection.",
+    "primaryKeyword": "perfume startup guide",
+    "secondaryKeywords": [
+      "start a fragrance business",
+      "perfume brand launch checklist"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-branding-guide",
+    "title": "Perfume Branding: Building a Brief a Factory Can Use",
+    "description": "Perfume branding is the set of expectations created before, during and after someone smells the product. Practical guidance for B2B perfume buyers.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Brand Strategy",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/brand-launch.webp",
+    "coverAlt": "Perfume brand team reviewing fragrance and packaging options, relevant to perfume branding",
+    "seoTitle": "Perfume Branding: Building a Brief a Factory Can Use",
+    "seoDescription": "Perfume branding is the set of expectations created before, during and after someone smells the product. Practical guidance for B2B perfume buyers.",
+    "primaryKeyword": "perfume branding",
+    "secondaryKeywords": [
+      "fragrance brand identity",
+      "perfume packaging branding"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "private-label-vs-oem-vs-odm-perfume",
+    "title": "Private Label vs OEM vs ODM Perfume: Which Model Fits?",
+    "description": "Private label, OEM and ODM perfume describe different allocations of development work. Compare control, scope and responsibility before choosing a route.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Business Models",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/representative-project.webp",
+    "coverAlt": "Perfume product concepts arranged for a project review, relevant to private label vs OEM vs ODM perfume",
+    "seoTitle": "Private Label vs OEM vs ODM Perfume: Which Model Fits?",
+    "seoDescription": "Private label, OEM and ODM perfume describe different allocations of development work. Compare control, scope and responsibility before choosing a route.",
+    "primaryKeyword": "private label vs OEM vs ODM perfume",
+    "secondaryKeywords": [
+      "OEM ODM perfume difference",
+      "white label perfume"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "how-to-write-a-fragrance-brief",
+    "title": "How to Write a Fragrance Brief for a Perfume Manufacturer",
+    "description": "A fragrance brief should help a perfumer make choices. Replace abstract praise with boundaries: who will wear it, where, at what price and how it should feel beside competing products.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Fragrance Development",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/fragrance-development.webp",
+    "coverAlt": "Fragrance samples and raw materials used during scent development, relevant to fragrance brief",
+    "seoTitle": "How to Write a Fragrance Brief for a Perfume Manufacturer",
+    "seoDescription": "Write a fragrance brief that defines the customer, market, scent direction, dislikes and evaluation priorities a perfume manufacturer can act on.",
+    "primaryKeyword": "fragrance brief",
+    "secondaryKeywords": [
+      "perfume brief template",
+      "custom scent brief"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "edp-vs-edt-vs-extrait-manufacturing",
+    "title": "EDP vs EDT vs Extrait: What Changes in Manufacturing?",
+    "description": "EDP, EDT and extrait are useful positioning terms, but they do not guarantee one universal fragrance percentage or performance level.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Fragrance Development",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/compounding-detail.webp",
+    "coverAlt": "Detailed view of perfume liquid compounding equipment, relevant to EDP vs EDT vs extrait",
+    "seoTitle": "EDP vs EDT vs Extrait: What Changes in Manufacturing?",
+    "seoDescription": "EDP, EDT and extrait are useful positioning terms, but they do not guarantee one universal fragrance percentage or performance level.",
+    "primaryKeyword": "EDP vs EDT vs extrait",
+    "secondaryKeywords": [
+      "perfume concentration guide",
+      "eau de parfum manufacturer"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "alcohol-free-perfume-manufacturing",
+    "title": "Alcohol-Free Perfume Manufacturing: Formats and Trade-Offs",
+    "description": "Alcohol-free perfume manufacturing is not simply standard perfume with ethanol removed. Practical guidance for B2B perfume buyers.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Product Development",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-product-formats.webp",
+    "coverAlt": "Different fragrance product formats arranged for technical comparison, relevant to alcohol-free perfume manufacturing",
+    "seoTitle": "Alcohol-Free Perfume Manufacturing: Formats and Trade-Offs",
+    "seoDescription": "Alcohol-free perfume manufacturing is not simply standard perfume with ethanol removed. Practical guidance for B2B perfume buyers.",
+    "primaryKeyword": "alcohol-free perfume manufacturing",
+    "secondaryKeywords": [
+      "non alcoholic perfume",
+      "water based perfume manufacturer"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-oil-vs-spray-for-private-label",
+    "title": "Perfume Oil vs Spray Perfume for a Private Label Launch",
+    "description": "Perfume oil and spray perfume create different customer experiences and different manufacturing projects. Choose by use case, not by assuming one format is universally longer lasting.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Product Development",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/body-fragrance.webp",
+    "coverAlt": "Body fragrance products prepared for private-label development, relevant to perfume oil vs spray perfume",
+    "seoTitle": "Perfume Oil vs Spray Perfume for a Private Label Launch",
+    "seoDescription": "Perfume oil and spray perfume create different customer experiences and different manufacturing projects.",
+    "primaryKeyword": "perfume oil vs spray perfume",
+    "secondaryKeywords": [
+      "roll on perfume oil private label",
+      "spray perfume manufacturer"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "how-to-compare-perfume-manufacturers",
+    "title": "How to Compare Perfume Manufacturers Before Ordering",
+    "description": "Compare perfume manufacturers with one written brief and one evidence checklist. Learn what evidence to request before selecting a factory.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Supplier Selection",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/factory-exterior.webp",
+    "coverAlt": "AROMAMATRIX perfume factory exterior, relevant to how to compare perfume manufacturers",
+    "seoTitle": "How to Compare Perfume Manufacturers Before Ordering",
+    "seoDescription": "Compare perfume manufacturers with one written brief and one evidence checklist. Learn what evidence to request before selecting a factory.",
+    "primaryKeyword": "how to compare perfume manufacturers",
+    "secondaryKeywords": [
+      "best private label perfume manufacturer",
+      "perfume factory audit"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-rfq-checklist",
+    "title": "Perfume RFQ Checklist: Information Needed for an Accurate Quote",
+    "description": "A perfume RFQ should make suppliers quote the same project. Include enough detail to expose assumptions without pretending every design decision is already final.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Sourcing Guide",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/project-team.webp",
+    "coverAlt": "Factory project team reviewing a perfume manufacturing brief, relevant to perfume RFQ checklist",
+    "seoTitle": "Perfume RFQ Checklist: Information Needed for an Accurate Quote",
+    "seoDescription": "A perfume RFQ should make suppliers quote the same project. Practical guidance for B2B perfume buyers.",
+    "primaryKeyword": "perfume RFQ checklist",
+    "secondaryKeywords": [
+      "perfume quotation request",
+      "OEM perfume inquiry"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "what-affects-perfume-unit-cost",
+    "title": "What Affects Perfume Unit Cost? Seven Factory Variables",
+    "description": "Perfume unit cost changes when the formula, component specification, production quantity or included service changes. It should never be compared without those four references.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Cost & MOQ",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/project-team.webp",
+    "coverAlt": "Factory project team reviewing a perfume manufacturing brief, relevant to perfume unit cost",
+    "seoTitle": "What Affects Perfume Unit Cost? Seven Factory Variables",
+    "seoDescription": "Perfume unit cost changes when the formula, component specification, production quantity or included service changes.",
+    "primaryKeyword": "perfume unit cost",
+    "secondaryKeywords": [
+      "perfume manufacturing price",
+      "OEM perfume cost factors"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "small-batch-perfume-manufacturing",
+    "title": "Small-Batch Perfume Manufacturing: What Is Realistically Flexible?",
+    "description": "Small batch perfume manufacturing is feasible when the project accepts standardization. The production line may handle a short run, but packaging suppliers still need economical quantities.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Cost & MOQ",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-cost-moq.webp",
+    "coverAlt": "Buyer planning perfume quantities and component costs at a worktable, relevant to small batch perfume manufacturing",
+    "seoTitle": "Small-Batch Perfume Manufacturing Guide",
+    "seoDescription": "Small batch perfume manufacturing is feasible when the project accepts standardization. Review the variables that change quantity, feasibility and landed cost.",
+    "primaryKeyword": "small batch perfume manufacturing",
+    "secondaryKeywords": [
+      "low MOQ perfume",
+      "perfume pilot run"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "can-you-combine-scents-to-meet-perfume-moq",
+    "title": "Can Different Scents Be Combined to Meet a Perfume MOQ?",
+    "description": "Several scents cannot automatically be combined to meet one perfume MOQ. Each fragrance creates its own liquid batch, identification, filling changeover and artwork controls.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Cost & MOQ",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/packaging-components-detail.webp",
+    "coverAlt": "Perfume packaging components arranged for specification review, relevant to combine scents perfume MOQ",
+    "seoTitle": "Can Different Scents Be Combined to Meet a Perfume MOQ?",
+    "seoDescription": "Several scents cannot automatically be combined to meet one perfume MOQ. Review the variables that change quantity, feasibility and landed cost.",
+    "primaryKeyword": "combine scents perfume MOQ",
+    "secondaryKeywords": [
+      "MOQ per fragrance",
+      "multiple perfume SKUs"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "stock-vs-custom-perfume-packaging",
+    "title": "Stock vs Custom Perfume Packaging for a First Launch",
+    "description": "Stock perfume packaging buys speed and flexibility. Custom packaging buys differentiation at the cost of tooling, trials, higher component commitments and repeat-order planning.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Packaging",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-packaging-engineering.webp",
+    "coverAlt": "Perfume bottle, pump and carton components under engineering review, relevant to stock vs custom perfume packaging",
+    "seoTitle": "Stock vs Custom Perfume Packaging for a First Launch",
+    "seoDescription": "Stock perfume packaging buys speed and flexibility. Review the component and approval decisions that affect production.",
+    "primaryKeyword": "stock vs custom perfume packaging",
+    "secondaryKeywords": [
+      "standard perfume bottle",
+      "custom perfume packaging"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-pump-bottle-compatibility",
+    "title": "Perfume Bottle and Pump Compatibility: Tests Buyers Should Request",
+    "description": "Perfume bottle pump compatibility depends on the complete closure system and liquid, not merely matching a neck diameter.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Quality Control",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/quality-inspection.webp",
+    "coverAlt": "Factory technician inspecting finished perfume bottles, relevant to perfume bottle pump compatibility",
+    "seoTitle": "Perfume Bottle and Pump Compatibility Tests",
+    "seoDescription": "Perfume bottle pump compatibility depends on the complete closure system and liquid, not merely matching a neck diameter.",
+    "primaryKeyword": "perfume bottle pump compatibility",
+    "secondaryKeywords": [
+      "perfume atomizer test",
+      "perfume leakage test"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "crimp-vs-screw-perfume-pumps",
+    "title": "Crimp vs Screw Perfume Pumps: Which Closure Should a Brand Use?",
+    "description": "Crimp and screw perfume pumps solve the same closure problem with different assembly, appearance and rework characteristics.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Packaging",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/bottle-components-detail.webp",
+    "coverAlt": "Perfume bottles, pumps and caps prepared for compatibility evaluation, relevant to crimp vs screw perfume pump",
+    "seoTitle": "Crimp vs Screw Perfume Pumps: Which Closure Should a Brand Use?",
+    "seoDescription": "Crimp and screw perfume pumps solve the same closure problem with different assembly, appearance and rework characteristics.",
+    "primaryKeyword": "crimp vs screw perfume pump",
+    "secondaryKeywords": [
+      "perfume crimp pump",
+      "screw neck perfume bottle"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-bottle-decoration-methods",
+    "title": "Perfume Bottle Decoration Methods: Printing, Coating and Foil",
+    "description": "Perfume bottle decoration should be selected by material, artwork, quantity and durability—not from a rendering alone.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Packaging",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/fine-fragrance.webp",
+    "coverAlt": "Finished fine-fragrance products in varied bottle formats, relevant to perfume bottle decoration methods",
+    "seoTitle": "Perfume Bottle Decoration Methods: Printing, Coating and Foil",
+    "seoDescription": "Perfume bottle decoration should be selected by material, artwork, quantity and durability—not from a rendering alone.",
+    "primaryKeyword": "perfume bottle decoration methods",
+    "secondaryKeywords": [
+      "screen printing perfume bottle",
+      "perfume bottle coating"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-box-packaging-guide",
+    "title": "Perfume Box Packaging Guide: Cartons, Inserts and Gift Sets",
+    "description": "A perfume box has three jobs: protect the bottle, carry required information and present the brand. Structural design should begin with the actual bottle and cap, not a guessed dimension.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Packaging",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-packaging-engineering.webp",
+    "coverAlt": "Perfume bottle, pump and carton components under engineering review, relevant to perfume box packaging",
+    "seoTitle": "Perfume Box Packaging Guide: Cartons, Inserts and Gift Sets",
+    "seoDescription": "Plan perfume box packaging around the real bottle, protective insert, required market information, production artwork and shipping conditions.",
+    "primaryKeyword": "perfume box packaging",
+    "secondaryKeywords": [
+      "custom perfume boxes",
+      "perfume gift box manufacturer"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-packaging-artwork-files",
+    "title": "Perfume Packaging Artwork Files: What Your Factory Needs",
+    "description": "Production-ready perfume packaging artwork is built on confirmed dimensions and separated by process. A high-resolution image is not a substitute for editable vector files.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Packaging",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/bottle-components-detail.webp",
+    "coverAlt": "Perfume bottles, pumps and caps prepared for compatibility evaluation, relevant to perfume packaging artwork files",
+    "seoTitle": "Perfume Packaging Artwork Files: What Your Factory Needs",
+    "seoDescription": "Production-ready perfume packaging artwork is built on confirmed dimensions and separated by process.",
+    "primaryKeyword": "perfume packaging artwork files",
+    "secondaryKeywords": [
+      "perfume label design file",
+      "packaging dieline perfume"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-packaging-quality-control",
+    "title": "Perfume Packaging Quality Control: Common Defects and Checks",
+    "description": "Perfume packaging quality control needs measurable defect definitions. “Looks premium” cannot guide inspectors deciding whether to accept a batch.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Quality Control",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/quality-detail.webp",
+    "coverAlt": "Close inspection of perfume packaging and finished-product quality, relevant to perfume packaging quality control",
+    "seoTitle": "Perfume Packaging Quality Control: Common Defects and Checks",
+    "seoDescription": "Perfume packaging quality control needs measurable defect definitions. “Looks premium” cannot guide inspectors deciding whether to accept a batch.",
+    "primaryKeyword": "perfume packaging quality control",
+    "secondaryKeywords": [
+      "perfume bottle defects",
+      "packaging inspection checklist"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-manufacturing-process",
+    "title": "Perfume Manufacturing Process: From Compounding to Boxing",
+    "description": "The perfume manufacturing process begins before liquid enters a tank. Understand the control points from specification to release.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Production",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/compounding-tanks.webp",
+    "coverAlt": "Stainless-steel tanks used for perfume compounding, relevant to perfume manufacturing process",
+    "seoTitle": "Perfume Manufacturing Process: From Compounding to Boxing",
+    "seoDescription": "The perfume manufacturing process begins before liquid enters a tank. Understand the control points from specification to release.",
+    "primaryKeyword": "perfume manufacturing process",
+    "secondaryKeywords": [
+      "how perfume is manufactured",
+      "perfume factory process"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-production-lead-time",
+    "title": "Perfume Production Lead Time: How to Build a Real Schedule",
+    "description": "Perfume production lead time is the sum of development, buyer decisions, component procurement, manufacturing and freight—not a single number starting when an inquiry is sent.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Production",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/packing-team.webp",
+    "coverAlt": "Factory team assembling and packing finished perfume products, relevant to perfume production lead time",
+    "seoTitle": "Perfume Production Lead Time: How to Build a Real Schedule",
+    "seoDescription": "Build a realistic perfume production schedule covering fragrance approval, packaging, procurement, manufacturing, inspection and freight.",
+    "primaryKeyword": "perfume production lead time",
+    "secondaryKeywords": [
+      "private label perfume lead time",
+      "OEM perfume timeline"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "five-day-raw-material-procurement",
+    "title": "What Does a 5-Day Raw-Material Procurement Period Mean?",
+    "description": "A five-day raw-material procurement period is one purchasing milestone, not the total perfume delivery time.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Production",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/filling-line.webp",
+    "coverAlt": "Perfume bottles moving through the filling and assembly line, relevant to perfume raw material procurement time",
+    "seoTitle": "What Does a 5-Day Raw-Material Procurement Period Mean?",
+    "seoDescription": "A five-day raw-material procurement period is one purchasing milestone, not the total perfume delivery time.",
+    "primaryKeyword": "perfume raw material procurement time",
+    "secondaryKeywords": [
+      "perfume production schedule",
+      "fragrance material sourcing"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "pre-production-perfume-sample",
+    "title": "Why Approve a Pre-Production Perfume Sample?",
+    "description": "A pre-production perfume sample is the first opportunity to approve the complete product: liquid, fill, closure, decoration, label, carton and assembly together.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Samples",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/sample-selection-detail.webp",
+    "coverAlt": "Coded fragrance samples arranged for buyer evaluation, relevant to pre-production perfume sample",
+    "seoTitle": "Why Approve a Pre-Production Perfume Sample?",
+    "seoDescription": "A pre-production perfume sample is the first opportunity to approve the complete product: liquid, fill, closure, decoration, label, carton and assembly together.",
+    "primaryKeyword": "pre-production perfume sample",
+    "secondaryKeywords": [
+      "golden sample perfume",
+      "perfume production approval"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-batch-consistency",
+    "title": "Perfume Batch Consistency: What Brands Should Control",
+    "description": "Perfume batch consistency comes from controlling references and process variables, not expecting raw materials to have no natural variation.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Quality Control",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/quality-inspection.webp",
+    "coverAlt": "Factory technician inspecting finished perfume bottles, relevant to perfume batch consistency",
+    "seoTitle": "Perfume Batch Consistency: What Brands Should Control",
+    "seoDescription": "Perfume batch consistency comes from controlling references and process variables, not expecting raw materials to have no natural variation.",
+    "primaryKeyword": "perfume batch consistency",
+    "secondaryKeywords": [
+      "perfume quality control",
+      "repeat perfume order"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "iso-22716-perfume-manufacturing",
+    "title": "ISO 22716 for Perfume Manufacturing: What Buyers Should Know",
+    "description": "ISO 22716 provides guidelines for cosmetic good manufacturing practices covering production, control, storage and shipment.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Compliance",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-label-review.webp",
+    "coverAlt": "Perfume bottle and carton artwork checked against label requirements, relevant to ISO 22716 perfume manufacturing",
+    "seoTitle": "ISO 22716 for Perfume Manufacturing: What Buyers Should Know",
+    "seoDescription": "ISO 22716 provides guidelines for cosmetic good manufacturing practices covering production, control, storage and shipment.",
+    "primaryKeyword": "ISO 22716 perfume manufacturing",
+    "secondaryKeywords": [
+      "cosmetics GMP perfume factory",
+      "ISO 22716 certificate"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "sds-coa-ifra-documents",
+    "title": "SDS vs COA vs IFRA Certificate: Perfume Documents Explained",
+    "description": "SDS, COA and IFRA documents answer different questions. Asking for “all certificates” can leave a buyer with many files but no evidence tied to the approved product.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Compliance",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/quality-inspection.webp",
+    "coverAlt": "Factory technician inspecting finished perfume bottles, relevant to SDS vs COA vs IFRA",
+    "seoTitle": "SDS vs COA vs IFRA Certificate: Perfume Documents Explained",
+    "seoDescription": "SDS, COA and IFRA documents answer different questions. Separate factory documents from market-entry responsibilities.",
+    "primaryKeyword": "SDS vs COA vs IFRA",
+    "secondaryKeywords": [
+      "perfume compliance documents",
+      "fragrance COA SDS"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "fda-mocra-perfume-brands",
+    "title": "FDA MoCRA for Perfume Brands: Factory Support vs Brand Responsibility",
+    "description": "For perfume brands entering the United States, MoCRA creates responsibilities that should be assigned before launch.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Compliance",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-regulatory-review.webp",
+    "coverAlt": "Regulatory specialist reviewing fragrance product documentation, relevant to FDA MoCRA perfume",
+    "seoTitle": "FDA MoCRA for Perfume Brands: Buyer Responsibilities",
+    "seoDescription": "For perfume brands entering the United States, MoCRA creates responsibilities that should be assigned before launch.",
+    "primaryKeyword": "FDA MoCRA perfume",
+    "secondaryKeywords": [
+      "FDA cosmetic product listing perfume",
+      "US responsible person"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "eu-cpnp-perfume-guide",
+    "title": "EU CPNP for Perfume: What an Overseas Brand Needs to Plan",
+    "description": "CPNP is the EU notification portal for cosmetic products; it is not a factory certificate. Separate factory documents from market-entry responsibilities.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Compliance",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-label-review.webp",
+    "coverAlt": "Perfume bottle and carton artwork checked against label requirements, relevant to EU CPNP perfume",
+    "seoTitle": "EU CPNP for Perfume: What an Overseas Brand Needs to Plan",
+    "seoDescription": "CPNP is the EU notification portal for cosmetic products; it is not a factory certificate. Separate factory documents from market-entry responsibilities.",
+    "primaryKeyword": "EU CPNP perfume",
+    "secondaryKeywords": [
+      "EU perfume responsible person",
+      "cosmetic product notification"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "us-perfume-label-requirements",
+    "title": "U.S. Perfume Label Planning: Details Brands Commonly Miss",
+    "description": "US perfume label requirements should be reviewed on the final bottle and carton, not copied from a competitor.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Compliance",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/quality-inspection.webp",
+    "coverAlt": "Factory technician inspecting finished perfume bottles, relevant to US perfume label requirements",
+    "seoTitle": "U.S. Perfume Label Planning: Details Brands Commonly Miss",
+    "seoDescription": "US perfume label requirements should be reviewed on the final bottle and carton, not copied from a competitor.",
+    "primaryKeyword": "US perfume label requirements",
+    "secondaryKeywords": [
+      "perfume cosmetic label USA",
+      "fragrance net contents label"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "eu-perfume-label-planning",
+    "title": "EU Perfume Label Planning: A Pre-Print Checklist",
+    "description": "EU perfume label planning belongs at the start of packaging design. The Responsible Person and safety assessor need the actual formula and market plan before mandatory text can be finalized.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Compliance",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-regulatory-review.webp",
+    "coverAlt": "Regulatory specialist reviewing fragrance product documentation, relevant to EU perfume label requirements",
+    "seoTitle": "EU Perfume Label Planning: A Pre-Print Checklist",
+    "seoDescription": "EU perfume label planning belongs at the start of packaging design. Separate factory documents from market-entry responsibilities.",
+    "primaryKeyword": "EU perfume label requirements",
+    "secondaryKeywords": [
+      "EU cosmetic fragrance label",
+      "perfume allergens EU"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "why-perfume-is-dangerous-goods",
+    "title": "Why Is Alcohol-Based Perfume Classified as Dangerous Goods?",
+    "description": "Perfume is often dangerous goods in transport because alcohol-based formulas can be flammable. Plan responsibilities and transport before goods move.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Shipping & Import",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/warehouse.webp",
+    "coverAlt": "Perfume components and export cartons organized in the warehouse, relevant to why is perfume dangerous goods",
+    "seoTitle": "Why Is Alcohol-Based Perfume Classified as Dangerous Goods?",
+    "seoDescription": "Perfume is often dangerous goods in transport because alcohol-based formulas can be flammable. Plan responsibilities and transport before goods move.",
+    "primaryKeyword": "why is perfume dangerous goods",
+    "secondaryKeywords": [
+      "UN 1266 perfume",
+      "Class 3 perfume shipping"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "how-to-ship-perfume-samples-internationally",
+    "title": "How to Ship Perfume Samples Internationally",
+    "description": "To ship perfume samples internationally, first confirm that the carrier accepts the actual alcohol-based product on the intended route.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Shipping & Import",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/factory-exterior.webp",
+    "coverAlt": "AROMAMATRIX perfume factory exterior, relevant to ship perfume samples internationally",
+    "seoTitle": "How to Ship Perfume Samples Internationally",
+    "seoDescription": "To ship perfume samples internationally, first confirm that the carrier accepts the actual alcohol-based product on the intended route.",
+    "primaryKeyword": "ship perfume samples internationally",
+    "secondaryKeywords": [
+      "perfume sample courier",
+      "fragrance sample shipping"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "international-perfume-shipping-options",
+    "title": "International Perfume Shipping Options for Bulk Orders",
+    "description": "International perfume shipping options are constrained by dangerous-goods acceptance. Compare routes by eligibility and total landed outcome before comparing transit time.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Shipping & Import",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-dangerous-goods-logistics.webp",
+    "coverAlt": "Alcohol-based perfume cartons prepared for compliant international transport, relevant to international perfume shipping",
+    "seoTitle": "International Perfume Shipping Options for Bulk Orders",
+    "seoDescription": "International perfume shipping options are constrained by dangerous-goods acceptance. Plan responsibilities and transport before goods move.",
+    "primaryKeyword": "international perfume shipping",
+    "secondaryKeywords": [
+      "ship perfume by air or sea",
+      "perfume freight forwarder"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "import-perfume-from-china-checklist",
+    "title": "Import Perfume from China: Factory-to-Warehouse Checklist",
+    "description": "Before importing perfume from China, close the gaps between the sales contract, destination compliance and freight booking.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Shipping & Import",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/warehouse.webp",
+    "coverAlt": "Perfume components and export cartons organized in the warehouse, relevant to import perfume from China",
+    "seoTitle": "Import Perfume from China: Factory-to-Warehouse Checklist",
+    "seoDescription": "Before importing perfume from China, close the gaps between the sales contract, destination compliance and freight booking.",
+    "primaryKeyword": "import perfume from China",
+    "secondaryKeywords": [
+      "China perfume export",
+      "OEM perfume import checklist"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "prevent-perfume-bottle-leakage",
+    "title": "How to Prevent Perfume Bottle Leakage in Production and Shipping",
+    "description": "Preventing perfume bottle leakage requires control of the bottle neck, pump or closure, gasket, assembly settings, liquid and transport conditions.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Quality Control",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/quality-detail.webp",
+    "coverAlt": "Close inspection of perfume packaging and finished-product quality, relevant to prevent perfume bottle leakage",
+    "seoTitle": "How to Prevent Perfume Bottle Leakage in Production and Shipping",
+    "seoDescription": "Preventing perfume bottle leakage requires control of the bottle neck, pump or closure, gasket, assembly settings, liquid and transport conditions.",
+    "primaryKeyword": "prevent perfume bottle leakage",
+    "secondaryKeywords": [
+      "perfume atomizer leaking",
+      "perfume package compatibility"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-shipment-damage-claims",
+    "title": "Perfume Shipment Damage: Inspection and Claims Checklist",
+    "description": "When a perfume shipment is damaged, preserve evidence before sorting or discarding goods. Carriers, insurers and suppliers need to distinguish transport damage from manufacturing defects.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "After-Sales",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/quality-detail.webp",
+    "coverAlt": "Close inspection of perfume packaging and finished-product quality, relevant to perfume shipment damaged",
+    "seoTitle": "Perfume Shipment Damage: Inspection and Claims Checklist",
+    "seoDescription": "When a perfume shipment is damaged, preserve evidence before sorting or discarding goods. Practical guidance for B2B perfume buyers.",
+    "primaryKeyword": "perfume shipment damaged",
+    "secondaryKeywords": [
+      "leaking perfume shipment",
+      "perfume quality claim"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "private-label-perfume-for-startups",
+    "title": "Private Label Perfume for Startups: A Lean First-Launch Plan",
+    "description": "Private label perfume can help startups test a clear proposition without funding every custom element. Practical guidance for B2B perfume buyers.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Startup Guide",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/representative-project.webp",
+    "coverAlt": "Perfume product concepts arranged for a project review, relevant to private label perfume for startups",
+    "seoTitle": "Private Label Perfume for Startups: A Lean First-Launch Plan",
+    "seoDescription": "Private label perfume can help startups test a clear proposition without funding every custom element. Practical guidance for B2B perfume buyers.",
+    "primaryKeyword": "private label perfume for startups",
+    "secondaryKeywords": [
+      "startup perfume manufacturer",
+      "launch perfume brand"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-brand-manufacturer-questions",
+    "title": "25 Questions to Ask a Perfume Manufacturer Before You Order",
+    "description": "The best questions to ask a perfume manufacturer reveal responsibility and evidence, not just price. Learn what evidence to request before selecting a factory.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Supplier Selection",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/manufacturing-wide.webp",
+    "coverAlt": "Wide view of the perfume manufacturing workshop, relevant to questions to ask perfume manufacturer",
+    "seoTitle": "25 Questions to Ask a Perfume Manufacturer Before You Order",
+    "seoDescription": "The best questions to ask a perfume manufacturer reveal responsibility and evidence, not just price. Learn what evidence to request before selecting a factory.",
+    "primaryKeyword": "questions to ask perfume manufacturer",
+    "secondaryKeywords": [
+      "perfume manufacturer checklist",
+      "OEM perfume due diligence"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-fragrance-families-for-brand-briefs",
+    "title": "Perfume Fragrance Families: A Practical Guide for Brand Briefs",
+    "description": "Perfume fragrance families give a brand and perfumer a shared starting vocabulary, but they should not become rigid boxes.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Fragrance Development",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/ai-fragrance-brief.webp",
+    "coverAlt": "Perfumer translating an olfactory brief into evaluation directions, relevant to perfume fragrance families",
+    "seoTitle": "Perfume Fragrance Families: A Practical Guide for Brand Briefs",
+    "seoDescription": "Perfume fragrance families give a brand and perfumer a shared starting vocabulary, but they should not become rigid boxes.",
+    "primaryKeyword": "perfume fragrance families",
+    "secondaryKeywords": [
+      "fragrance notes for perfume brand",
+      "scent family guide"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-sample-feedback-guide",
+    "title": "How to Give Useful Feedback on Perfume Samples",
+    "description": "Good perfume sample feedback tells the perfumer where the fragrance departs from the brief and what must not be lost during revision.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Samples",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/fragrance-development.webp",
+    "coverAlt": "Fragrance samples and raw materials used during scent development, relevant to perfume sample feedback",
+    "seoTitle": "How to Give Useful Feedback on Perfume Samples",
+    "seoDescription": "Good perfume sample feedback tells the perfumer where the fragrance departs from the brief and what must not be lost during revision.",
+    "primaryKeyword": "perfume sample feedback",
+    "secondaryKeywords": [
+      "evaluate fragrance samples",
+      "perfume development revisions"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "customer-supplied-perfume-packaging",
+    "title": "Can a Perfume Factory Use Customer-Supplied Bottles and Packaging?",
+    "description": "Customer-supplied perfume packaging can reduce sourcing work only when the components arrive with usable specifications, quantities and responsibility rules.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Production",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/compounding-tanks.webp",
+    "coverAlt": "Stainless-steel tanks used for perfume compounding, relevant to customer supplied perfume packaging",
+    "seoTitle": "Using Customer-Supplied Perfume Packaging",
+    "seoDescription": "Customer-supplied perfume packaging can reduce sourcing work only when the components arrive with usable specifications, quantities and responsibility rules.",
+    "primaryKeyword": "customer supplied perfume packaging",
+    "secondaryKeywords": [
+      "supplied bottles perfume filling",
+      "OEM supplied materials"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-quality-control-checklist",
+    "title": "Perfume Quality Control Checklist for Brand Owners",
+    "description": "A perfume quality control checklist should connect each risk to an observable result and an approved reference.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Quality Control",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/quality-inspection.webp",
+    "coverAlt": "Factory technician inspecting finished perfume bottles, relevant to perfume quality control checklist",
+    "seoTitle": "Perfume Quality Control Checklist for Brand Owners",
+    "seoDescription": "A perfume quality control checklist should connect each risk to an observable result and an approved reference.",
+    "primaryKeyword": "perfume quality control checklist",
+    "secondaryKeywords": [
+      "perfume factory inspection",
+      "perfume QC tests"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-wholesale-vs-private-label",
+    "title": "Wholesale Perfume vs Private Label: Which Route Fits Your Business?",
+    "description": "Wholesale perfume resells an existing brand's finished product; private label perfume places your brand on a product manufactured for your business.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Business Models",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/brand-launch.webp",
+    "coverAlt": "Perfume brand team reviewing fragrance and packaging options, relevant to wholesale perfume vs private label",
+    "seoTitle": "Wholesale Perfume vs Private Label Business Models",
+    "seoDescription": "Wholesale perfume resells an existing brand's finished product; private label perfume places your brand on a product manufactured for your business.",
+    "primaryKeyword": "wholesale perfume vs private label",
+    "secondaryKeywords": [
+      "private label or wholesale fragrance",
+      "branded perfume supplier"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "perfume-concentration-and-cost",
+    "title": "How Perfume Concentration Affects Cost, Clarity and Performance",
+    "description": "Perfume concentration affects cost because it changes fragrance concentrate usage, but the relationship is not a simple percentage multiplier.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Fragrance Development",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/fragrance-development.webp",
+    "coverAlt": "Fragrance samples and raw materials used during scent development, relevant to perfume concentration and cost",
+    "seoTitle": "How Perfume Concentration Affects Cost, Clarity and Performance",
+    "seoDescription": "Perfume concentration affects cost because it changes fragrance concentrate usage, but the relationship is not a simple percentage multiplier.",
+    "primaryKeyword": "perfume concentration and cost",
+    "secondaryKeywords": [
+      "EDP manufacturing cost",
+      "fragrance oil percentage perfume"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
+  },
+  {
+    "slug": "how-to-request-a-perfume-quote",
+    "title": "How to Request a Perfume Manufacturing Quote That You Can Compare",
+    "description": "To request a useful perfume quote, give the manufacturer enough information to price one product rather than guess between many possible versions.",
+    "date": "2026-07-15",
+    "dateLabel": "July 15, 2026",
+    "category": "Sourcing Guide",
+    "author": "AROMAMATRIX Project Team",
+    "coverImage": "assets/images/blog/brand-launch.webp",
+    "coverAlt": "Perfume brand team reviewing fragrance and packaging options, relevant to how to request a perfume quote",
+    "seoTitle": "How to Request a Perfume Manufacturing Quote That You Can Compare",
+    "seoDescription": "To request a useful perfume quote, give the manufacturer enough information to price one product rather than guess between many possible versions.",
+    "primaryKeyword": "how to request a perfume quote",
+    "secondaryKeywords": [
+      "private label perfume quote",
+      "OEM fragrance RFQ"
+    ],
+    "dateModified": "2026-07-15",
+    "published": true
   }
 ]

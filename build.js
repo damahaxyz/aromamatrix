@@ -1,5 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const {
+  PAGE_SEO,
+  applySeo,
+  staticPageSchema,
+  blogPageSchema,
+  renderSitemap,
+  renderRobots
+} = require('./seo');
 
 const SRC_DIR = path.join(__dirname, 'src');
 const LAYOUT_DIR = path.join(__dirname, 'layout');
@@ -11,55 +19,6 @@ const PRIVATE_FACTORY_DIR_NAME = '工厂实拍';
 
 function normalizedPath(value) {
   return path.resolve(value).normalize('NFC');
-}
-
-function decodeHtmlEntities(value) {
-  const namedEntities = {
-    amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: ' '
-  };
-  return value.replace(/&(#x[0-9a-f]+|#\d+|amp|quot|apos|lt|gt|nbsp);/gi, (match, entity) => {
-    if (entity[0] === '#') {
-      const isHex = entity[1].toLowerCase() === 'x';
-      const codePoint = Number.parseInt(entity.slice(isHex ? 2 : 1), isHex ? 16 : 10);
-      return Number.isFinite(codePoint) ? String.fromCodePoint(codePoint) : match;
-    }
-    return namedEntities[entity.toLowerCase()] || match;
-  });
-}
-
-function stripHtml(value) {
-  return decodeHtmlEntities(value
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<\/(p|li|ul|ol)>|<br\s*\/?>/gi, ' ')
-    .replace(/<[^>]+>/g, ' '))
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function buildFaqSchema(content) {
-  const mainEntity = [];
-  const faqPattern = /<details class="faq-item"[^>]*>\s*<summary>([\s\S]*?)<\/summary>\s*<div class="faq-answer">([\s\S]*?)<\/div>\s*<\/details>/gi;
-  let match;
-
-  while ((match = faqPattern.exec(content)) !== null) {
-    mainEntity.push({
-      '@type': 'Question',
-      name: stripHtml(match[1]),
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: stripHtml(match[2])
-      }
-    });
-  }
-
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity
-  };
-
-  return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
 }
 
 function escapeHtml(value) {
@@ -82,6 +41,13 @@ function prefixRelativeUrls(content, prefix) {
   return content.replace(/\b(href|src)=["']([^"']+)["']/gi, (match, attr, value) => {
     if (!isRelativePageUrl(value) || value.startsWith(prefix)) return match;
     return `${attr}="${prefix}${value}"`;
+  });
+}
+
+function enhanceImageAttributes(content) {
+  return content.replace(/<img\b[^>]*>/gi, tag => {
+    if (/\bdecoding=["']/i.test(tag)) return tag;
+    return tag.replace(/\s*\/?\s*>$/, match => ` decoding="async"${match}`);
   });
 }
 
@@ -111,10 +77,12 @@ function renderBlogCards(posts) {
     return '<p class="section-subtitle text-center" style="grid-column: 1 / -1; margin-bottom: 0;">New factory guides are being prepared. Contact our team if you need sourcing advice now.</p>';
   }
 
-  return posts.map(post => `
-        <article class="blog-card">
+  return posts.map(post => {
+    const searchText = [post.title, post.description, post.category, post.primaryKeyword, ...(post.secondaryKeywords || [])].filter(Boolean).join(' ');
+    return `
+        <article class="blog-card" data-blog-card data-blog-category="${escapeHtml(post.category)}" data-blog-search="${escapeHtml(searchText.toLowerCase())}">
           <div class="blog-img">
-            <img src="${escapeHtml(post.coverImage)}" alt="${escapeHtml(post.coverAlt)}">
+            <img src="${escapeHtml(post.coverImage)}" alt="${escapeHtml(post.coverAlt)}" width="1600" height="900" loading="lazy" decoding="async">
           </div>
           <div class="blog-card-content">
             <div class="blog-meta">${escapeHtml(post.dateLabel)} | ${escapeHtml(post.category)}</div>
@@ -122,17 +90,27 @@ function renderBlogCards(posts) {
             <p>${escapeHtml(post.description)}</p>
             <a href="blog/${escapeHtml(post.slug)}.html" class="blog-readmore">Read Full Guide</a>
           </div>
-        </article>`).join('\n');
+        </article>`;
+  }).join('\n');
+}
+
+function renderBlogFilters(posts) {
+  const categories = [...new Set(posts.map(post => post.category).filter(Boolean))].sort();
+  return [
+    '<button type="button" class="blog-filter is-active" data-blog-filter="all" aria-pressed="true">All topics</button>',
+    ...categories.map(category => `<button type="button" class="blog-filter" data-blog-filter="${escapeHtml(category)}" aria-pressed="false">${escapeHtml(category)}</button>`)
+  ].join('\n');
 }
 
 function applyLayoutIncludes(content, headerHtml, footerHtml, options = {}) {
   let output = content
     .replace(/<!--\s*@include\s+header\s*-->/g, headerHtml)
-    .replace(/<!--\s*@include\s+footer\s*-->/g, footerHtml)
-    .replace(/<!--\s*@include\s+faq-schema\s*-->/g, () => buildFaqSchema(content));
+    .replace(/<!--\s*@include\s+footer\s*-->/g, footerHtml);
 
   if (options.blogPosts) {
     output = output.replace(/<!--\s*@blog-posts\s*-->/g, () => renderBlogCards(options.blogPosts));
+    output = output.replace(/<!--\s*@blog-filters\s*-->/g, () => renderBlogFilters(options.blogPosts));
+    output = output.replace(/{{BLOG_POST_COUNT}}/g, String(options.blogPosts.length));
   }
 
   if (options.pathPrefix) {
@@ -156,7 +134,6 @@ function renderBlogDetailPages(posts, headerHtml, footerHtml) {
     let page = template
       .replace(/{{SEO_TITLE}}/g, escapeHtml(post.seoTitle || post.title))
       .replace(/{{SEO_DESCRIPTION}}/g, escapeHtml(post.seoDescription || post.description))
-      .replace(/{{CANONICAL_PATH}}/g, `blog/${escapeHtml(post.slug)}.html`)
       .replace(/{{DATE_LABEL}}/g, escapeHtml(post.dateLabel))
       .replace(/{{CATEGORY}}/g, escapeHtml(post.category))
       .replace(/{{TITLE}}/g, escapeHtml(post.title))
@@ -166,6 +143,17 @@ function renderBlogDetailPages(posts, headerHtml, footerHtml) {
       .replace(/{{ARTICLE_BODY}}/g, bodyHtml);
 
     page = applyLayoutIncludes(page, headerHtml, footerHtml, { pathPrefix: '../' });
+    page = applySeo(page, {
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.description,
+      path: `/blog/${post.slug}.html`,
+      image: post.coverImage,
+      imageWidth: 1600,
+      imageHeight: 900,
+      ogType: 'article',
+      schema: blogPageSchema(post, bodyHtml)
+    });
+    page = enhanceImageAttributes(page);
     fs.writeFileSync(path.join(blogDistDir, `${post.slug}.html`), page, 'utf8');
   });
 }
@@ -250,8 +238,15 @@ function runBuild() {
       const srcPath = path.join(SRC_DIR, filename);
       const distPath = path.join(DIST_DIR, filename);
       let content = fs.readFileSync(srcPath, 'utf8');
+      const seo = PAGE_SEO[filename];
+      if (!seo) throw new Error(`Missing SEO configuration for ${filename}`);
 
       content = applyLayoutIncludes(content, headerHtml, footerHtml, { blogPosts });
+      content = applySeo(content, {
+        ...seo,
+        schema: staticPageSchema(filename, content, blogPosts)
+      });
+      content = enhanceImageAttributes(content);
 
       fs.writeFileSync(distPath, content, 'utf8');
     });
@@ -277,6 +272,8 @@ function runBuild() {
       }
     }
   });
+  fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), renderSitemap(blogPosts), 'utf8');
+  fs.writeFileSync(path.join(DIST_DIR, 'robots.txt'), renderRobots(), 'utf8');
   removeGeneratedDsStore(DIST_DIR);
   console.log('🎉 Build completed successfully!');
 }
