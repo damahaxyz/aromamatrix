@@ -1,0 +1,7 @@
+module.exports = {
+  "id": "stock-vs-custom-perfume-packaging",
+  "coverImage": "assets/images/blog/ai-packaging-engineering.webp",
+  "author": "{{config.brand.name}} Project Team",
+  "category": "packaging",
+  "datePublished": "2026-07-15"
+};

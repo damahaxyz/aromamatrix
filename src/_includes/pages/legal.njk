@@ -1,0 +1,26 @@
+<section class="page-hero legal-hero">
+  <div class="container">
+    <span>{{ copy.hero.kicker }}</span>
+    <h1 class="hero-title">{{ copy.hero.title }}</h1>
+    <p class="section-subtitle">{{ copy.hero.description | interpolate(locale) | safe }}</p>
+    <p class="legal-updated">{{ copy.hero.updated }}</p>
+  </div>
+</section>
+
+<section class="section-padding legal-page">
+  <div class="container legal-layout">
+    <aside class="legal-index" aria-label="{{ copy.hero.title }}">
+      <h2>{{ copy.navTitle }}</h2>
+      {% for item in copy.nav %}<a href="#{{ item.id }}">{{ item.label }}</a>{% endfor %}
+    </aside>
+    <div class="legal-content">
+      {% if copy.introHtml %}<div class="legal-intro">{{ copy.introHtml | interpolate(locale) | safe }}</div>{% endif %}
+      {% for section in copy.sections %}
+        <section class="legal-section" id="{{ section.id }}">
+          <h2>{{ section.title }}</h2>
+          {{ section.html | interpolate(locale) | safe }}
+        </section>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -2,31 +2,24 @@
 
 Last updated: 2026-07-15
 
-This file is the concise source of truth for AI assistants working on the AROMAMATRIX website. Read it before writing or changing public-facing content. When this document conflicts with old website copy, use this document and flag the conflict.
+This file contains editorial, compliance and implementation guardrails for AI assistants working on the website. All changeable business facts are defined in `config/site.config.js`, which is the authoritative source when this document or old website copy differs.
 
 ## 1. Brand and factory identity
 
-- Public-facing brand: **AROMAMATRIX**
-- Brand descriptor: **Perfume Factory**
-- Business type: B2B fragrance manufacturer providing private label, OEM, ODM and contract-processing services
-- Brand and international sales entity: **厦门香氛矩阵化妆品有限公司**.
-- English business name: **Xiamen Aroma Matrix Cosmetics Co., Ltd.**
-- Legal manufacturing entity: **Guangzhou Zhuoya Biotechnology Cosmetics Co., Ltd.**
-- Public relationship: AROMAMATRIX is operated by the Xiamen brand and sales entity; confirmed perfume manufacturing is carried out by the Guangzhou manufacturing entity.
-- Founded: **November 2024**
-- Factory area: **6,000+ m²**
-- Location used publicly: **Baiyun District, Guangzhou, China** or simply **Guangzhou, China**
-- Communication time zone: **UTC+8**
+- Brand identity and descriptor: `brand.name`, `brand.descriptor`
+- Brand and international-sales entities: `brand.legalEntity`
+- Legal manufacturing entity and public locations: `manufacturer.legalName`, `manufacturer.location`
+- Entity-relationship wording: `policies.entityRelationship`
+- Founding date and factory facts: `brand.founded`, `manufacturer`
+- Contact location and time zone: `contact.projectDeskLocation`, `contact.timeZone`
 - Primary audience: overseas fragrance brand owners, startups, importers, distributors and sourcing teams
 - Positioning: a real, practical manufacturing partner—not a consumer perfume brand
 
-Do not use “20+ years” or any wording that implies the business was established before November 2024.
+Do not invent years of experience or wording that predates `brand.founded`.
 
 ## 2. Factory facts currently used on the website
 
-- Factory area: **6,000+ m²**
-- Controlled workshop: **Class 100,000**
-- Fragrance formula library: **10,000+ directions/formulas**
+- Use `manufacturer.factoryArea`, `manufacturer.controlledWorkshop` and `manufacturer.fragranceFormulaLibrary` exactly as configured.
 - Visible factory areas include compounding, filling, inspection, packaging assembly, sample showroom, warehouse/staging and project office.
 - Main production stages: material preparation, compounding, maceration/conditioning where applicable, filtration, filling, crimping or closure assembly, inspection, coding, secondary packaging and shipment staging.
 
@@ -39,13 +32,13 @@ Use these figures only as stated. Do not invent annual capacity, number of emplo
 - Uses suitable existing fragrance directions and standard/available components.
 - Buyer supplies brand name, artwork, target market and commercial requirements.
 - Factory can support sourcing, filling, labeling, assembly and packing within the confirmed scope.
-- Typical starting MOQ: **500 pieces**.
+- Typical starting MOQ: `services.privateLabel.moq`.
 
 ### ODM / customized fragrance project
 
 - Development based on a brand brief, scent direction, price position and target market.
 - Can include fragrance sampling, component selection, sourcing, compounding, filling and finished packing.
-- Typical starting MOQ: **1,000 pieces**.
+- Typical starting MOQ: `services.odm.moq`.
 
 ### OEM / contract processing
 
@@ -55,12 +48,10 @@ Use these figures only as stated. Do not invent annual capacity, number of emplo
 
 ## 4. MOQ policy
 
-Approved public wording:
+Approved reusable public wording is stored in `policies.moq`.
 
-> Our typical starting MOQ is 500 pieces for private label projects using suitable standard components, and 1,000 pieces for customized fragrance projects. Actual quantities depend on the formula, bottle, decoration, packaging and supplied materials. If you need a smaller pilot run, contact our team on WhatsApp so we can review the available options. Smaller quantities are evaluated case by case and cannot be guaranteed.
-
-- Always describe 500 and 1,000 pieces as **typical**, not absolute.
-- Projects below 500 pieces require a WhatsApp feasibility review.
+- Always describe configured MOQ values as **typical**, not absolute.
+- Projects below `services.lowQuantityReview.threshold` require a WhatsApp feasibility review.
 - Never guarantee that a below-500 order can be produced.
 - Smaller runs may restrict fragrance, bottle, decoration and packaging choices and may increase unit price.
 - Do not assume different fragrances or artwork versions can automatically be combined to meet MOQ.
@@ -68,8 +59,7 @@ Approved public wording:
 ## 5. Free sample policy
 
 - Basic fragrance evaluation samples are free.
-- Typical set: **3 × 10ml evaluation samples**.
-- Typical preparation time: **5–7 business days** after the brief and shipping arrangement are confirmed.
+- Typical set and preparation time: `samples.setDisplay` and `samples.preparationDays`.
 - Customer pays the **actual courier/logistics cost**.
 - Courier quotation is confirmed with the customer before dispatch.
 - Special formulations, extra revision rounds or customized packaging samples may require separate review and pricing.
@@ -100,9 +90,9 @@ Do not present the website as a fixed consumer-product catalog. AROMAMATRIX sell
 
 Current protected certificate previews on the About page:
 
-- ISO 22716 cosmetics GMP system certificate; website verification copy currently states August 2025–August 2028.
+- ISO 22716 cosmetics GMP system certificate; use `certificates.iso22716` for the current public validity wording.
 - SGS cosmetic GMP assessment against U.S. FDA CFSAN Cosmetic GMP Guidelines; this is **not FDA product approval**.
-- Cosmetics Manufacturing License issued by the Guangdong provincial regulator; website verification copy currently states validity through May 2030.
+- Cosmetics Manufacturing License issued by the Guangdong provincial regulator; use `certificates.manufacturingLicense` for the current validity wording.
 
 Certificate policy:
 
@@ -132,40 +122,54 @@ Do not claim “FDA approved,” “IFRA certified by IFRA,” unconditional CPN
 
 ## 10. Contact information currently in the project
 
-- Public email: `sales@aromamatrix.com`
-- WhatsApp account: `85257633378`
-- Public display format: `+852 5763 3378`
-- WhatsApp link: `https://wa.me/85257633378`
-- Location label: `China · UTC+8` or `Guangzhou, China`
+- Public email: `contact.email`
+- WhatsApp account, display, links and messages: `contact.whatsapp`
+- Location labels: `contact.projectDeskLocation` and `manufacturer.location`
 
-This WhatsApp account was confirmed by the website owner on 2026-07-15. Keep the digits unchanged unless the owner provides a replacement.
+Do not change configured contact details unless the website owner provides a replacement.
 
 ## 11. Website structure and maintenance
 
-- Editable source pages: `src/*.html`
-- Shared header/footer: `layout/header.html` and `layout/footer.html`
+- Static site generator: Eleventy 3 with Nunjucks templates
+- Required runtime: Node.js 22 or newer
+- Core page generator: `src/generators/core-pages.njk`
+- One shared structure per core page: `src/_includes/pages/{page}.njk`
+- Localized core-page data: `src/content/pages/{page}.js`
+- Core route registry: `config/routes.js`
+- Shared layouts and components: `src/_includes/`
+- Site facts: `config/site.config.js`
+- Locale registry: `config/locales.js`
+- Interface translations and localized SEO metadata: `src/i18n/{locale}.json`
+- Shared Eleventy data: `src/_data/`
 - Main styles: `assets/css/global.css` and `assets/css/pages.css`
 - Main JavaScript: `assets/js/main.js`
-- Build script: `build.js`
+- Eleventy configuration: `.eleventy.js`
+- Eleventy build and SEO helpers: `eleventy/helpers.js`
 - Deployment output: `docs/`
 - Build command: `npm run build`
-- Blog metadata: `src/blog-posts/posts.json`
-- Blog article fragments: `src/blog-posts/{slug}.html`
-- Blog detail template: `src/_blog-detail-template.html`
-- Central SEO configuration and JSON-LD builders: `seo.js`
+- Development command: `npm run dev`
+- Test command: `npm test`
+- Blog article root: `src/content/blog/articles/{article-id}/`
+- Shared article data: `src/content/blog/articles/{article-id}/article.js`
+- Localized article metadata and body: `src/content/blog/articles/{article-id}/{locale}.njk`
+- Blog detail generator: `src/generators/blog-posts.njk`
+- Sitemap and robots generators: `src/generators/sitemap.njk` and `src/generators/robots.njk`
 - Unified blog images: `assets/images/blog/`
 - Blog articles are edited individually. Do not use a shared body template or batch generator to overwrite article content.
 
-The header and footer must continue to be included through the build system. Do not edit generated `docs/` pages as the primary source because the next build will overwrite them.
+The header and footer must continue to be included through Nunjucks. Do not edit generated `docs/` pages as the primary source because the next build will overwrite them.
+
+English (`en`) and Simplified Chinese (`zh-CN`) are enabled. Spanish (`es`), Arabic (`ar`) and Russian (`ru`) are registered but disabled until their dictionaries and page data are complete. Arabic must use RTL direction when enabled. Add localized content under the locale key in every `src/content/pages/{page}.js`, add its interface/SEO dictionary, and then enable it through `config/locales.js`; do not copy core templates or duplicate routing rules.
 
 Blog writing rule: each article must answer one specific buyer search intent with its own outline, examples and decision guidance. Reusing a page shell is acceptable; repeating the same introduction, MOQ/sample paragraph, checklist, factory note or CTA across article bodies is not.
 
 SEO maintenance rules:
 
 - The canonical production origin is `https://www.aromamatrix.com`.
-- Every new public base page must have an entry in `PAGE_SEO` in `seo.js`; do not hand-copy canonical, Open Graph, Twitter or JSON-LD tags into page templates.
-- Every new blog post must provide a unique SEO title, complete SEO description, cover image, publication date and modification date in `src/blog-posts/posts.json`.
-- Canonical URLs, social tags, JSON-LD, `sitemap.xml` and `robots.txt` are generated by `build.js`. Rebuild and validate the generated output after changing page or blog metadata.
+- Every new public base page must have a route in `config/routes.js`, a shared template and localized data for every enabled locale, plus localized metadata in each locale dictionary; do not hand-copy canonical, Open Graph, Twitter or JSON-LD tags into page templates.
+- Every blog translation must provide a unique locale slug, SEO title, complete SEO description, modification date and reviewed body. Shared cover image, category, author and publication date belong in the article's `article.js`.
+- Blog detail canonical, hreflang, language switching and sitemap alternates must include only translations that exist, are marked `published` and belong to enabled locales.
+- Canonical URLs, hreflang links, social tags, JSON-LD, `sitemap.xml` and `robots.txt` are generated by Eleventy. Rebuild and validate the generated output after changing page, locale or blog metadata.
 - Keep the two public entities distinct in visible copy and structured data: the Xiamen company operates the AROMAMATRIX brand and international sales; the Guangzhou company carries out confirmed manufacturing.
 - Do not add `Product`, `Review`, `AggregateRating` or `LocalBusiness` schema without verified page-visible evidence.
 
@@ -184,7 +188,7 @@ SEO maintenance rules:
 
 Before publishing new copy, confirm that it:
 
-1. Uses **November 2024** and **6,000+ m²**.
+1. Uses `brand.founded` and `manufacturer.factoryArea` rather than copied literals.
 2. Uses “typical MOQ” rather than an absolute minimum.
 3. States that basic samples are free and the customer pays actual courier cost.
 4. Does not treat five-day procurement as total lead time.

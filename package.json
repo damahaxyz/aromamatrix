@@ -1,13 +1,17 @@
 {
   "name": "aromamatrix-website",
   "version": "1.0.0",
-  "description": "AROMAMATRIX Luxury Perfume Factory Official Marketing Website",
-  "main": "index.html",
+  "private": true,
+  "description": "Multilingual B2B fragrance manufacturing website built with Eleventy and Nunjucks",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "dev": "node build.js --watch & http-server ./docs -p 3000 -c-1",
-    "build": "node build.js"
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "test": "node --test"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "@11ty/eleventy": "^3.1.6"
   }
 }

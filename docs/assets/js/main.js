@@ -1,27 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. WhatsApp Configuration
-  const WHATSAPP_NUMBER = '85257633378';
-  const WHATSAPP_WELCOME_MSG = 'Hello AROMAMATRIX, I am interested in your perfume OEM/ODM services and would like to get a quote and samples.';
+  // 1. Public configuration injected by the Eleventy base layout
+  const runtimeConfig = window.SITE_CONFIG;
+  if (!runtimeConfig?.contact?.whatsapp?.number) {
+    console.error('Missing generated site runtime configuration.');
+    return;
+  }
 
   // 2. Inject Shared Floating WhatsApp Button
-  renderWhatsAppFloat(WHATSAPP_NUMBER, WHATSAPP_WELCOME_MSG);
+  renderWhatsAppFloat(runtimeConfig.contact.whatsapp.baseUrl, runtimeConfig.contact.whatsapp.defaultMessage);
 
   // 3. Initialize Interactive Components
   initMobileMenu();
   highlightActiveNav();
   window.addEventListener('hashchange', highlightActiveNav);
   initAccordion();
-  initFaqExplorer();
-  initBlogExplorer();
-  initInquiryForm(WHATSAPP_NUMBER);
+  initFaqExplorer(runtimeConfig.locale);
+  initBlogExplorer(runtimeConfig.locale);
+  initInquiryForm(runtimeConfig);
 });
 
 /**
  * Renders the WhatsApp Floating Button
  */
-function renderWhatsAppFloat(number, msg) {
+function renderWhatsAppFloat(baseUrl, msg) {
   const encodedMsg = encodeURIComponent(msg);
-  const waUrl = `https://wa.me/${number}?text=${encodedMsg}`;
+  const waUrl = `${baseUrl}?text=${encodedMsg}`;
   
   const waBtn = document.createElement('a');
   waBtn.href = waUrl;
@@ -161,7 +164,7 @@ function initAccordion() {
  * Search and category filters for the FAQ knowledge base.
  * The questions remain native details/summary elements for keyboard access.
  */
-function initFaqExplorer() {
+function initFaqExplorer(locale = 'en') {
   const directory = document.querySelector('[data-faq-directory]');
   if (!directory) return;
 
@@ -198,7 +201,9 @@ function initFaqExplorer() {
     });
 
     if (resultCount) {
-      resultCount.textContent = `Showing ${visibleCount} question${visibleCount === 1 ? '' : 's'}`;
+      resultCount.textContent = locale === 'zh-CN'
+        ? `显示 ${visibleCount} 个问题`
+        : `Showing ${visibleCount} question${visibleCount === 1 ? '' : 's'}`;
     }
     if (emptyState) emptyState.hidden = visibleCount !== 0;
     if (clearButton) clearButton.hidden = query.length === 0;
@@ -225,7 +230,7 @@ function initFaqExplorer() {
 /**
  * Client-side search and category filters for the static blog library.
  */
-function initBlogExplorer() {
+function initBlogExplorer(locale = 'en') {
   const directory = document.querySelector('[data-blog-directory]');
   if (!directory) return;
 
@@ -249,7 +254,11 @@ function initBlogExplorer() {
       if (show) visible += 1;
     });
 
-    if (count) count.textContent = `Showing ${visible} guide${visible === 1 ? '' : 's'}`;
+    if (count) {
+      count.textContent = locale === 'zh-CN'
+        ? `显示 ${visible} 篇指南`
+        : `Showing ${visible} guide${visible === 1 ? '' : 's'}`;
+    }
     if (empty) empty.hidden = visible !== 0;
   };
 
@@ -272,7 +281,7 @@ function initBlogExplorer() {
 /**
  * Handles B2B Inquiry Form submission and routes to WhatsApp
  */
-function initInquiryForm(waNumber) {
+function initInquiryForm(siteConfig) {
   const inquiryForm = document.getElementById('inquiry-form');
   if (!inquiryForm) return;
 
@@ -303,7 +312,9 @@ function initInquiryForm(waNumber) {
     const servicesStr = serviceTypes.length > 0 ? serviceTypes.join(', ') : 'Not Specified';
     
     const requirements = document.getElementById('inquiry-details')?.value || '';
-    const lowQuantityReview = quantity.startsWith('Below 500');
+    const quantityValue = Number.parseInt(quantity.replace(/,/g, ''), 10);
+    const lowQuantityReview = quantity.startsWith('Below')
+      || (Number.isFinite(quantityValue) && quantityValue < siteConfig.services.lowQuantityReview.threshold);
     const reviewLine = lowQuantityReview
       ? '\n🔎 *Low-Quantity Review:* Requested — factory feasibility confirmation required'
       : '';
@@ -311,7 +322,7 @@ function initInquiryForm(waNumber) {
     // 2. Format a professional WhatsApp message
     const boldLine = '--------------------------------------------';
     const waText = 
-`💼 *New Project Inquiry for AROMAMATRIX*
+`💼 *New Project Inquiry for ${siteConfig.brand.name}*
 ${boldLine}
 👤 *Name:* ${name}
 📧 *Email:* ${email}
@@ -329,7 +340,7 @@ ${boldLine}
 _Submitted via website portal._`;
 
     // 3. Open WhatsApp Link
-    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waText)}`;
+    const waUrl = `${siteConfig.contact.whatsapp.baseUrl}?text=${encodeURIComponent(waText)}`;
     
     // Show success dialog before redirecting
     showFormSuccessPopup(() => {

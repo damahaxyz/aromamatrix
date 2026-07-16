@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ locales[locale].code }}" dir="{{ locales[locale].direction }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ renderSeo(pageKey, locale, content, post or null) | safe }}
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="locale-{{ locale | lower }}">
+  {% include "components/header.njk" %}
+
+  {{ content | safe }}
+
+  {% include "components/footer.njk" %}
+  <script>window.SITE_CONFIG={{ runtimeConfig(locale) | safe }};</script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

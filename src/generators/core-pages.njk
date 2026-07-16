@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: corePageVariants
+  size: 1
+  alias: variant
+  addAllPagesToCollections: true
+permalink: "{{ variant.permalink }}"
+eleventyComputed:
+  locale: "{{ variant.locale }}"
+  pageKey: "{{ variant.pageKey }}"
+  translationKey: "page:{{ variant.pageKey }}"
+---
+{% set copy = variant.copy %}
+{% set pageTemplate = "pages/legal.njk" if variant.pageKey == "terms" or variant.pageKey == "privacy" else "pages/" + variant.pageKey + ".njk" %}
+{% include pageTemplate %}

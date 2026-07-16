@@ -1,0 +1,56 @@
+<header>
+  <div class="container">
+    <a href="{{ localeUrl('index', locale) }}" class="logo">
+      <img src="/assets/images/brand/aromamatrix-logo-square.png" width="512" height="512" alt="" class="logo-symbol" decoding="async">
+      <span class="logo-copy">
+        <span class="logo-name">{{ site.brand.name }}</span>
+        <span class="logo-tagline">{{ site.brand.descriptor }}</span>
+      </span>
+    </a>
+    <nav id="nav-menu" aria-label="{{ t(locale, 'nav.language') }} / Navigation">
+      <ul class="nav-list">
+        <li class="nav-item has-dropdown">
+          <div class="nav-link-group">
+            <a href="{{ localeUrl('index', locale) }}#product-capabilities" id="nav-products">{{ t(locale, 'nav.products') }}</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="products-menu">
+              <span class="sr-only">{{ t(locale, 'nav.products') }}</span><span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <ul class="nav-dropdown" id="products-menu">
+            <li><a href="{{ localeUrl('index', locale) }}#fine-fragrance">{{ t(locale, 'nav.fineFragrance') }}</a></li>
+            <li><a href="{{ localeUrl('index', locale) }}#home-fragrance">{{ t(locale, 'nav.homeFragrance') }}</a></li>
+            <li><a href="{{ localeUrl('index', locale) }}#body-fragrance">{{ t(locale, 'nav.bodyMist') }}</a></li>
+            <li><a href="{{ localeUrl('index', locale) }}#packaging-solutions">{{ t(locale, 'nav.packaging') }}</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <div class="nav-link-group">
+            <a href="{{ localeUrl('process', locale) }}#service-models" id="nav-services">{{ t(locale, 'nav.services') }}</a>
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="services-menu">
+              <span class="sr-only">{{ t(locale, 'nav.services') }}</span><span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <ul class="nav-dropdown" id="services-menu">
+            <li><a href="{{ localeUrl('process', locale) }}#private-label">Private Label</a></li>
+            <li><a href="{{ localeUrl('process', locale) }}#odm">ODM</a></li>
+            <li><a href="{{ localeUrl('process', locale) }}#oem">OEM</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="{{ localeUrl('about', locale) }}" id="nav-about">{{ t(locale, 'nav.about') }}</a></li>
+        <li class="nav-item"><a href="{{ localeUrl('process', locale) }}#customization-process" id="nav-process">{{ t(locale, 'nav.process') }}</a></li>
+        <li class="nav-item"><a href="{{ localeUrl('qa', locale) }}" id="nav-qa">{{ t(locale, 'nav.faq') }}</a></li>
+        <li class="nav-item language-switcher">
+          {% for targetLocale, target in locales %}
+            {% if target.enabled and targetLocale != locale %}
+              <a href="{{ pageAlternateUrl(pageKey, targetLocale, locale, post) }}" hreflang="{{ target.hreflang }}" lang="{{ target.code }}">{{ target.nativeLabel }}</a>
+            {% endif %}
+          {% endfor %}
+        </li>
+        <li class="nav-item"><a href="{{ localeUrl('contact', locale) }}" id="nav-contact" class="nav-cta">{{ t(locale, 'nav.contact') }}</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Menu" aria-controls="nav-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

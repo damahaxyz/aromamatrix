@@ -1,0 +1,105 @@
+{
+  "languageName": "English",
+  "nav": {
+    "home": "Home",
+    "products": "What We Make",
+    "services": "OEM / ODM Services",
+    "about": "Factory & Certificates",
+    "process": "How It Works",
+    "faq": "FAQ",
+    "contact": "Get a Quote",
+    "blog": "Industry Insights",
+    "language": "Language",
+    "fineFragrance": "Fine Fragrance",
+    "homeFragrance": "Home Fragrance",
+    "bodyMist": "Body & Hair Mist",
+    "packaging": "Packaging Solutions"
+  },
+  "footer": {
+    "description": "{brand} is the international brand and sales platform for private label, OEM and ODM fragrance projects manufactured through our Guangzhou production entity.",
+    "services": "Custom Services",
+    "quickLinks": "Quick Links",
+    "contact": "{brand} Contact",
+    "projectDesk": "Project Desk",
+    "projectDeskLocation": "China · UTC+8",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "rights": "All Rights Reserved.",
+    "shipping": "Shipping & Dangerous Goods",
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy Policy"
+  },
+  "contact": {
+    "whatsappMessage": "Hello {brand}, I am interested in your perfume OEM/ODM services and would like to get a quote and samples."
+  },
+  "blog": {
+    "by": "By",
+    "categories": {
+      "sourcing": "Sourcing Guide",
+      "cost-moq": "Cost & MOQ",
+      "packaging": "Packaging",
+      "shipping-import": "Shipping & Import",
+      "compliance": "Compliance",
+      "samples": "Samples",
+      "business-models": "Business Models",
+      "supplier-selection": "Supplier Selection",
+      "production": "Production",
+      "fragrance-development": "Fragrance Development",
+      "startup": "Startup Guide",
+      "brand-strategy": "Brand Strategy",
+      "product-development": "Product Development",
+      "quality-control": "Quality Control",
+      "after-sales": "After-Sales"
+    }
+  },
+  "pages": {
+    "index": {
+      "label": "Home",
+      "title": "Private Label Perfume Manufacturer in China | {brand}",
+      "description": "{brand} supports private label, OEM and ODM perfume projects with fragrance development, filling, packaging and export coordination in China.",
+      "image": "assets/images/seo/factory-og.webp"
+    },
+    "about": {
+      "label": "Factory & Certificates",
+      "title": "About Our Guangzhou Perfume Factory | {brand}",
+      "description": "Meet the {brand} brand and sales team and see the Guangzhou manufacturing facility, production workflow, equipment and protected certificates.",
+      "image": "assets/images/seo/factory-og.webp"
+    },
+    "process": {
+      "label": "OEM / ODM Services",
+      "title": "Perfume OEM, ODM & Private Label Services | {brand}",
+      "description": "Compare private label, ODM development and OEM perfume manufacturing routes, including typical quantities, sampling, packaging and production stages.",
+      "image": "assets/images/seo/filling-line-og.webp"
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "Request a Perfume Factory Quote | {brand}",
+      "description": "Send your perfume project brief to {brand} for a feasibility review, manufacturing quotation or free fragrance samples with buyer-paid courier cost.",
+      "image": "assets/images/seo/team-office-og.webp"
+    },
+    "qa": {
+      "label": "FAQ",
+      "title": "Perfume OEM/ODM FAQ: MOQ, Samples & Shipping | {brand}",
+      "description": "Read practical answers about perfume private label, OEM and ODM services, typical MOQ, free samples, packaging, compliance and international shipping.",
+      "image": "assets/images/seo/sample-showroom-og.webp"
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Perfume Manufacturing Guides & Insights | {brand}",
+      "description": "Explore practical guides for perfume brand owners covering sourcing, fragrance development, MOQ, packaging, quality, compliance and international shipping.",
+      "image": "assets/images/seo/blog-guides-og.webp"
+    },
+    "terms": {
+      "label": "Terms and Conditions",
+      "title": "Terms and Conditions | {brand}",
+      "description": "Review the terms governing {brand} website use, B2B perfume inquiries, quotations, samples, manufacturing discussions and shipping information.",
+      "image": "assets/images/brand/aromamatrix-og.webp"
+    },
+    "privacy": {
+      "label": "Privacy Policy",
+      "title": "Business Inquiry Privacy Policy | {brand}",
+      "description": "Learn how {brand} collects, uses, shares and protects contact details, project briefs and other information submitted through business inquiries.",
+      "image": "assets/images/brand/aromamatrix-og.webp"
+    }
+  }
+}

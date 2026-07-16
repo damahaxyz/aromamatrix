@@ -1,0 +1,105 @@
+{
+  "languageName": "中文",
+  "nav": {
+    "home": "首页",
+    "products": "产品能力",
+    "services": "OEM / ODM 服务",
+    "about": "工厂与证书",
+    "process": "合作流程",
+    "faq": "常见问题",
+    "contact": "获取报价",
+    "blog": "行业指南",
+    "language": "语言",
+    "fineFragrance": "精品香水",
+    "homeFragrance": "家居香氛",
+    "bodyMist": "身体与发用香氛",
+    "packaging": "包装方案"
+  },
+  "footer": {
+    "description": "{brand} 面向全球香水品牌提供私人标签、OEM 与 ODM 项目沟通、销售和生产协调服务，产品由广州生产主体完成制造。",
+    "services": "定制服务",
+    "quickLinks": "快速链接",
+    "contact": "联系 {brand}",
+    "projectDesk": "项目团队",
+    "projectDeskLocation": "中国 · UTC+8",
+    "email": "邮箱",
+    "whatsapp": "WhatsApp",
+    "rights": "保留所有权利。",
+    "shipping": "运输与危险品",
+    "terms": "条款与条件",
+    "privacy": "隐私政策"
+  },
+  "contact": {
+    "whatsappMessage": "您好 {brand}，我想了解香水 OEM/ODM 服务、报价和样品。"
+  },
+  "blog": {
+    "by": "作者：",
+    "categories": {
+      "sourcing": "采购指南",
+      "cost-moq": "成本与起订量",
+      "packaging": "包装",
+      "shipping-import": "运输与进口",
+      "compliance": "法规与合规",
+      "samples": "样品",
+      "business-models": "合作模式",
+      "supplier-selection": "供应商选择",
+      "production": "生产",
+      "fragrance-development": "香型开发",
+      "startup": "品牌启动",
+      "brand-strategy": "品牌策略",
+      "product-development": "产品开发",
+      "quality-control": "质量控制",
+      "after-sales": "售后"
+    }
+  },
+  "pages": {
+    "index": {
+      "label": "首页",
+      "title": "中国香水私人标签、OEM 与 ODM 制造商 | {brand}",
+      "description": "{brand} 为香水品牌提供香型开发、灌装、包装、私人标签、OEM、ODM 与出口项目协调服务。",
+      "image": "assets/images/seo/factory-og.webp"
+    },
+    "about": {
+      "label": "工厂与证书",
+      "title": "关于广州香水生产工厂 | {brand}",
+      "description": "了解 {brand} 品牌与项目团队，并查看广州香水生产场地、生产流程、设备和受保护的证书预览。",
+      "image": "assets/images/seo/factory-og.webp"
+    },
+    "process": {
+      "label": "OEM / ODM 服务",
+      "title": "香水 OEM、ODM 与私人标签服务 | {brand}",
+      "description": "比较私人标签、ODM 开发与 OEM 香水生产方式，了解典型起订量、打样、包装和生产流程。",
+      "image": "assets/images/seo/filling-line-og.webp"
+    },
+    "contact": {
+      "label": "联系",
+      "title": "获取香水工厂报价 | {brand}",
+      "description": "提交香水项目需求，获取可行性评估、生产报价或基础香型评估样品。",
+      "image": "assets/images/seo/team-office-og.webp"
+    },
+    "qa": {
+      "label": "常见问题",
+      "title": "香水 OEM/ODM 常见问题：起订量、样品与运输 | {brand}",
+      "description": "了解香水私人标签、OEM、ODM、典型起订量、样品、包装、合规与国际运输等常见问题。",
+      "image": "assets/images/seo/sample-showroom-og.webp"
+    },
+    "blog": {
+      "label": "行业指南",
+      "title": "香水生产与品牌采购指南 | {brand}",
+      "description": "面向香水品牌方的采购、香型开发、起订量、包装、质量、合规和国际运输指南。",
+      "image": "assets/images/seo/blog-guides-og.webp"
+    },
+    "terms": {
+      "label": "条款与条件",
+      "title": "网站条款与条件 | {brand}",
+      "description": "了解 {brand} 网站使用、B2B 询盘、报价、样品、生产沟通与运输信息相关条款。",
+      "image": "assets/images/brand/aromamatrix-og.webp"
+    },
+    "privacy": {
+      "label": "隐私政策",
+      "title": "商业询盘隐私政策 | {brand}",
+      "description": "了解 {brand} 如何收集、使用、共享和保护商业询盘中的联系人信息与项目资料。",
+      "image": "assets/images/brand/aromamatrix-og.webp"
+    }
+  }
+}

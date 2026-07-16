@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: blogPosts
+  size: 1
+  alias: post
+  addAllPagesToCollections: true
+permalink: "{{ post.permalink }}"
+pageKey: blogDetail
+eleventyComputed:
+  locale: "{{ post.locale }}"
+  translationKey: "{{ post.translationKey }}"
+---
+<section class="page-hero" style="padding-bottom: 40px;">
+  <div class="container text-center">
+    <div class="blog-detail-meta" style="margin-bottom: 15px;">{{ post.dateLabel }} | {{ post.categoryLabel }}</div>
+    <h1 class="hero-title" style="max-width: 800px; margin: 0 auto 20px auto; font-size: clamp(24px, 4vw, 42px); line-height: 1.25;">{{ post.title }}</h1>
+    <p style="color: var(--text-light); font-size: 14px;">{{ t(locale, 'blog.by') }} {{ post.authorLabel }}</p>
+  </div>
+</section>
+<section class="section-padding" style="background-color: var(--bg-secondary); padding-top: 0;">
+  <div class="container">
+    <div class="blog-detail-container">
+      <div class="blog-detail-hero">
+        <img src="{{ post.coverImage | assetUrl }}" alt="{{ post.coverAlt }}" width="1600" height="900" decoding="async">
+      </div>
+      <div class="blog-detail-body">{{ post.body | safe }}</div>
+    </div>
+  </div>
+</section>

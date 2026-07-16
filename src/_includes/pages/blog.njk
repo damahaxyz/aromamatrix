@@ -1,0 +1,48 @@
+<section class="page-hero">
+  <div class="container text-center">
+    {% if copy.hero.kicker %}<span class="section-kicker">{{ copy.hero.kicker }}</span>{% endif %}
+    <h1 class="hero-title" style="margin-bottom: 12px;">{{ copy.hero.title | replace('{brand}', site.brand.name) }}</h1>
+    <p class="section-subtitle" style="margin-bottom: 0;">{{ copy.hero.description }}</p>
+  </div>
+</section>
+
+<section class="section-padding" style="background-color: var(--bg-secondary);">
+  <div class="container">
+    {% set localizedPosts = localizedBlogPosts(blogPosts, locale) %}
+    {% if localizedPosts | length %}
+      <div class="blog-explorer" data-blog-directory>
+        <div class="blog-search-row">
+          <label class="blog-search-control" for="blog-search">
+            <span>{{ copy.searchLabel }}</span>
+            <input id="blog-search" type="search" placeholder="{{ copy.searchPlaceholder }}" autocomplete="off">
+          </label>
+          <p id="blog-result-count" class="blog-result-count" aria-live="polite">{{ copy.showing }} {{ localizedPosts | length }} {{ copy.countSuffix }}</p>
+        </div>
+        <div class="blog-filter-row" aria-label="{{ copy.filterLabel }}">
+          <button type="button" class="blog-filter is-active" data-blog-filter="all" aria-pressed="true">{{ copy.allCategories }}</button>
+          {% for category in blogCategories(localizedPosts) %}
+            <button type="button" class="blog-filter" data-blog-filter="{{ category }}" aria-pressed="false">{{ t(locale, 'blog.categories.' + category) }}</button>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="blog-grid">
+        {% for post in localizedPosts %}
+          <article class="blog-card" data-blog-card data-blog-category="{{ post.categoryKey }}" data-blog-search="{{ (post.title + ' ' + post.description + ' ' + post.categoryLabel + ' ' + post.primaryKeyword) | lower }}">
+            <div class="blog-img"><img src="{{ post.coverImage | assetUrl }}" alt="{{ post.coverAlt }}" width="1600" height="900" loading="lazy" decoding="async"></div>
+            <div class="blog-card-content">
+              <div class="blog-meta">{{ post.dateLabel }} | {{ post.categoryLabel }}</div>
+              <h3>{{ post.title }}</h3><p>{{ post.description }}</p>
+              <a href="{{ post.permalink }}" class="blog-readmore">{{ copy.readMore }}</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <div id="blog-empty" class="blog-empty" hidden><h2>{{ copy.emptyTitle }}</h2><p>{{ copy.emptyText }}</p></div>
+    {% else %}
+      <div class="blog-empty-state text-center">
+        <h2>{{ copy.pendingTitle }}</h2><p>{{ copy.pendingText }}</p>
+        <div class="hero-actions" style="justify-content:center;">{% if locale != 'en' %}<a href="/blog.html" class="btn btn-outline" hreflang="en">{{ copy.englishLink }}</a>{% endif %}<a href="{{ localeUrl('contact', locale) }}" class="btn btn-gold">{{ copy.contactLink }}</a></div>
+      </div>
+    {% endif %}
+  </div>
+</section>

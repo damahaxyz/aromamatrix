@@ -1,0 +1,26 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% for item in collections.all %}
+{% if item.data.pageKey %}
+  <url>
+    <loc>{{ site.site.origin }}{{ item.url }}</loc>
+    <lastmod>{{ item.data.post.dateModified or item.data.post.date or "2026-07-15" }}</lastmod>
+    {% if item.data.pageKey == "blogDetail" %}
+    {% for translation in item.data.post.translations %}
+    <xhtml:link rel="alternate" hreflang="{{ locales[translation.locale].hreflang }}" href="{{ site.site.origin }}{{ translation.url }}" />
+    {% endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.site.origin }}{{ item.data.post.xDefaultUrl }}" />
+    {% else %}
+    {% for localeKey, localeInfo in locales %}{% if localeInfo.enabled %}
+    <xhtml:link rel="alternate" hreflang="{{ localeInfo.hreflang }}" href="{{ site.site.origin }}{{ localeUrl(item.data.pageKey, localeKey) }}" />
+    {% endif %}{% endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.site.origin }}{{ localeUrl(item.data.pageKey, 'en') }}" />
+    {% endif %}
+  </url>
+{% endif %}
+{% endfor %}
+</urlset>

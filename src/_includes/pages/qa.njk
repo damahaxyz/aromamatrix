@@ -1,0 +1,42 @@
+<section class="faq-hero">
+  <div class="container">
+    <span>{{ copy.hero.kicker }}</span>
+    <h1>{{ copy.hero.title }}</h1>
+    <p>{{ copy.hero.description }}</p>
+    <div class="faq-hero-links">
+      {% for link in copy.hero.links %}<a href="{{ link.href }}" class="btn {{ link.className }}">{{ link.label }}</a>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-padding faq-page" id="faq-directory" data-faq-directory>
+  <div class="container">
+    <div class="faq-toolbar">
+      <div class="faq-search-wrap">
+        <label for="faq-search">{{ copy.search.label }}</label>
+        <div class="faq-search-control">
+          <input type="search" id="faq-search" placeholder="{{ copy.search.placeholder }}" autocomplete="off">
+          <button type="button" id="faq-clear" hidden>{{ copy.search.clearLabel }}</button>
+        </div>
+      </div>
+      <div class="faq-filters" aria-label="{{ copy.search.ariaLabel }}">
+        {% for filter in copy.search.filters %}<button type="button" data-faq-filter="{{ filter.value }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">{{ filter.label | safe }}</button>{% endfor %}
+      </div>
+      <p class="faq-result-count" id="faq-result-count" aria-live="polite"></p>
+    </div>
+
+    <div class="faq-groups">
+      {% for group in copy.groups %}
+        <section class="faq-group" id="{{ group.id }}" data-faq-category="{{ group.category }}">
+          <div class="faq-group-heading"><span>{{ group.number }}</span><div><h2>{{ group.title | safe }}</h2><p>{{ group.description }}</p></div></div>
+          {% for item in group.questions %}
+            <details class="faq-item"><summary>{{ item.question | interpolate(locale) | safe }}</summary><div class="faq-answer">{{ item.answerHtml | interpolate(locale) | safe }}</div></details>
+          {% endfor %}
+        </section>
+      {% endfor %}
+    </div>
+
+    <div class="faq-empty" id="faq-empty" hidden><h2>{{ copy.empty.title }}</h2><p>{{ copy.empty.text }}</p><a href="{{ copy.empty.href }}" class="btn btn-gold">{{ copy.empty.label | interpolate(locale) }}</a></div>
+    <div class="faq-final-cta"><div><span>{{ copy.cta.kicker }}</span><h2>{{ copy.cta.title }}</h2><p>{{ copy.cta.text }}</p></div><a href="{{ copy.cta.href }}" class="btn btn-gold">{{ copy.cta.label }}</a></div>
+  </div>
+</section>
