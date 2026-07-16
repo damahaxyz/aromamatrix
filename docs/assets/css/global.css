@@ -374,6 +374,32 @@ footer h4 {
   margin-bottom: 40px;
 }
 
+.footer-brand-link {
+  display: block;
+  width: min(100%, 280px);
+  margin-bottom: 22px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-brand-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+}
+
+.footer-brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer-brand > p {
+  max-width: 460px;
+}
+
 .footer-col h4 {
   font-size: 15px;
   margin-bottom: 20px;
@@ -402,6 +428,34 @@ footer h4 {
 .footer-col ul li a:hover {
   color: #ffffff;
   padding-left: 2px;
+}
+
+.footer-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-bottom: 12px;
+}
+
+.footer-contact-row strong {
+  color: #cbd5e1;
+}
+
+.footer-contact-row span {
+  color: #e2e8f0;
+}
+
+.footer-col .footer-contact-link {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.38);
+  text-underline-offset: 4px;
+}
+
+.footer-col .footer-contact-link:hover {
+  color: var(--accent-green);
+  text-decoration-color: currentColor;
 }
 
 .social-links {

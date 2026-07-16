@@ -1,9 +1,9 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col">
-        <a href="{{ localeUrl('index', locale) }}" class="logo" style="margin-bottom: 20px; display: inline-block;">
-          {{ site.brand.name }}<span>{{ site.brand.descriptor }}</span>
+      <div class="footer-col footer-brand">
+        <a href="{{ localeUrl('index', locale) }}" class="footer-brand-link" aria-label="{{ site.brand.name }}">
+          <img src="{{ 'assets/images/brand/aromamatrix-wordmark.svg' | assetUrl }}" alt="{{ site.brand.name }} {{ site.brand.descriptor }}" class="footer-brand-logo" width="1200" height="300">
         </a>
         <p>{{ t(locale, 'footer.description') }}</p>
       </div>
@@ -27,17 +27,28 @@
       </div>
       <div class="footer-col">
         <h4>{{ t(locale, 'footer.contact') }}</h4>
-        <p style="margin-bottom: 10px;"><strong>{{ t(locale, 'footer.projectDesk') }}:</strong> {{ t(locale, 'footer.projectDeskLocation') }}</p>
-        <p style="margin-bottom: 10px;"><strong>{{ t(locale, 'footer.email') }}:</strong> <a href="mailto:{{ site.contact.email }}" style="color: var(--accent-green);">{{ site.contact.email }}</a></p>
-        <p><strong>{{ t(locale, 'footer.whatsapp') }}:</strong> <a href="{{ site.contact.whatsapp.url }}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green); font-weight: 600;">{{ site.contact.whatsapp.display }}</a></p>
+        <p class="footer-contact-row">
+          <strong>{{ t(locale, 'footer.projectDesk') }}:</strong>
+          <span>{{ t(locale, 'footer.projectDeskLocation') }}</span>
+        </p>
+        <p class="footer-contact-row">
+          <strong>{{ t(locale, 'footer.email') }}:</strong>
+          <a class="footer-contact-link" href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+        </p>
+        <p class="footer-contact-row">
+          <strong>{{ t(locale, 'footer.whatsapp') }}:</strong>
+          <a class="footer-contact-link" href="{{ site.contact.whatsapp.url }}" target="_blank" rel="noopener noreferrer">{{ site.contact.whatsapp.display }}</a>
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 {{ site.brand.name }} {{ site.brand.descriptor }}. {{ t(locale, 'footer.rights') }} (ISO 22716 &amp; GMPC)</p>
-      <p class="footer-entity-notice">{% if locale == 'zh-CN' %}{{ site.transaction.entityNotice.zh }}{% else %}{{ site.transaction.entityNotice.en }}{% endif %}</p>
+      <p>&copy; 2026 {{ site.brand.name }}
+        {{ site.brand.descriptor }}. {{ t(locale, 'footer.rights') }} (ISO 22716 &amp; GMPC)</p>
       <p class="footer-legal-links">
-        <a href="{{ localeUrl('qa', locale) }}#shipping">{{ t(locale, 'footer.shipping') }}</a><span aria-hidden="true">|</span>
-        <a href="{{ localeUrl('terms', locale) }}">{{ t(locale, 'footer.terms') }}</a><span aria-hidden="true">|</span>
+        <a href="{{ localeUrl('qa', locale) }}#shipping">{{ t(locale, 'footer.shipping') }}</a>
+        <span aria-hidden="true">|</span>
+        <a href="{{ localeUrl('terms', locale) }}">{{ t(locale, 'footer.terms') }}</a>
+        <span aria-hidden="true">|</span>
         <a href="{{ localeUrl('privacy', locale) }}">{{ t(locale, 'footer.privacy') }}</a>
       </p>
     </div>
