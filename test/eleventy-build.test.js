@@ -27,6 +27,26 @@ function outputFile(pageKey, locale) {
   return path.join(OUTPUT, prefix, route.slice(1));
 }
 
+function assertLocaleDataShape(english, chinese, location) {
+  if (Array.isArray(english)) {
+    assert.ok(Array.isArray(chinese), `${location} must be an array in Chinese`);
+    assert.equal(chinese.length, english.length, `${location} must contain the same number of Chinese items`);
+    english.forEach((item, index) => assertLocaleDataShape(item, chinese[index], `${location}[${index}]`));
+    return;
+  }
+
+  if (english && typeof english === 'object') {
+    assert.ok(chinese && typeof chinese === 'object' && !Array.isArray(chinese), `${location} must be an object in Chinese`);
+    for (const key of Object.keys(english)) {
+      assert.ok(Object.hasOwn(chinese, key), `missing Chinese page data: ${location}.${key}`);
+      assertLocaleDataShape(english[key], chinese[key], `${location}.${key}`);
+    }
+    return;
+  }
+
+  assert.equal(typeof chinese, typeof english, `${location} must use the same value type in both locales`);
+}
+
 test.before(() => {
   assert.ok(Number(process.versions.node.split('.')[0]) >= 22, 'the build requires Node.js 22 or newer');
   execFileSync(process.execPath, ['node_modules/@11ty/eleventy/cmd.cjs'], {
@@ -130,6 +150,7 @@ test('all core pages use one generator and locale data instead of copied templat
     for (const locale of Object.values(locales).filter(item => item.enabled)) {
       assert.ok(content[locale.key], `missing ${locale.key} data for ${pageKey}`);
     }
+    assertLocaleDataShape(content.en, content['zh-CN'], pageKey);
   }
 
   assert.equal(fs.existsSync(path.join(ROOT, 'src', 'pages')), false, 'legacy pages directory should not exist');

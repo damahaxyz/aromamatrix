@@ -41,6 +41,10 @@ module.exports = {
         "label": "Intellectual Property"
       },
       {
+        "id": "terms-liability",
+        "label": "Website Responsibility"
+      },
+      {
         "id": "terms-contact",
         "label": "Contact"
       }
@@ -141,8 +145,8 @@ module.exports = {
         "label": "知识产权"
       },
       {
-        "id": "terms-language",
-        "label": "语言说明"
+        "id": "terms-liability",
+        "label": "网站责任限制"
       },
       {
         "id": "terms-contact",
@@ -192,9 +196,9 @@ module.exports = {
         "html": "<p>不得未经许可复制网站内容或利用品牌、工厂图片和证书误导供应商身份。客户提交的第三方商标、设计与作品不得侵犯他人权利。</p>"
       },
       {
-        "id": "terms-language",
-        "title": "9. 语言说明",
-        "html": "<p>本中文页面用于提高阅读便利。如中文与英文条款存在解释差异，应在交易前联系项目团队书面确认；正式交易文件中的约定优先。</p>"
+        "id": "terms-liability",
+        "title": "9. 网站责任限制",
+        "html": "<p>本网站用于业务沟通和供应商评估。在适用法律允许的最大范围内，{{ site.brand.name }} 不对项目书面确认前因依赖网站一般信息而产生的间接损失负责。本条款不会限制依法不能排除的责任。</p>"
       },
       {
         "id": "terms-contact",

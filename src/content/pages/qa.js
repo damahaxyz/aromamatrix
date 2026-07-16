@@ -447,3 +447,73 @@ module.exports = {
     }
   }
 };
+
+// Keep the Chinese knowledge base at the same coverage level as English.
+module.exports['zh-CN'].search.filters = [
+  {value:'all',label:'全部'},
+  {value:'getting-started',label:'项目入门'},
+  {value:'moq-pricing',label:'起订量与价格'},
+  {value:'fragrance-samples',label:'香型与样品'},
+  {value:'packaging',label:'瓶器与包装'},
+  {value:'production-quality',label:'生产与质量'},
+  {value:'compliance',label:'证书与合规'},
+  {value:'shipping',label:'运输与售后'}
+];
+
+module.exports['zh-CN'].groups = [
+  {id:'getting-started',category:'getting-started',number:'01',title:'项目入门与合作方式',description:'了解可生产的产品，以及如何准备有效的项目需求。',questions:[
+    {question:'{{config.brand.name}} 可以生产哪些香氛产品？',answerHtml:'<p>我们支持 EDP、EDT、Extrait 等精品香水，以及身体和发用香氛、部分家居香氛及香水包装项目。最终可行性取决于配方、组件、数量和目标市场。可查看<a href="/zh/#product-capabilities">产品能力</a>。</p>'},
+    {question:'私人标签、OEM 和 ODM 有什么区别？',answerHtml:'<p>私人标签从现有香型方向和合适标准组件开始；ODM 根据品牌需求开发产品；OEM 或委托加工则使用客户提供的配方、材料、设计稿、规格或参考样品。可在<a href="/zh/process.html#service-models">服务页面</a>比较不同路径。</p>'},
+    {question:'哪种合作方式适合我的项目？',answerHtml:'<p>私人标签通常最适合较小规模的市场测试；ODM 适合需要香型和包装开发的品牌；OEM 适合已有成熟资料或技术标准的采购方。提供您现有的资料后，我们会在审核后建议合适路径。</p>'},
+    {question:'{{config.brand.name}} 是制造商还是贸易公司？',answerHtml:'<p>{{config.brand.name}} 由 {{config.brand.legalEntity.zh}} 作为品牌和国际销售主体运营。确认的生产由 {{config.manufacturer.legalName}} 在网站展示的广州生产场地完成。合格采购方可在<a href="/zh/about.html">关于我们</a>页面查看受保护的证书预览并申请完整核验文件。</p>'},
+    {question:'初创企业和首次创建香水品牌的客户可以合作吗？',answerHtml:'<p>可以。我们可以协助首次采购方明确产品形式、数量、香型方向和包装路径。清晰的预算、目标市场和上市目标有助于推荐现实的标准组件方案，避免不必要的定制模具。</p>'},
+    {question:'申请报价需要提供哪些信息？',answerHtml:'<p>请提供产品类别、预计数量、目标国家、香型方向、瓶器或包装偏好、计划上市时间，以及任何客供配方、设计稿或参考样品。尚未确定的内容可在<a href="/zh/contact.html#inquiry-form">项目询盘表单</a>中标记。</p>'}
+  ]},
+  {id:'moq-pricing',category:'moq-pricing',number:'02',title:'起订量、价格与商业条件',description:'起始数量是项目指引，并非自动批准或拒绝规则。',questions:[
+    {question:'典型最低订购数量是多少？',answerHtml:'<p>采用合适标准组件时，私人标签项目的典型起订量为 {{fact("privateLabelMoq")}}，定制香型项目通常从 {{fact("customMoq")}} 开始。实际数量取决于配方、瓶器、装饰、包装和客供材料。</p>'},
+    {question:'可以审核低于标准起订量的项目吗？',answerHtml:'<p>可以，团队可以评估较小的试单。可行方案可能需要现有香型、现货瓶、简化装饰或标准彩盒。较低数量也会影响单位成本和组件选择。请在<a href="/zh/contact.html#inquiry-form">询盘表单</a>中选择低数量评估。</p>'},
+    {question:'不同香型或瓶型可以合并达到起订量吗？',answerHtml:'<p>起订量通常按批准的 SKU、香精批次和包装配置评估。共用兼容组件和生产要求时，部分款式可能合并，但不会自动适用。请提供计划的 SKU 数量拆分，以便确认每款可执行数量。</p>'},
+    {question:'哪些因素会影响香水单价？',answerHtml:'<p>主要因素包括香精浓度、瓶器和泵头、瓶盖材料、装饰方式、彩盒结构、订单数量、客供材料、测试要求和出口包装。较低起订量通常单价更高，因为设置和采购成本分摊在更少产品上。</p>'},
+    {question:'香型开发、包装设置或模具费用是否单独收取？',answerHtml:'<p>有可能。定制配方、额外打样轮次、印刷设置、装饰治具、瓶器或瓶盖模具和特殊包装样品会分别评估。任何适用的开发或模具费用都会在项目推进前列入报价。</p>'},
+    {question:'付款条件和报价有效期如何确认？',answerHtml:'<p>付款节点、币种、收款信息和报价有效期会在正式报价或形式发票中说明。条件会随开发范围、定制模具、客供材料和生产金额变化，因此网站不提供统一付款计划。</p>'}
+  ]},
+  {id:'fragrance-samples',category:'fragrance-samples',number:'03',title:'香型开发与样品',description:'在投入量产前先评估香型方向。',questions:[
+    {question:'香型评估样品免费吗？',answerHtml:'<p>基础香型评估样品免费，客户只承担寄往目的地的实际快递费用。特殊配方、额外修改轮次或定制包装样品如产生额外费用，会另行评估。详见<a href="/zh/process.html#free-samples">样品政策</a>。</p>'},
+    {question:'样品套装包含什么，准备需要多久？',answerHtml:'<p>典型评香套装包含 {{fact("sampleSet")}} 香型样品。确认需求和香型方向后，通常需要 {{fact("sampleDays")}} 准备。快递费用按目的地计算，并在寄出前确认。</p>'},
+    {question:'可以根据品牌需求开发香型吗？',answerHtml:'<p>可以。有效需求应包含目标顾客、价格定位、香调家族、参考香调、浓度、目标市场和包装概念。我们会将方向转化为评估样品，并明确修改范围和批准节点。</p>'},
+    {question:'可以从现有香精配方库中选择吗？',answerHtml:'<p>可以。现有香型方向能够缩短开发时间，适合私人标签项目。选择前会核对供应情况、预期用途、浓度和目标市场要求。现有配方库中的香型不会自动成为某个品牌独家使用。</p>'},
+    {question:'可以按照参考香水或客户提供的香氛样品开发吗？',answerHtml:'<p>我们可以评估参考样品，以理解嗅觉方向、表现目标和预算。目标是形成可执行且合法的产品规格，而不是承诺完全复制第三方品牌香水或受保护的产品呈现。</p>'},
+    {question:'可以进行多少轮香型修改？',answerHtml:'<p>包含的修改范围会在打样方案中确认，取决于项目使用现有方向还是全新定制需求，以及反馈对原目标的改变程度。额外轮次可能影响时间或费用，并会在继续前确认。</p>'},
+    {question:'可以生产 EDP、EDT、Extrait 或无酒精产品吗？',answerHtml:'<p>可根据配方和用途规划 EDP、EDT 与 Extrait 浓度。无酒精或替代载体形式需要单独进行可行性、稳定性、包装和目标市场审核。浓度名称本身不能保证留香，配方、用量和使用方式同样重要。</p>'},
+    {question:'定制配方归谁所有，如何处理保密？',answerHtml:'<p>保密、配方使用及任何独家安排会针对具体项目书面约定，适用时可审核保密协议。现有配方库通常非独家；定制开发的所有权或独家权仅在签署的商业协议明确列入时适用。</p>'}
+  ]},
+  {id:'packaging',category:'packaging',number:'04',title:'瓶器、包装与装饰',description:'根据数量、预算和上市时间选择包装路径。',questions:[
+    {question:'现货包装与定制瓶器模具有何区别？',answerHtml:'<p>现货包装使用现有瓶器、泵头和瓶盖，通常起始数量较低、采购时间较短。定制模具可形成项目专属组件，但需要模具、开发样品、更高数量和由组件供应商确认的更长周期。</p>'},
+    {question:'瓶器、泵头、瓶盖和彩盒哪些部分可以定制？',answerHtml:'<p>根据数量和兼容性，可选择瓶器颜色或喷涂、泵头和肩套表面、瓶盖材料、标签、直接印刷和彩盒结构。专属瓶型或瓶盖形状需要技术审核和定制模具，并非简单装饰。</p>'},
+    {question:'可以提供哪些装饰工艺？',answerHtml:'<p>常见选项包括喷涂、磨砂、丝印、标签、烫箔和部分二次包装工艺。可用性取决于组件材料、设计稿、数量和供应商能力；需要时会通过样品确认可实现的颜色、附着力和套位标准。</p>'},
+    {question:'客户应提供哪些设计稿和标签文件？',answerHtml:'<p>标志和印刷版面建议提供 AI、可编辑 PDF 或 EPS 等矢量文件，并包含品牌文字、净含量、条码、市场必需文字和颜色标准。最终法律标签仍由采购方或目标市场责任方批准。</p>'},
+    {question:'客户可以提供自有瓶器、包装或组件吗？',answerHtml:'<p>可以，可在 OEM 或委托加工模式下评估。组件必须按约定数量、状态和时间到货，并可能在量产批准前进行来料检验、灌装试验和兼容性测试。</p>'},
+    {question:'如何测试瓶器、泵头和香水的兼容性？',answerHtml:'<p>检查可包括配合、压口或封口完整性、泄漏、喷雾表现、外观，以及配方与密封件、泵头和装饰的相互作用。测试方案会对应所选配方和组件，不能只凭目录图片批准包装。</p>'}
+  ]},
+  {id:'production-quality',category:'production-quality',number:'05',title:'生产、交期与质量控制',description:'明确批准节点可以减少可避免的生产风险。',questions:[
+    {question:'香水订单的主要生产阶段有哪些？',answerHtml:'<p>典型项目依次进行需求审核、报价、打样、配方与包装批准、材料采购、调配、按要求静置或过滤、灌装、封口、装配、检验和出货准备。准确路径取决于合作方式。</p>'},
+    {question:'5 天原料采购期是否代表总交期？',answerHtml:'<p>不是。约 5 天仅指项目确认后采购适用的常规原料。定制瓶器、瓶盖、印刷彩盒、特殊装饰、生产、检验和运输需要分别排期，可能需要更长时间。</p>'},
+    {question:'大货生产周期如何计算？',answerHtml:'<p>配方、组件、设计稿、数量和质量要求批准后才会确认交期。现货组件项目通常更快；定制模具、装饰、硬盒、客供材料和生产旺季会延长排期。</p>'},
+    {question:'生产中会执行哪些质量检查？',answerHtml:'<p>适用方案可能覆盖来料、配方外观和气味、灌装量、压口或封口完整性、泄漏、喷雾功能、编码、装饰、装配和最终包装。测试范围以批准的产品规格为依据。</p>'},
+    {question:'量产前是否需要批准产前样品？',answerHtml:'<p>项目通常需要在量产前批准相关香型方向、包装组件、设计稿和成品呈现。根据项目内容，批准形式可能是实物样品、数码设计稿、组件样品或签署规格。</p>'},
+    {question:'如何管理批次一致性和补单？',answerHtml:'<p>批准规格、批次记录和留存标准用于指导重复生产。原料或包装变更影响批准标准时会重新审核。申请补单时，采购方应提供上一订单或 SKU 编号。</p>'}
+  ]},
+  {id:'compliance',category:'compliance',number:'06',title:'证书、文件与市场合规',description:'区分工厂文件与目标市场责任。',questions:[
+    {question:'采购方可以核验哪些工厂证书？',answerHtml:'<p>现有生产及质量文件的受保护预览展示在<a href="/zh/about.html#certificates">证书核验区域</a>。合格采购方可通过 WhatsApp 申请相关完整副本。应将文件范围和有效期与证书列示的法律主体核对。</p>'},
+    {question:'可以提供哪些 SDS、COA、批次和香精文件？',answerHtml:'<p>可用资料可能包括 SDS、COA、批次记录和与批准配方相关的香精文件。准确文件包取决于产品类型、原料供应商、目的地和商业协议，并非每款 SKU 或市场都自动具备所有文件。</p>'},
+    {question:'IFRA 符合性证书代表什么？',answerHtml:'<p>它是供应商针对预期用途出具的香精混合物符合适用 IFRA 标准的声明，并非由 IFRA 出具，不能替代产品安全评估或当地法规义务。参见 <a href="https://ifrafragrance.org/initiatives-positions/safe-use-fragrance-science/ifra-standards" target="_blank" rel="noopener noreferrer">IFRA 说明</a>。</p>'},
+    {question:'可以支持计划在美国销售的产品吗？',answerHtml:'<p>我们可以整理项目所需的现有工厂和产品资料，但美国责任人及相关方必须确认 MoCRA 设施注册、产品列名、安全证明和标签责任。注册或列名不代表 FDA 产品批准。参见 <a href="https://www.fda.gov/cosmetics/registration-listing-cosmetic-product-facilities-and-products" target="_blank" rel="noopener noreferrer">FDA 指南</a>。</p>'},
+    {question:'可以支持计划在欧盟销售的产品吗？',answerHtml:'<p>我们可以准备或协调现有配方和生产资料，但欧盟责任人必须在产品上市前确认安全评估、产品信息档案、标签和 CPNP 通报。CPNP 是通报系统，不是工厂证书。参见<a href="https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-product-notification-portal_en" target="_blank" rel="noopener noreferrer">欧盟委员会指南</a>。</p>'},
+    {question:'谁负责目标市场注册和最终标签合规？',answerHtml:'<p>根据当地法律，品牌方、进口商、经销商或指定责任人通常承担市场准入和标签批准的最终责任。工厂可以提供现有技术和生产资料，但采购方应在生产前确定目的地和法规路径。</p>'}
+  ]},
+  {id:'shipping',category:'shipping',number:'07',title:'运输、交付与售后',description:'在最终确定产品和外箱规格前规划运输路线。',questions:[
+    {question:'为什么含酒精香水被归类为危险品？',answerHtml:'<p>含易燃溶剂的香水通常按 UN 1266、第 3 类危险品运输。准确分类、包装类别和路线取决于配方、浓度、包装容量和运输规则。参见 <a href="https://unece.org/fileadmin/DAM/trans/danger/publi/unrec/rev18/English/Rev18_Volume1_Part2.pdf" target="_blank" rel="noopener noreferrer">UNECE 危险品清单</a>。</p>'},
+    {question:'香型样品和大货如何进行国际运输？',answerHtml:'<p>实际快递费获批后，样品通过适合的专业渠道寄送。大货可根据目的地、数量和交付要求选择危险品空运或海运。每票货物单独确认路线，而不能假定全球通用。</p>'},
+    {question:'货物到达后损坏、泄漏或不一致怎么办？',answerHtml:'<p>请及时通知项目团队，并保留外箱、标签和受影响产品。提供订单号、批次编号、数量、照片和视频，以便工厂与物流方调查。补货、抵扣或其他处理将依据证据、约定规格和签署的商业条款执行。</p>'}
+  ]}
+];

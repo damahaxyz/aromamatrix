@@ -16,7 +16,7 @@ const config = {
     descriptor: 'Perfume Factory',
     businessType: 'B2B fragrance manufacturer providing private label, OEM, ODM and contract-processing services',
     legalEntity: {
-      zh: '厦门香氛矩阵化妆品有限公司',
+      zh: 'Xiamen Aroma Matrix Cosmetics Co., Ltd.',
       en: 'Xiamen Aroma Matrix Cosmetics Co., Ltd.'
     },
     founded: {
@@ -116,14 +116,16 @@ const config = {
   certificates: {
     iso22716: {
       name: 'ISO 22716',
-      validityDisplay: 'August 2025–August 2028'
+      validityDisplay: 'August 2025–August 2028',
+      validityDisplayZh: '2025年8月至2028年8月'
     },
     gmpAssessment: {
       name: 'SGS cosmetic GMP assessment'
     },
     manufacturingLicense: {
       name: 'Cosmetics Manufacturing License',
-      validThroughDisplay: 'May 2030'
+      validThroughDisplay: 'May 2030',
+      validThroughDisplayZh: '2030年5月'
     }
   }
 };

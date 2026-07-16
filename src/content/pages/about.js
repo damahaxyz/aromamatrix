@@ -38,8 +38,19 @@ module.exports = {
   'zh-CN': {
     hero: { location:'中国 · 广州', title:'了解 {brand} 与广州生产工厂', text:'从香精调配、灌装到包装组装和出口准备，为私人标签、OEM 与 ODM 香氛项目提供可核验的生产支持。', cta:'预约工厂视频沟通', alt:'广州香水生产场地外观' },
     entity: { kicker:'我们是谁', title:'品牌沟通与生产执行协同', paragraphs:['{{site.brand.name}} 由 {{site.brand.legalEntity.zh}}运营，负责品牌、国际询盘、报价和销售沟通。','确认的香水生产由 {{site.manufacturer.legalName}} 在广州生产场地完成，双方协同推进香型、组件、调配、灌装、检验、包装和出货准备。'], facts:[['业务品牌','{{site.brand.name}}'],['品牌与销售主体','{{site.brand.legalEntity.zh}}'],['生产主体','{{site.manufacturer.legalName}}'],['成立时间','{{fact("founded")}}'],['生产地点','{{site.manufacturer.location.full}}'],['合作方式','私人标签 · OEM · ODM']] },
-    metricLabels:['厂房面积','成立时间','受控车间','香型方向'],
-    gallery: { kicker:'现场能力', title:'从调配到成品包装', text:'公开图片展示调配、灌装、检验、包装等实际生产区域。', items: gallery([{alt:'香水调配车间',title:'调配与工艺控制',text:'不锈钢调配设备与生产环境'},{alt:'香水灌装设备',title:'灌装与组件装配',text:'产品灌装和组件处理'},{alt:'香水产品质量检验',title:'质量检验',text:'过程检查、喷码和成品确认'},{alt:'香水包装组装',title:'包装与出货准备',text:'人工检查和二次包装'}]) },
-    certificates: { kicker:'供应商核验', title:'可供采购方核验的证书文件', intro:'为避免证书被未经授权复用，公开页面仅展示模糊或低分辨率预览。合格采购方可联系项目团队申请完整副本。', protected:'受保护预览', request:'完整副本需申请', cards:[['SGS · 体系认证','ISO 22716','当前核验副本显示的有效期为 {{site.certificates.iso22716.validityDisplay}}。','iso-22716-preview.webp','ISO 22716 证书受保护预览',480,679],['SGS · GMP 评估','化妆品 GMP 评估','该评估不代表 FDA 对具体产品的批准。','gmp-preview.webp','GMP 评估文件受保护预览',480,679],['广东省药品监督管理部门','化妆品生产许可证','当前核验副本显示有效期至 {{site.certificates.manufacturingLicense.validThroughDisplay}}。','production-license-preview.webp','化妆品生产许可证受保护预览',560,396]], ctaTitle:'供应商审核需要完整文件？', ctaText:'请提供公司名称、目标市场和计划产品类别，项目团队将发送相关文件供核验。', cta:'申请完整核验文件' }
+    metricLabels:['厂房面积','成立时间','受控车间','香精配方库'],
+    video: { kicker:'工厂实景', title:'查看网站背后的生产场地', text:'通过短片了解实际生产环境。如需实时查看当前设备和产能，可预约与项目团队进行工厂视频沟通。', fallback:'您的浏览器不支持嵌入视频。', label:'工厂实景短片', meta:'真实生产环境 · 广州' },
+    gallery: { kicker:'走进工厂', title:'了解我们的实际工作环境', text:'展示办公室、生产、灌装、检验、样品和仓储区域的真实照片。', items: gallery([
+      {alt:'生产车间内的不锈钢香水调配设备',title:'调配车间',text:'不锈钢配制设备'},
+      {alt:'香水灌装和组件装配设备',title:'灌装设备',text:'产品灌装与组件处理'},
+      {alt:'生产团队进行包装和质量检查',title:'质量检验',text:'过程检查与喷码'},
+      {alt:'工厂团队完成香水包装装配',title:'包装装配',text:'人工检查与二次包装'},
+      {alt:'受控车间内的大型不锈钢处理罐',title:'工艺罐体',text:'受控批次配制'},
+      {alt:'{brand} 项目和业务支持团队工作现场',title:'项目支持',text:'报价、打样与订单协调'},
+      {alt:'香型和包装样品展示区域',title:'样品展示区',text:'瓶器与产品参考资料库'},
+      {alt:'包装材料和成品暂存仓库',title:'仓储与暂存',text:'包装材料与出货准备'}
+    ]) },
+    workflow: { kicker:'生产流程', title:'明确阶段与清晰责任', text:'自动化设备结合人工检验和二次包装，为每个项目设置清晰的批准与控制节点。', items:[['材料准备','按照项目规格准备配方、酒精和批准组件。'],['调配','使用不锈钢工艺设备混合香水批次。'],['熟化与过滤','按照生产计划对批次进行静置和过滤。'],['灌装与压口','瓶器依次完成灌装、泵头安装和封口。'],['检验与包装','检查成品外观、编码和装配。'],['出货暂存','完成装箱，并为确认的运输路线做好准备。']] },
+    certificates: { kicker:'供应商核验', title:'可供采购方核验的证书文件', intro:'为避免证书被未经授权复用，公开页面仅展示模糊或低分辨率预览。合格采购方可联系项目团队申请完整副本。', protected:'受保护预览', request:'完整副本需申请', cards:[['SGS · 体系认证','ISO 22716','当前核验副本显示的有效期为 {{site.certificates.iso22716.validityDisplayZh}}。','iso-22716-preview.webp','ISO 22716 证书受保护预览',480,679],['SGS · GMP 评估','化妆品 GMP 评估','该评估不代表 FDA 对具体产品的批准。','gmp-preview.webp','GMP 评估文件受保护预览',480,679],['广东省药品监督管理部门','化妆品生产许可证','当前核验副本显示有效期至 {{site.certificates.manufacturingLicense.validThroughDisplayZh}}。','production-license-preview.webp','化妆品生产许可证受保护预览',560,396]], ctaTitle:'供应商审核需要完整文件？', ctaText:'请提供公司名称、目标市场和计划产品类别，项目团队将发送相关文件供核验。', cta:'申请完整核验文件' }
   }
 };

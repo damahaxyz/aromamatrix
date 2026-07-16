@@ -33,6 +33,10 @@ module.exports = {
         "label": "Retention"
       },
       {
+        "id": "privacy-international",
+        "label": "International Communication"
+      },
+      {
         "id": "privacy-rights",
         "label": "Your Choices"
       },
