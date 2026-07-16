@@ -110,7 +110,36 @@ function localizedFact(locale, key) {
     founded: `${site.brand.founded.iso.slice(0, 4)}年${Number(site.brand.founded.iso.slice(5))}月`,
     workshop: '10万级'
   };
-  const values = locale === 'zh-CN' ? chinese : english;
+  const localized = {
+    es: {
+      privateLabelMoq: `${site.services.privateLabel.moq.value.toLocaleString('es-ES')} unidades`,
+      customMoq: `${site.services.odm.moq.value.toLocaleString('es-ES')} unidades`,
+      sampleSet: `${site.samples.count} × ${site.samples.volumeMl} ml`,
+      sampleDays: `${site.samples.preparationDays.min}–${site.samples.preparationDays.max} días laborables`,
+      sampleDaysShort: `${site.samples.preparationDays.min}–${site.samples.preparationDays.max} días`,
+      founded: new Intl.DateTimeFormat('es-ES', { year: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(`${site.brand.founded.iso}-01`)),
+      workshop: 'Clase 100.000'
+    },
+    ar: {
+      privateLabelMoq: `${site.services.privateLabel.moq.value.toLocaleString('ar')} قطعة`,
+      customMoq: `${site.services.odm.moq.value.toLocaleString('ar')} قطعة`,
+      sampleSet: `${site.samples.count} × ${site.samples.volumeMl} مل`,
+      sampleDays: `${site.samples.preparationDays.min}–${site.samples.preparationDays.max} أيام عمل`,
+      sampleDaysShort: `${site.samples.preparationDays.min}–${site.samples.preparationDays.max} أيام`,
+      founded: new Intl.DateTimeFormat('ar', { year: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(`${site.brand.founded.iso}-01`)),
+      workshop: 'الفئة 100,000'
+    },
+    fr: {
+      privateLabelMoq: `${site.services.privateLabel.moq.value.toLocaleString('fr-FR')} unités`,
+      customMoq: `${site.services.odm.moq.value.toLocaleString('fr-FR')} unités`,
+      sampleSet: `${site.samples.count} × ${site.samples.volumeMl} ml`,
+      sampleDays: `${site.samples.preparationDays.min}–${site.samples.preparationDays.max} jours ouvrés`,
+      sampleDaysShort: `${site.samples.preparationDays.min}–${site.samples.preparationDays.max} jours`,
+      founded: new Intl.DateTimeFormat('fr-FR', { year: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(`${site.brand.founded.iso}-01`)),
+      workshop: 'Classe 100 000'
+    }
+  };
+  const values = locale === 'zh-CN' ? chinese : (localized[locale] || english);
   if (!(key in values)) throw new Error(`Unknown localized fact: ${key}`);
   return values[key];
 }
@@ -163,7 +192,7 @@ function organizationNodes(locale) {
         contactType: 'sales',
         email: site.contact.email,
         url: site.contact.whatsapp.url,
-        availableLanguage: ['English', 'Chinese'],
+        availableLanguage: Object.values(locales).filter(item => item.enabled).map(item => item.label),
         areaServed: 'Worldwide'
       },
       address: {
@@ -270,6 +299,7 @@ function renderRuntimeConfig(locale) {
         defaultMessage: translate(locale, 'contact.whatsappMessage')
       }
     },
+    ui: translate(locale, 'ui'),
     services: { lowQuantityReview: { threshold: site.services.lowQuantityReview.threshold } }
   };
   return JSON.stringify(payload).replace(/</g, '\\u003c');

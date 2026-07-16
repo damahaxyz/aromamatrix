@@ -18,6 +18,63 @@ module.exports = {
     pendingText: 'Published guides will appear here after editorial review.',
     contactLink: 'Ask the Project Team'
   },
+  es: {
+    hero: {
+      kicker: '',
+      title: 'Blog de {brand}',
+      description: 'Base de conocimientos completa sobre abastecimiento de fragancias, producción, marketing de perfumes y comercio internacional'
+    },
+    searchLabel: 'Buscar guías de fábrica',
+    searchPlaceholder: 'Pruebe con MOQ, IFRA, frasco, coste o envío',
+    countSuffix: 'guías',
+    showing: 'Mostrando',
+    filterLabel: 'Filtrar guías por categoría',
+    allCategories: 'Todas las guías',
+    readMore: 'Leer la guía completa',
+    emptyTitle: 'No hay ninguna guía de fábrica que coincida',
+    emptyText: 'Pruebe con un término más general o consulte al equipo de proyectos sobre su duda de abastecimiento.',
+    pendingTitle: 'No hay guías disponibles',
+    pendingText: 'No hay guías publicadas disponibles en esta selección.',
+    contactLink: 'Consultar al equipo de proyectos'
+  },
+  ar: {
+    hero: {
+      kicker: '',
+      title: 'مدونة {brand}',
+      description: 'قاعدة معرفية متكاملة حول توريد العطور والإنتاج وتسويق العطور والتجارة الدولية'
+    },
+    searchLabel: 'البحث في أدلة المصنع',
+    searchPlaceholder: 'جرّب MOQ أو IFRA أو الزجاجة أو التكلفة أو الشحن',
+    countSuffix: 'دليلًا',
+    showing: 'عرض',
+    filterLabel: 'تصفية الأدلة حسب الفئة',
+    allCategories: 'جميع الأدلة',
+    readMore: 'قراءة الدليل كاملًا',
+    emptyTitle: 'لا يوجد دليل مصنع مطابق',
+    emptyText: 'جرّب مصطلحًا أوسع أو اطرح استفسارك بشأن التوريد على فريق المشاريع.',
+    pendingTitle: 'لا توجد أدلة متاحة',
+    pendingText: 'لا تتوفر أدلة منشورة ضمن هذا التحديد.',
+    contactLink: 'اسأل فريق المشاريع'
+  },
+  fr: {
+    hero: {
+      kicker: '',
+      title: 'Blog {brand}',
+      description: 'Base de connaissances complète sur le sourcing de parfums, la production, le marketing des parfums et le commerce international'
+    },
+    searchLabel: 'Rechercher dans les guides de l’usine',
+    searchPlaceholder: 'Essayez MOQ, IFRA, flacon, coût ou expédition',
+    countSuffix: 'guides',
+    showing: 'Affichage',
+    filterLabel: 'Filtrer les guides par catégorie',
+    allCategories: 'Tous les guides',
+    readMore: 'Lire le guide complet',
+    emptyTitle: 'Aucun guide de l’usine ne correspond',
+    emptyText: 'Essayez un terme plus général ou posez votre question de sourcing à notre équipe projet.',
+    pendingTitle: 'Aucun guide disponible',
+    pendingText: 'Aucun guide publié n’est disponible dans cette sélection.',
+    contactLink: 'Interroger l’équipe projet'
+  },
   'zh-CN': {
     hero: {
       kicker: '采购与生产知识',

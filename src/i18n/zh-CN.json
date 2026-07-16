@@ -101,5 +101,15 @@
       "description": "了解 {brand} 如何收集、使用、共享和保护商业询盘中的联系人信息与项目资料。",
       "image": "assets/images/brand/aromamatrix-og.webp"
     }
+  },
+  "ui": {
+    "whatsappAria": "通过 WhatsApp 联系我们",
+    "menuOpen": "打开导航菜单",
+    "menuClose": "关闭导航菜单",
+    "faqCountOne": "显示 {count} 个问题",
+    "faqCountMany": "显示 {count} 个问题",
+    "blogCountOne": "显示 {count} 篇指南",
+    "blogCountMany": "显示 {count} 篇指南",
+    "formNotSpecified": "未说明"
   }
 }

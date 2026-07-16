@@ -6,23 +6,97 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  initPreferredLocale(runtimeConfig.locale);
+  initLanguageSwitcher();
+
   // 2. Inject Shared Floating WhatsApp Button
-  renderWhatsAppFloat(runtimeConfig.contact.whatsapp.baseUrl, runtimeConfig.contact.whatsapp.defaultMessage);
+  renderWhatsAppFloat(runtimeConfig.contact.whatsapp.baseUrl, runtimeConfig.contact.whatsapp.defaultMessage, runtimeConfig.ui);
 
   // 3. Initialize Interactive Components
-  initMobileMenu();
+  initMobileMenu(runtimeConfig.ui);
   highlightActiveNav();
   window.addEventListener('hashchange', highlightActiveNav);
   initAccordion();
-  initFaqExplorer(runtimeConfig.locale);
-  initBlogExplorer(runtimeConfig.locale);
+  initFaqExplorer(runtimeConfig.ui);
+  initBlogExplorer(runtimeConfig.ui);
   initInquiryForm(runtimeConfig);
 });
+
+function initLanguageSwitcher() {
+  const switcher = document.querySelector('[data-language-switcher]');
+  const trigger = switcher?.querySelector('.language-trigger');
+  if (!switcher || !trigger) return;
+
+  const setOpen = isOpen => {
+    switcher.classList.toggle('is-open', isOpen);
+    trigger.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  trigger.addEventListener('click', event => {
+    event.stopPropagation();
+    setOpen(!switcher.classList.contains('is-open'));
+  });
+  document.addEventListener('click', event => {
+    if (!switcher.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      setOpen(false);
+      trigger.focus();
+    }
+  });
+}
+
+/**
+ * Uses the visitor's saved choice first, then their browser language.
+ * Locale links provide the correct equivalent URL for core pages and articles.
+ */
+function initPreferredLocale(currentLocale) {
+  const localeLinks = [...document.querySelectorAll('#language-menu a[lang]')];
+  if (localeLinks.length === 0) return;
+
+  const available = new Map(localeLinks.map(link => [link.lang, link]));
+  const normalizeLocale = value => {
+    const locale = String(value || '').toLowerCase();
+    if (locale.startsWith('zh')) return 'zh-CN';
+    if (locale.startsWith('es')) return 'es';
+    if (locale.startsWith('ar')) return 'ar';
+    if (locale.startsWith('fr')) return 'fr';
+    if (locale.startsWith('en')) return 'en';
+    return null;
+  };
+
+  let savedLocale = null;
+  try {
+    savedLocale = normalizeLocale(localStorage.getItem('preferredLocale'));
+  } catch (_) {
+    // Continue with browser language when storage is unavailable.
+  }
+
+  const browserLocale = (navigator.languages || [navigator.language])
+    .map(normalizeLocale)
+    .find(locale => locale && available.has(locale));
+  const preferredLocale = savedLocale && available.has(savedLocale) ? savedLocale : browserLocale;
+
+  localeLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      try {
+        localStorage.setItem('preferredLocale', link.lang);
+      } catch (_) {
+        // Language switching still works without persistence.
+      }
+    });
+  });
+
+  if (preferredLocale && preferredLocale !== currentLocale) {
+    window.location.replace(available.get(preferredLocale).href);
+  }
+}
 
 /**
  * Renders the WhatsApp Floating Button
  */
-function renderWhatsAppFloat(baseUrl, msg) {
+function renderWhatsAppFloat(baseUrl, msg, ui) {
   const encodedMsg = encodeURIComponent(msg);
   const waUrl = `${baseUrl}?text=${encodedMsg}`;
   
@@ -30,7 +104,7 @@ function renderWhatsAppFloat(baseUrl, msg) {
   waBtn.href = waUrl;
   waBtn.className = 'whatsapp-float';
   waBtn.target = '_blank';
-  waBtn.setAttribute('aria-label', 'Contact us on WhatsApp');
+  waBtn.setAttribute('aria-label', ui.whatsappAria);
   waBtn.innerHTML = `
     <svg viewBox="0 0 448 512">
       <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
@@ -43,7 +117,7 @@ function renderWhatsAppFloat(baseUrl, msg) {
 /**
  * Moblie Toggle Menu
  */
-function initMobileMenu() {
+function initMobileMenu(ui) {
   const toggleBtn = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
 
@@ -53,7 +127,7 @@ function initMobileMenu() {
     navMenu.classList.remove('active');
     toggleBtn.classList.remove('active');
     toggleBtn.setAttribute('aria-expanded', 'false');
-    toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+    toggleBtn.setAttribute('aria-label', ui.menuOpen);
     document.body.classList.remove('nav-open');
 
     navMenu.querySelectorAll('.has-dropdown').forEach(item => {
@@ -67,7 +141,7 @@ function initMobileMenu() {
     navMenu.classList.toggle('active', isOpen);
     toggleBtn.classList.toggle('active', isOpen);
     toggleBtn.setAttribute('aria-expanded', String(isOpen));
-    toggleBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    toggleBtn.setAttribute('aria-label', isOpen ? ui.menuClose : ui.menuOpen);
     document.body.classList.toggle('nav-open', isOpen);
   });
 
@@ -164,7 +238,7 @@ function initAccordion() {
  * Search and category filters for the FAQ knowledge base.
  * The questions remain native details/summary elements for keyboard access.
  */
-function initFaqExplorer(locale = 'en') {
+function initFaqExplorer(ui) {
   const directory = document.querySelector('[data-faq-directory]');
   if (!directory) return;
 
@@ -201,9 +275,8 @@ function initFaqExplorer(locale = 'en') {
     });
 
     if (resultCount) {
-      resultCount.textContent = locale === 'zh-CN'
-        ? `显示 ${visibleCount} 个问题`
-        : `Showing ${visibleCount} question${visibleCount === 1 ? '' : 's'}`;
+      const template = visibleCount === 1 ? ui.faqCountOne : ui.faqCountMany;
+      resultCount.textContent = template.replace('{count}', visibleCount);
     }
     if (emptyState) emptyState.hidden = visibleCount !== 0;
     if (clearButton) clearButton.hidden = query.length === 0;
@@ -230,7 +303,7 @@ function initFaqExplorer(locale = 'en') {
 /**
  * Client-side search and category filters for the static blog library.
  */
-function initBlogExplorer(locale = 'en') {
+function initBlogExplorer(ui) {
   const directory = document.querySelector('[data-blog-directory]');
   if (!directory) return;
 
@@ -255,9 +328,8 @@ function initBlogExplorer(locale = 'en') {
     });
 
     if (count) {
-      count.textContent = locale === 'zh-CN'
-        ? `显示 ${visible} 篇指南`
-        : `Showing ${visible} guide${visible === 1 ? '' : 's'}`;
+      const template = visible === 1 ? ui.blogCountOne : ui.blogCountMany;
+      count.textContent = template.replace('{count}', visible);
     }
     if (empty) empty.hidden = visible !== 0;
   };
@@ -297,19 +369,20 @@ function initInquiryForm(siteConfig) {
     // 1. Extract Form Data
     const name = document.getElementById('inquiry-name')?.value || '';
     const email = document.getElementById('inquiry-email')?.value || '';
-    const company = document.getElementById('inquiry-company')?.value || 'Not Specified';
-    const country = document.getElementById('inquiry-country')?.value || 'Not Specified';
-    const product = document.getElementById('inquiry-product')?.value || 'Not Specified';
-    const quantity = document.getElementById('inquiry-qty')?.value || 'Not Specified';
-    const packaging = document.getElementById('inquiry-packaging')?.value || 'Not Specified';
-    const launchDate = document.getElementById('inquiry-launch')?.value || 'Not Specified';
+    const notSpecified = siteConfig.ui.formNotSpecified;
+    const company = document.getElementById('inquiry-company')?.value || notSpecified;
+    const country = document.getElementById('inquiry-country')?.value || notSpecified;
+    const product = document.getElementById('inquiry-product')?.value || notSpecified;
+    const quantity = document.getElementById('inquiry-qty')?.value || notSpecified;
+    const packaging = document.getElementById('inquiry-packaging')?.value || notSpecified;
+    const launchDate = document.getElementById('inquiry-launch')?.value || notSpecified;
     
     // Services
     let serviceTypes = [];
     document.querySelectorAll('input[name="service"]:checked').forEach(checkbox => {
       serviceTypes.push(checkbox.value);
     });
-    const servicesStr = serviceTypes.length > 0 ? serviceTypes.join(', ') : 'Not Specified';
+    const servicesStr = serviceTypes.length > 0 ? serviceTypes.join(', ') : notSpecified;
     
     const requirements = document.getElementById('inquiry-details')?.value || '';
     const quantityValue = Number.parseInt(quantity.replace(/,/g, ''), 10);

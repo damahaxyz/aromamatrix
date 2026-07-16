@@ -1,0 +1,115 @@
+{
+  "languageName": "Español",
+  "nav": {
+    "home": "Inicio",
+    "products": "Qué fabricamos",
+    "services": "Servicios OEM / ODM",
+    "about": "Fábrica y certificados",
+    "process": "Cómo funciona",
+    "faq": "FAQ",
+    "contact": "Solicitar cotización",
+    "blog": "Información del sector",
+    "language": "Idioma",
+    "fineFragrance": "Perfumería fina",
+    "homeFragrance": "Fragancias para el hogar",
+    "bodyMist": "Brumas corporales y capilares",
+    "packaging": "Soluciones de packaging"
+  },
+  "footer": {
+    "description": "{brand} es un programa internacional de fabricación de perfumes B2B que coordina proyectos de marca privada, OEM y ODM desde el desarrollo hasta la producción y la preparación para la exportación.",
+    "services": "Servicios personalizados",
+    "quickLinks": "Enlaces rápidos",
+    "contact": "Contacto de {brand}",
+    "projectDesk": "Oficina de proyectos",
+    "projectDeskLocation": "China · UTC+8",
+    "email": "Correo electrónico",
+    "whatsapp": "WhatsApp",
+    "rights": "Todos los derechos reservados.",
+    "shipping": "Envíos y mercancías peligrosas",
+    "terms": "Términos y condiciones",
+    "privacy": "Política de privacidad"
+  },
+  "contact": {
+    "whatsappMessage": "Hola, {brand}. Me interesan sus servicios OEM/ODM de perfumería y quisiera solicitar una cotización y muestras."
+  },
+  "blog": {
+    "by": "Por",
+    "categories": {
+      "sourcing": "Guía de abastecimiento",
+      "cost-moq": "Costes y MOQ",
+      "packaging": "Packaging",
+      "shipping-import": "Envíos e importación",
+      "compliance": "Cumplimiento normativo",
+      "samples": "Muestras",
+      "business-models": "Modelos de negocio",
+      "supplier-selection": "Selección de proveedores",
+      "production": "Producción",
+      "fragrance-development": "Desarrollo de fragancias",
+      "startup": "Guía para empresas emergentes",
+      "brand-strategy": "Estrategia de marca",
+      "product-development": "Desarrollo de productos",
+      "quality-control": "Control de calidad",
+      "after-sales": "Posventa"
+    }
+  },
+  "pages": {
+    "index": {
+      "label": "Inicio",
+      "title": "Fabricante de perfumes de marca privada en China | {brand}",
+      "description": "{brand} presta apoyo a proyectos de perfumería de marca privada, OEM y ODM mediante el desarrollo de fragancias, el llenado, el packaging y la coordinación de exportaciones en China.",
+      "image": "assets/images/seo/factory-og.webp"
+    },
+    "about": {
+      "label": "Fábrica y certificados",
+      "title": "Nuestra fábrica de perfumes en Guangzhou | {brand}",
+      "description": "Conozca al equipo internacional de proyectos B2B de {brand} y descubra las instalaciones de fabricación de Guangzhou, el flujo de producción, los equipos y los certificados protegidos.",
+      "image": "assets/images/seo/factory-og.webp"
+    },
+    "process": {
+      "label": "Servicios OEM / ODM",
+      "title": "Servicios de perfumería OEM, ODM y de marca privada | {brand}",
+      "description": "Compare las modalidades de marca privada, desarrollo ODM y fabricación de perfumes OEM, incluidas las cantidades habituales, el muestreo, el packaging y las etapas de producción.",
+      "image": "assets/images/seo/filling-line-og.webp"
+    },
+    "contact": {
+      "label": "Contacto",
+      "title": "Solicite una cotización a una fábrica de perfumes | {brand}",
+      "description": "Envíe la información de su proyecto de perfumería a {brand} para obtener una evaluación de viabilidad, una cotización de fabricación o muestras gratuitas de fragancias con el coste de mensajería a cargo del comprador.",
+      "image": "assets/images/seo/team-office-og.webp"
+    },
+    "qa": {
+      "label": "FAQ",
+      "title": "FAQ sobre OEM/ODM de perfumes: MOQ, muestras y envíos | {brand}",
+      "description": "Consulte respuestas prácticas sobre servicios de perfumería de marca privada, OEM y ODM, MOQ habituales, muestras gratuitas, packaging, cumplimiento normativo y envíos internacionales.",
+      "image": "assets/images/seo/sample-showroom-og.webp"
+    },
+    "blog": {
+      "label": "Blog",
+      "title": "Guías e información sobre fabricación de perfumes | {brand}",
+      "description": "Explore guías prácticas para propietarios de marcas de perfumes sobre abastecimiento, desarrollo de fragancias, MOQ, packaging, calidad, cumplimiento normativo y envíos internacionales.",
+      "image": "assets/images/seo/blog-guides-og.webp"
+    },
+    "terms": {
+      "label": "Términos y condiciones",
+      "title": "Términos y condiciones | {brand}",
+      "description": "Consulte los términos que rigen el uso del sitio web de {brand}, las consultas B2B sobre perfumes, las cotizaciones, las muestras, las conversaciones sobre fabricación y la información de envío.",
+      "image": "assets/images/brand/aromamatrix-og.webp"
+    },
+    "privacy": {
+      "label": "Política de privacidad",
+      "title": "Política de privacidad para consultas comerciales | {brand}",
+      "description": "Descubra cómo {brand} recopila, utiliza, comparte y protege los datos de contacto, la información de los proyectos y otros datos enviados mediante consultas comerciales.",
+      "image": "assets/images/brand/aromamatrix-og.webp"
+    }
+  },
+  "ui": {
+    "whatsappAria": "Contactar con {brand} por WhatsApp",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "faqCountOne": "{count} pregunta frecuente",
+    "faqCountMany": "{count} preguntas frecuentes",
+    "blogCountOne": "{count} artículo",
+    "blogCountMany": "{count} artículos",
+    "formNotSpecified": "No especificado"
+  }
+}

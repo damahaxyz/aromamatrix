@@ -72,17 +72,20 @@ test('site configuration validation rejects invalid public facts', () => {
   assert.throws(() => validateSiteConfig(invalidThreshold), /threshold/);
 });
 
-test('Eleventy generates English, Chinese, and English blog routes', () => {
+test('Eleventy generates every enabled locale and its blog routes', () => {
   const htmlFiles = filesUnder(OUTPUT, '.html');
-  assert.ok(htmlFiles.length >= 75, 'expected bilingual core pages and all blog detail pages');
+  const enabledLocales = Object.values(locales).filter(locale => locale.enabled);
+  assert.ok(htmlFiles.length >= enabledLocales.length * (Object.keys(PAGE_ROUTES).length + 59), 'expected all localized core pages and blog detail pages');
 
   for (const pageKey of Object.keys(PAGE_ROUTES)) {
-    assert.ok(fs.existsSync(outputFile(pageKey, 'en')), `missing English ${pageKey}`);
-    assert.ok(fs.existsSync(outputFile(pageKey, 'zh-CN')), `missing Chinese ${pageKey}`);
+    for (const locale of enabledLocales) {
+      assert.ok(fs.existsSync(outputFile(pageKey, locale.key)), `missing ${locale.key} ${pageKey}`);
+    }
   }
 
-  assert.ok(fs.existsSync(path.join(OUTPUT, 'blog', 'private-label-perfume-for-startups.html')));
-  assert.ok(fs.existsSync(path.join(OUTPUT, 'zh', 'blog', 'private-label-perfume-for-startups.html')));
+  for (const locale of enabledLocales) {
+    assert.equal(blogPosts.filter(post => post.locale === locale.key).length, 59);
+  }
 });
 
 test('blog content uses stable article directories and independently published translations', () => {
@@ -91,6 +94,9 @@ test('blog content uses stable article directories and independently published t
   assert.equal(articleDirectories.length, 59);
   assert.equal(blogPosts.filter(post => post.locale === 'en').length, 59);
   assert.equal(blogPosts.filter(post => post.locale === 'zh-CN').length, 59);
+  assert.equal(blogPosts.filter(post => post.locale === 'es').length, 59);
+  assert.equal(blogPosts.filter(post => post.locale === 'ar').length, 59);
+  assert.equal(blogPosts.filter(post => post.locale === 'fr').length, 59);
   assert.equal(fs.existsSync(path.join(ROOT, 'src', 'content', 'blog', 'en')), false);
 
   const translations = new Set();
@@ -124,7 +130,7 @@ test('blog detail SEO and sitemap expose only real published translations', () =
   assert.ok(html.includes(`rel="alternate" hreflang="en" href="${site.site.origin}${sample.permalink}"`));
   assert.ok(html.includes(`rel="alternate" hreflang="zh-CN" href="${site.site.origin}/zh/blog/${sample.slug}.html"`));
   assert.ok(html.includes(`rel="alternate" hreflang="x-default" href="${site.site.origin}${sample.permalink}"`));
-  assert.ok(html.includes(`href="/zh/blog/${sample.slug}.html" hreflang="zh-CN"`));
+  assert.match(html, new RegExp(`href="/zh/blog/${sample.slug}\\.html"[\\s\\S]*?hreflang="zh-CN"`));
 
   const schema = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(match => JSON.parse(match[1]))
@@ -193,6 +199,19 @@ test('core pages publish reciprocal language and canonical metadata', () => {
   }
 });
 
+test('Arabic pages publish RTL direction and all new locales expose reciprocal alternates', () => {
+  const enabledLocales = Object.values(locales).filter(locale => locale.enabled);
+  for (const pageKey of Object.keys(PAGE_ROUTES)) {
+    const arabic = fs.readFileSync(outputFile(pageKey, 'ar'), 'utf8');
+    assert.match(arabic, /<html lang="ar" dir="rtl">/);
+
+    const english = fs.readFileSync(outputFile(pageKey, 'en'), 'utf8');
+    for (const locale of enabledLocales) {
+      assert.ok(english.includes(`hreflang="${locale.hreflang}"`), `missing ${locale.key} alternate on ${pageKey}`);
+    }
+  }
+});
+
 test('English and Chinese homepages publish the same core capability modules', () => {
   const english = fs.readFileSync(outputFile('index', 'en'), 'utf8');
   const chinese = fs.readFileSync(outputFile('index', 'zh-CN'), 'utf8');
@@ -217,7 +236,7 @@ test('English and Chinese homepages publish the same core capability modules', (
 });
 
 test('contact links and public runtime configuration use shared configuration', () => {
-  for (const locale of ['en', 'zh-CN']) {
+  for (const locale of Object.values(locales).filter(item => item.enabled).map(item => item.key)) {
     const contact = fs.readFileSync(outputFile('contact', locale), 'utf8');
     assert.ok(contact.includes(`mailto:${site.contact.email}`));
     assert.ok(contact.includes(site.contact.whatsapp.url));

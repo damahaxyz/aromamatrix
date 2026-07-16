@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy",
+    "clean": "node scripts/clean-docs.js",
+    "build": "npm run clean && eleventy",
     "test": "node --test"
   },
   "devDependencies": {

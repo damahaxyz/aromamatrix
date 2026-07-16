@@ -39,13 +39,6 @@
         <li class="nav-item"><a href="{{ localeUrl('about', locale) }}" id="nav-about">{{ t(locale, 'nav.about') }}</a></li>
         <li class="nav-item"><a href="{{ localeUrl('process', locale) }}#customization-process" id="nav-process">{{ t(locale, 'nav.process') }}</a></li>
         <li class="nav-item"><a href="{{ localeUrl('qa', locale) }}" id="nav-qa">{{ t(locale, 'nav.faq') }}</a></li>
-        <li class="nav-item language-switcher">
-          {% for targetLocale, target in locales %}
-            {% if target.enabled and targetLocale != locale %}
-              <a href="{{ pageAlternateUrl(pageKey, targetLocale, locale, post) }}" hreflang="{{ target.hreflang }}" lang="{{ target.code }}">{{ target.nativeLabel }}</a>
-            {% endif %}
-          {% endfor %}
-        </li>
         <li class="nav-item"><a href="{{ localeUrl('contact', locale) }}" id="nav-contact" class="nav-cta">{{ t(locale, 'nav.contact') }}</a></li>
       </ul>
     </nav>
@@ -54,3 +47,21 @@
     </button>
   </div>
 </header>
+
+<div class="language-float" data-language-switcher>
+  <button class="language-trigger" type="button" aria-expanded="false" aria-controls="language-menu" aria-label="{{ t(locale, 'nav.language') }}: {{ locales[locale].nativeLabel }}" title="{{ t(locale, 'nav.language') }}: {{ locales[locale].nativeLabel }}">
+    <svg class="language-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9S14.4 18.5 12 21M12 3C9.6 5.5 8.3 8.5 8.3 12S9.6 18.5 12 21"></path>
+    </svg>
+    <span>{{ locales[locale].nativeLabel }}</span>
+    <span class="language-chevron" aria-hidden="true">⌃</span>
+  </button>
+  <ul class="language-menu" id="language-menu">
+    {% for targetLocale, target in locales %}
+      {% if target.enabled %}
+        <li><a href="{{ pageAlternateUrl(pageKey, targetLocale, locale, post) }}" hreflang="{{ target.hreflang }}" lang="{{ target.code }}" {% if targetLocale == locale %}class="is-current" aria-current="page"{% endif %}><span>{{ target.nativeLabel }}</span>{% if targetLocale == locale %}<span class="language-check" aria-hidden="true">✓</span>{% endif %}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

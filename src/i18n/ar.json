@@ -1,0 +1,115 @@
+{
+  "languageName": "العربية",
+  "nav": {
+    "home": "الرئيسية",
+    "products": "ما نصنّعه",
+    "services": "خدمات OEM / ODM",
+    "about": "المصنع والشهادات",
+    "process": "آلية العمل",
+    "faq": "الأسئلة الشائعة",
+    "contact": "طلب عرض سعر",
+    "blog": "رؤى القطاع",
+    "language": "اللغة",
+    "fineFragrance": "العطور الفاخرة",
+    "homeFragrance": "عطور المنزل",
+    "bodyMist": "رذاذ الجسم والشعر",
+    "packaging": "حلول التعبئة والتغليف"
+  },
+  "footer": {
+    "description": "{brand} برنامج دولي لتصنيع العطور بنظام B2B، ينسّق مشاريع العلامات الخاصة وOEM وODM بدءًا من التطوير ووصولًا إلى الإنتاج والتحضير للتصدير.",
+    "services": "خدمات مخصصة",
+    "quickLinks": "روابط سريعة",
+    "contact": "التواصل مع {brand}",
+    "projectDesk": "مكتب المشاريع",
+    "projectDeskLocation": "الصين · UTC+8",
+    "email": "البريد الإلكتروني",
+    "whatsapp": "WhatsApp",
+    "rights": "جميع الحقوق محفوظة.",
+    "shipping": "الشحن والبضائع الخطرة",
+    "terms": "الشروط والأحكام",
+    "privacy": "سياسة الخصوصية"
+  },
+  "contact": {
+    "whatsappMessage": "مرحبًا {brand}، أنا مهتم بخدماتكم في تصنيع العطور بنظام OEM/ODM، وأرغب في الحصول على عرض سعر وعينات."
+  },
+  "blog": {
+    "by": "بقلم",
+    "categories": {
+      "sourcing": "دليل التوريد",
+      "cost-moq": "التكلفة وMOQ",
+      "packaging": "التعبئة والتغليف",
+      "shipping-import": "الشحن والاستيراد",
+      "compliance": "الامتثال",
+      "samples": "العينات",
+      "business-models": "نماذج الأعمال",
+      "supplier-selection": "اختيار المورّدين",
+      "production": "الإنتاج",
+      "fragrance-development": "تطوير العطور",
+      "startup": "دليل الشركات الناشئة",
+      "brand-strategy": "استراتيجية العلامة التجارية",
+      "product-development": "تطوير المنتجات",
+      "quality-control": "مراقبة الجودة",
+      "after-sales": "خدمات ما بعد البيع"
+    }
+  },
+  "pages": {
+    "index": {
+      "label": "الرئيسية",
+      "title": "مصنّع عطور بعلامة خاصة في الصين | {brand}",
+      "description": "تدعم {brand} مشاريع العطور ذات العلامات الخاصة وOEM وODM من خلال تطوير العطور والتعبئة والتغليف وتنسيق التصدير في الصين.",
+      "image": "assets/images/seo/factory-og.webp"
+    },
+    "about": {
+      "label": "المصنع والشهادات",
+      "title": "نبذة عن مصنعنا للعطور في غوانزو | {brand}",
+      "description": "تعرّف على فريق المشاريع الدولية بنظام B2B لدى {brand}، واطّلع على منشأة التصنيع في غوانزو وسير العمل الإنتاجي والمعدات والشهادات المحمية.",
+      "image": "assets/images/seo/factory-og.webp"
+    },
+    "process": {
+      "label": "خدمات OEM / ODM",
+      "title": "خدمات تصنيع العطور بنظام OEM وODM والعلامة الخاصة | {brand}",
+      "description": "قارن بين مسارات العلامة الخاصة والتطوير بنظام ODM وتصنيع العطور بنظام OEM، بما يشمل الكميات المعتادة وأخذ العينات والتعبئة والتغليف ومراحل الإنتاج.",
+      "image": "assets/images/seo/filling-line-og.webp"
+    },
+    "contact": {
+      "label": "اتصل بنا",
+      "title": "اطلب عرض سعر من مصنع عطور | {brand}",
+      "description": "أرسل موجز مشروع العطور الخاص بك إلى {brand} للحصول على مراجعة للجدوى أو عرض سعر للتصنيع أو عينات عطور مجانية، مع تحمّل المشتري تكلفة الشحن السريع.",
+      "image": "assets/images/seo/team-office-og.webp"
+    },
+    "qa": {
+      "label": "الأسئلة الشائعة",
+      "title": "الأسئلة الشائعة عن OEM/ODM للعطور: MOQ والعينات والشحن | {brand}",
+      "description": "اطّلع على إجابات عملية حول خدمات العطور ذات العلامات الخاصة وOEM وODM، وMOQ المعتاد، والعينات المجانية، والتعبئة والتغليف، والامتثال، والشحن الدولي.",
+      "image": "assets/images/seo/sample-showroom-og.webp"
+    },
+    "blog": {
+      "label": "المدونة",
+      "title": "أدلة ورؤى حول تصنيع العطور | {brand}",
+      "description": "استكشف أدلة عملية لأصحاب العلامات التجارية للعطور تغطي التوريد وتطوير العطور وMOQ والتعبئة والتغليف والجودة والامتثال والشحن الدولي.",
+      "image": "assets/images/seo/blog-guides-og.webp"
+    },
+    "terms": {
+      "label": "الشروط والأحكام",
+      "title": "الشروط والأحكام | {brand}",
+      "description": "راجع الشروط المنظمة لاستخدام موقع {brand}، واستفسارات العطور بنظام B2B، وعروض الأسعار، والعينات، ومناقشات التصنيع، ومعلومات الشحن.",
+      "image": "assets/images/brand/aromamatrix-og.webp"
+    },
+    "privacy": {
+      "label": "سياسة الخصوصية",
+      "title": "سياسة خصوصية الاستفسارات التجارية | {brand}",
+      "description": "تعرّف على كيفية جمع {brand} لبيانات الاتصال وموجزات المشاريع وغيرها من المعلومات المقدمة عبر الاستفسارات التجارية، وكيفية استخدامها ومشاركتها وحمايتها.",
+      "image": "assets/images/brand/aromamatrix-og.webp"
+    }
+  },
+  "ui": {
+    "whatsappAria": "التواصل مع {brand} عبر WhatsApp",
+    "menuOpen": "فتح القائمة",
+    "menuClose": "إغلاق القائمة",
+    "faqCountOne": "{count} سؤال شائع",
+    "faqCountMany": "{count} أسئلة شائعة",
+    "blogCountOne": "{count} مقال",
+    "blogCountMany": "{count} مقالات",
+    "formNotSpecified": "غير محدد"
+  }
+}

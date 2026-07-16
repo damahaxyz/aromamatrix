@@ -101,5 +101,15 @@
       "description": "Learn how {brand} collects, uses, shares and protects contact details, project briefs and other information submitted through business inquiries.",
       "image": "assets/images/brand/aromamatrix-og.webp"
     }
+  },
+  "ui": {
+    "whatsappAria": "Contact us on WhatsApp",
+    "menuOpen": "Open navigation menu",
+    "menuClose": "Close navigation menu",
+    "faqCountOne": "Showing {count} question",
+    "faqCountMany": "Showing {count} questions",
+    "blogCountOne": "Showing {count} guide",
+    "blogCountMany": "Showing {count} guides",
+    "formNotSpecified": "Not Specified"
   }
 }

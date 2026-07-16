@@ -54,6 +54,64 @@ body {
   overflow-x: hidden;
 }
 
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+html[dir="rtl"] .header-container,
+html[dir="rtl"] .nav-list,
+html[dir="rtl"] .nav-link-group,
+html[dir="rtl"] .footer-grid,
+html[dir="rtl"] .contact-channel,
+html[dir="rtl"] .feature-checklist li {
+  direction: rtl;
+}
+
+html[dir="rtl"] .logo,
+html[dir="rtl"] .btn,
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea {
+  direction: rtl;
+}
+
+html[dir="rtl"] .whatsapp-float {
+  right: auto;
+  left: 30px;
+}
+
+html[dir="rtl"] nav .nav-dropdown {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .language-float {
+  left: auto;
+  right: 24px;
+}
+
+html[dir="rtl"] .language-menu {
+  left: auto;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] nav {
+    left: auto;
+    right: 0;
+  }
+
+  html[dir="rtl"] nav .nav-dropdown {
+    padding-right: 14px;
+    padding-left: 0;
+  }
+
+  html[dir="rtl"] .whatsapp-float {
+    right: auto;
+    left: 20px;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -258,11 +316,116 @@ nav .nav-item > a.active,
   transition: var(--transition);
 }
 
-.has-dropdown:hover .dropdown-toggle,
-.has-dropdown:focus-within .dropdown-toggle,
-.has-dropdown.submenu-open .dropdown-toggle {
+.has-dropdown:not(.language-switcher):hover .dropdown-toggle,
+.has-dropdown:not(.language-switcher):focus-within .dropdown-toggle,
+.has-dropdown:not(.language-switcher).submenu-open .dropdown-toggle {
   color: var(--primary-blue);
   transform: rotate(180deg);
+}
+
+.language-trigger {
+  width: auto;
+  min-width: 92px;
+  height: 38px;
+  gap: 7px;
+  padding: 0 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.language-trigger:hover,
+.language-trigger:focus-visible,
+.language-float.is-open .language-trigger {
+  color: var(--primary-blue);
+  border-color: var(--border-focus);
+  background: var(--bg-secondary);
+  transform: none;
+}
+
+.language-icon {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.language-chevron {
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.language-float.is-open .language-chevron {
+  transform: rotate(180deg);
+}
+
+.language-float {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 1100;
+}
+
+.language-float .language-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.14);
+}
+
+.language-menu {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  min-width: 168px;
+  margin: 0;
+  padding: 7px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 14px 30px rgba(17, 17, 17, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: var(--transition);
+}
+
+.language-float.is-open .language-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.language-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 9px 11px;
+  font-size: 14px;
+}
+
+.language-menu a.is-current {
+  color: var(--primary-blue);
+  background: var(--bg-accent);
+  font-weight: 600;
+}
+
+.language-check {
+  color: var(--accent-green);
+  font-size: 12px;
 }
 
 nav .nav-dropdown {
@@ -583,9 +746,16 @@ body.nav-open {
 }
 
 /* Responsive Styles */
+@media (max-width: 1180px) {
+  nav .nav-list {
+    gap: 14px;
+  }
+
+}
+
 @media (max-width: 992px) {
   nav .nav-list {
-    gap: 13px;
+    gap: 10px;
   }
 
   nav .nav-item > a,
@@ -679,6 +849,28 @@ body.nav-open {
     width: 44px;
     height: 46px;
     flex: 0 0 44px;
+  }
+
+  .language-float {
+    left: 16px;
+    bottom: 16px;
+  }
+
+  html[dir="rtl"] .language-float {
+    left: auto;
+    right: 16px;
+  }
+
+  .language-float .language-trigger {
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .language-float .language-trigger > span {
+    display: none;
   }
 
   nav .nav-dropdown {
