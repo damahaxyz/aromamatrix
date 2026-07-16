@@ -49,7 +49,7 @@ module.exports = {
         "label": "Contact"
       }
     ],
-    "introHtml": "<strong>Plain-language note:</strong>\n          <p>This website and the {{config.brand.name}} brand are operated by {{config.brand.legalEntity.zh}} ({{config.brand.legalEntity.en}}) for international B2B sales and project communication. Manufacturing is carried out by {{config.manufacturer.legalName}}</p>\n          <p>Final project terms are confirmed only through a written quotation, proforma invoice, specification, purchase order or signed agreement.</p>",
+    "introHtml": "<strong>Plain-language note:</strong>\n          <p>{{config.brand.name}} is an international B2B perfume manufacturing program. Production is carried out by {{config.manufacturer.legalName}}.</p>\n          <p>{{config.transaction.entityNotice.en}} Final project terms are confirmed through the applicable written quotation, proforma invoice, specification, purchase order or signed agreement.</p>",
     "sections": [
       {
         "id": "terms-scope",
@@ -64,7 +64,7 @@ module.exports = {
       {
         "id": "terms-inquiries",
         "title": "3. Inquiries, Quotations and Commercial Terms",
-        "html": "<p>International inquiries, quotations and sales communication are normally coordinated by {{config.brand.legalEntity.en}} Any quotation, price indication, lead-time estimate or MOQ discussion is preliminary until confirmed in writing for the specific project. Final commercial terms may depend on fragrance concentration, bottle and pump selection, cap material, decoration, packaging, testing scope, production quantity and shipping route.</p>\n          <ul>\n            <li>Typical starting quantities are guidelines and may vary by project.</li>\n            <li>Smaller pilot runs are reviewed case by case and cannot be guaranteed.</li>\n            <li>Payment terms, quotation validity, tooling charges and development charges are confirmed in the formal quotation or proforma invoice.</li>\n            <li>A project is not reserved for production until the required confirmation, documents and payment stage are completed.</li>\n          </ul>\n          <p>The legal entity named on the final quotation, contract, proforma invoice and payment instructions controls that transaction. Unless a formal document states otherwise, the default international sales entity is {{config.brand.legalEntity.en}}</p>"
+        "html": "<p>The {{config.brand.name}} project team coordinates international inquiries, quotations and sales communication. Any quotation, price indication, lead-time estimate or MOQ discussion is preliminary until confirmed in writing for the specific project. Final commercial terms may depend on fragrance concentration, bottle and pump selection, cap material, decoration, packaging, testing scope, production quantity and shipping route.</p>\n          <ul>\n            <li>Typical starting quantities are guidelines and may vary by project.</li>\n            <li>Smaller pilot runs are reviewed case by case and cannot be guaranteed.</li>\n            <li>Payment terms, quotation validity, tooling charges and development charges are confirmed in the formal quotation or proforma invoice.</li>\n            <li>A project is not reserved for production until the required confirmation, documents and payment stage are completed.</li>\n          </ul>\n          <p>{{config.transaction.entityNotice.en}}</p>"
       },
       {
         "id": "terms-samples",
@@ -158,7 +158,7 @@ module.exports = {
       {
         "id": "terms-scope",
         "title": "1. 适用范围",
-        "html": "<p>本网站及 {{ site.brand.name }} 品牌由 {{ site.brand.legalEntity.zh }}运营，用于国际 B2B 销售和项目沟通。确认的香水生产由 {{ site.manufacturer.legalName }}执行。本条款不替代双方签署的合同、采购订单、形式发票或书面项目协议。</p>"
+        "html": "<p>{{ site.brand.name }} 是国际 B2B 香水制造项目，香水生产由 {{ site.manufacturer.legalName }}执行。{{ site.transaction.entityNotice.zh }} 本条款不替代双方签署的合同、采购订单、形式发票或书面项目协议。</p>"
       },
       {
         "id": "terms-information",

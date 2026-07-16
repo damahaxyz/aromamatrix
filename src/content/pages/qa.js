@@ -79,7 +79,7 @@ module.exports = {
           },
           {
             "question": "Is {{config.brand.name}} a manufacturer or a trading company?",
-            "answerHtml": "<p>{{config.brand.name}} is operated by {{config.brand.legalEntity.en}} as the brand and international sales entity. Confirmed production is carried out by {{config.manufacturer.legalName}} at the Guangzhou manufacturing facility shown on this website. Qualified buyers can review protected certificate previews and request full verification documents through <a href=\"about.html\">About Us</a>.</p>"
+            "answerHtml": "<p>{{config.brand.name}} is an international B2B perfume manufacturing program. The project team coordinates international inquiries, development, manufacturing and export preparation, while production is carried out by {{config.manufacturer.legalName}} at the Guangzhou facility shown on this website. Qualified buyers can review protected certificate previews and request full verification documents through <a href=\"about.html\">About Us</a>.</p>"
           },
           {
             "question": "Can startups and first-time fragrance brands work with you?",
@@ -356,7 +356,7 @@ module.exports = {
         "questions": [
           {
             "question": "{{ site.brand.name }} 是制造商还是贸易公司？",
-            "answerHtml": "<p>{{ site.brand.name }} 由 {{ site.brand.legalEntity.zh }}运营，负责品牌和国际销售沟通；确认的生产由 {{ site.manufacturer.legalName }}在广州生产场地完成。</p>"
+            "answerHtml": "<p>{{ site.brand.name }} 是国际 B2B 香水制造项目，项目团队统一协调海外询盘、产品开发、生产和出口准备；香水生产由 {{ site.manufacturer.legalName }}在广州生产场地完成。</p>"
           },
           {
             "question": "私人标签、ODM 和 OEM 有什么区别？",
@@ -465,7 +465,7 @@ module.exports['zh-CN'].groups = [
     {question:'{{config.brand.name}} 可以生产哪些香氛产品？',answerHtml:'<p>我们支持 EDP、EDT、Extrait 等精品香水，以及身体和发用香氛、部分家居香氛及香水包装项目。最终可行性取决于配方、组件、数量和目标市场。可查看<a href="/zh/#product-capabilities">产品能力</a>。</p>'},
     {question:'私人标签、OEM 和 ODM 有什么区别？',answerHtml:'<p>私人标签从现有香型方向和合适标准组件开始；ODM 根据品牌需求开发产品；OEM 或委托加工则使用客户提供的配方、材料、设计稿、规格或参考样品。可在<a href="/zh/process.html#service-models">服务页面</a>比较不同路径。</p>'},
     {question:'哪种合作方式适合我的项目？',answerHtml:'<p>私人标签通常最适合较小规模的市场测试；ODM 适合需要香型和包装开发的品牌；OEM 适合已有成熟资料或技术标准的采购方。提供您现有的资料后，我们会在审核后建议合适路径。</p>'},
-    {question:'{{config.brand.name}} 是制造商还是贸易公司？',answerHtml:'<p>{{config.brand.name}} 由 {{config.brand.legalEntity.zh}} 作为品牌和国际销售主体运营。确认的生产由 {{config.manufacturer.legalName}} 在网站展示的广州生产场地完成。合格采购方可在<a href="/zh/about.html">关于我们</a>页面查看受保护的证书预览并申请完整核验文件。</p>'},
+    {question:'{{config.brand.name}} 是怎样的业务项目？',answerHtml:'<p>{{config.brand.name}} 是面向全球品牌方、进口商和分销商的国际 B2B 香水制造项目。项目团队统一协调海外询盘、产品开发、生产和出口准备；香水生产由 {{config.manufacturer.legalName}} 在网站展示的广州生产场地完成。合格采购方可在<a href="/zh/about.html">关于我们</a>页面查看受保护的证书预览并申请完整核验文件。</p>'},
     {question:'初创企业和首次创建香水品牌的客户可以合作吗？',answerHtml:'<p>可以。我们可以协助首次采购方明确产品形式、数量、香型方向和包装路径。清晰的预算、目标市场和上市目标有助于推荐现实的标准组件方案，避免不必要的定制模具。</p>'},
     {question:'申请报价需要提供哪些信息？',answerHtml:'<p>请提供产品类别、预计数量、目标国家、香型方向、瓶器或包装偏好、计划上市时间，以及任何客供配方、设计稿或参考样品。尚未确定的内容可在<a href="/zh/contact.html#inquiry-form">项目询盘表单</a>中标记。</p>'}
   ]},

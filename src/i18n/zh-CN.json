@@ -16,7 +16,7 @@
     "packaging": "包装方案"
   },
   "footer": {
-    "description": "{brand} 面向全球香水品牌提供私人标签、OEM 与 ODM 项目沟通、销售和生产协调服务，产品由广州生产主体完成制造。",
+    "description": "{brand} 是国际 B2B 香水制造项目，统一协调私人标签、OEM 与 ODM 项目的开发、生产和出口准备。",
     "services": "定制服务",
     "quickLinks": "快速链接",
     "contact": "联系 {brand}",
@@ -55,14 +55,14 @@
   "pages": {
     "index": {
       "label": "首页",
-      "title": "中国香水私人标签、OEM 与 ODM 制造商 | {brand}",
+      "title": "国际 B2B 香水制造项目：私人标签、OEM 与 ODM | {brand}",
       "description": "{brand} 为香水品牌提供香型开发、灌装、包装、私人标签、OEM、ODM 与出口项目协调服务。",
       "image": "assets/images/seo/factory-og.webp"
     },
     "about": {
       "label": "工厂与证书",
       "title": "关于广州香水生产工厂 | {brand}",
-      "description": "了解 {brand} 品牌与项目团队，并查看广州香水生产场地、生产流程、设备和受保护的证书预览。",
+      "description": "了解 {brand} 国际 B2B 项目团队，并查看广州香水生产场地、生产流程、设备和受保护的证书预览。",
       "image": "assets/images/seo/factory-og.webp"
     },
     "process": {

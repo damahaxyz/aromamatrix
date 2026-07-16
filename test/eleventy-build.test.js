@@ -57,6 +57,12 @@ test.before(() => {
 });
 
 test('site configuration validation rejects invalid public facts', () => {
+  assert.equal(Object.hasOwn(site.brand, 'legalEntity'), false);
+  assert.match(site.brand.positioning.en, /international B2B perfume manufacturing program/i);
+  assert.match(site.brand.positioning.zh, /国际 B2B 香水制造项目/);
+  assert.match(site.transaction.entityNotice.en, /quotation, contract, proforma invoice and payment documents/);
+  assert.match(site.transaction.entityNotice.zh, /报价、合同、形式发票及收款文件/);
+
   const invalid = structuredClone(site);
   invalid.contact.whatsapp.number = '12 34';
   assert.throws(() => validateSiteConfig(invalid), /digits only/);

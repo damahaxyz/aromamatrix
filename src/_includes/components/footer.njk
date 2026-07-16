@@ -34,6 +34,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 {{ site.brand.name }} {{ site.brand.descriptor }}. {{ t(locale, 'footer.rights') }} (ISO 22716 &amp; GMPC)</p>
+      <p class="footer-entity-notice">{% if locale == 'zh-CN' %}{{ site.transaction.entityNotice.zh }}{% else %}{{ site.transaction.entityNotice.en }}{% endif %}</p>
       <p class="footer-legal-links">
         <a href="{{ localeUrl('qa', locale) }}#shipping">{{ t(locale, 'footer.shipping') }}</a><span aria-hidden="true">|</span>
         <a href="{{ localeUrl('terms', locale) }}">{{ t(locale, 'footer.terms') }}</a><span aria-hidden="true">|</span>

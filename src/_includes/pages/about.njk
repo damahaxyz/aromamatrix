@@ -1,10 +1,144 @@
 <section class="about-factory-hero">
   <img src="{{ 'assets/images/about/factory/factory-exterior.webp' | assetUrl }}" alt="{{ copy.hero.alt | interpolate(locale) }}" width="1600" height="729" fetchpriority="high" decoding="async">
-  <div class="about-factory-overlay"></div><div class="container"><div class="about-factory-hero-content"><span>{{ copy.hero.location }}</span><h1>{{ copy.hero.title | interpolate(locale) }}</h1><p>{{ copy.hero.text }}</p><a href="{{ localeUrl('contact', locale) }}" class="btn btn-gold">{{ copy.hero.cta }}</a></div></div>
-</section>
-<section class="section-padding about-entity-section"><div class="container"><div class="about-entity-grid"><div><span class="section-kicker">{{ copy.entity.kicker }}</span><h2 class="section-title">{{ copy.entity.title }}</h2>{% for paragraph in copy.entity.paragraphs %}<p class="about-copy">{{ paragraph | interpolate(locale) | safe }}</p>{% endfor %}</div><div class="entity-facts">{% for item in copy.entity.facts %}<div><span>{{ item[0] }}</span><strong>{{ item[1] | interpolate(locale) | safe }}</strong></div>{% endfor %}</div></div></div></section>
-<section class="about-metrics" aria-label="{{ copy.metricLabels[0] }}"><div class="container"><div class="about-metrics-grid">{% set metrics = [site.manufacturer.factoryArea.display, fact(locale, 'founded'), fact(locale, 'workshop'), site.manufacturer.fragranceFormulaLibrary.display] %}{% for label in copy.metricLabels %}<div><strong>{{ metrics[loop.index0] }}</strong><span>{{ label }}</span></div>{% endfor %}</div></div></section>
-{% if copy.video %}<section class="section-padding about-video-section"><div class="container"><div class="about-section-heading"><div><span class="section-kicker">{{ copy.video.kicker }}</span><h2 class="section-title">{{ copy.video.title }}</h2></div><p>{{ copy.video.text }}</p></div><div class="factory-video-shell"><video controls playsinline preload="metadata" poster="{{ 'assets/images/about/factory/compounding-tanks.webp' | assetUrl }}"><source src="{{ 'assets/video/factory-tour.mp4' | assetUrl }}" type="video/mp4">{{ copy.video.fallback }}</video><div class="factory-video-caption"><strong>{{ copy.video.label }}</strong><span>{{ copy.video.meta }}</span></div></div></div></section>{% endif %}
-<section class="section-padding factory-tour-section" id="factory-tour"><div class="container"><div class="text-center"><span class="section-kicker">{{ copy.gallery.kicker }}</span><h2 class="section-title">{{ copy.gallery.title }}</h2><p class="section-lead">{{ copy.gallery.text }}</p></div><div class="factory-tour-grid">{% for item in copy.gallery.items %}<figure class="factory-tour-card{% if item.wide %} tour-wide{% endif %}"><img src="{{ ('assets/images/about/factory/' + item.image) | assetUrl }}" alt="{{ item.alt | interpolate(locale) }}" width="{{ item.width }}" height="{{ item.height }}" loading="lazy"><figcaption><strong>{{ item.title }}</strong><span>{{ item.text }}</span></figcaption></figure>{% endfor %}</div></div></section>
-{% if copy.workflow %}<section class="section-padding about-flow-section" id="production-workflow"><div class="container"><div class="about-section-heading"><div><span class="section-kicker">{{ copy.workflow.kicker }}</span><h2 class="section-title">{{ copy.workflow.title }}</h2></div><p>{{ copy.workflow.text }}</p></div><ol class="about-flow-grid">{% for item in copy.workflow.items %}<li><span>0{{ loop.index }}</span><h3>{{ item[0] }}</h3><p>{{ item[1] }}</p></li>{% endfor %}</ol></div></section>{% endif %}
-<section class="section-padding protected-cert-section" id="certificates"><div class="container"><div class="protected-cert-header"><div><span class="section-kicker">{{ copy.certificates.kicker }}</span><h2 class="section-title">{{ copy.certificates.title }}</h2></div><p>{{ copy.certificates.intro }}</p></div><div class="protected-cert-grid">{% for card in copy.certificates.cards %}<article class="protected-cert-card"><div class="protected-cert-preview{% if loop.last %} landscape{% endif %}"><img src="{{ ('assets/images/about/cert/' + card[3]) | assetUrl }}" alt="{{ card[4] }}" width="{{ card[5] }}" height="{{ card[6] }}" loading="lazy"><div class="cert-lock-overlay"><span>{{ copy.certificates.protected }}</span><strong>{{ copy.certificates.request }}</strong></div></div><div class="protected-cert-content"><span>{{ card[0] }}</span><h3>{{ card[1] }}</h3><p>{{ card[2] | interpolate(locale) | safe }}</p></div></article>{% endfor %}</div><div class="certificate-request-cta"><div><h3>{{ copy.certificates.ctaTitle }}</h3><p>{{ copy.certificates.ctaText }}</p></div><a href="{{ site.contact.whatsapp.certificateRequestUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-gold">{{ copy.certificates.cta }}</a></div></div></section>
+    <div class="about-factory-overlay"></div>
+    <div class="container">
+      <div class="about-factory-hero-content">
+        <span>{{ copy.hero.location }}</span>
+        <h1>{{ copy.hero.title | interpolate(locale) }}</h1>
+        <p>{{ copy.hero.text }}</p>
+        <a href="{{ localeUrl('contact', locale) }}" class="btn btn-gold">{{ copy.hero.cta }}</a>
+      </div>
+    </div>
+  </section>
+  <section class="section-padding about-entity-section">
+    <div class="container">
+      <div class="about-entity-grid">
+        <div>
+          <span class="section-kicker">{{ copy.entity.kicker }}</span>
+          <h2 class="section-title">{{ copy.entity.title }}</h2>
+          {% for paragraph in copy.entity.paragraphs %}
+            <p class="about-copy">{{ paragraph | interpolate(locale) | safe }}</p>
+          {% endfor %}
+        </div>
+        <div class="entity-facts">
+          {% for item in copy.entity.facts %}
+            <div>
+              <span>{{ item[0] }}</span>
+              <strong>{{ item[1] | interpolate(locale) | safe }}</strong>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-metrics" aria-label="{{ copy.metricLabels[0] }}">
+    <div class="container">
+      <div class="about-metrics-grid">{% set metrics = [site.manufacturer.factoryArea.display, fact(locale, 'founded'), fact(locale, 'workshop'), site.manufacturer.fragranceFormulaLibrary.display] %}
+        {% for label in copy.metricLabels %}
+          <div>
+            <strong>{{ metrics[loop.index0] }}</strong>
+            <span>{{ label }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% if copy.video %}
+    <section class="section-padding about-video-section">
+      <div class="container">
+        <div class="about-section-heading">
+          <div>
+            <span class="section-kicker">{{ copy.video.kicker }}</span>
+            <h2 class="section-title">{{ copy.video.title }}</h2>
+          </div>
+          <p>{{ copy.video.text }}</p>
+        </div>
+        <div class="factory-video-shell">
+          <video controls playsinline preload="metadata" poster="{{ 'assets/images/about/factory/compounding-tanks.webp' | assetUrl }}">
+            <source src="{{ 'assets/video/factory-tour.mp4' | assetUrl }}" type="video/mp4">{{ copy.video.fallback }}</video>
+            <div class="factory-video-caption">
+              <strong>{{ copy.video.label }}</strong>
+              <span>{{ copy.video.meta }}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+    <section class="section-padding factory-tour-section" id="factory-tour">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-kicker">{{ copy.gallery.kicker }}</span>
+          <h2 class="section-title">{{ copy.gallery.title }}</h2>
+          <p class="section-lead">{{ copy.gallery.text }}</p>
+        </div>
+        <div class="factory-tour-grid">
+          {% for item in copy.gallery.items %}
+            <figure class="factory-tour-card{% if item.wide %} tour-wide{% endif %}">
+              <img src="{{ ('assets/images/about/factory/' + item.image) | assetUrl }}" alt="{{ item.alt | interpolate(locale) }}" width="{{ item.width }}" height="{{ item.height }}" loading="lazy">
+                <figcaption>
+                  <strong>{{ item.title }}</strong>
+                  <span>{{ item.text }}</span>
+                </figcaption>
+              </figure>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      {% if copy.workflow %}
+        <section class="section-padding about-flow-section" id="production-workflow">
+          <div class="container">
+            <div class="about-section-heading">
+              <div>
+                <span class="section-kicker">{{ copy.workflow.kicker }}</span>
+                <h2 class="section-title">{{ copy.workflow.title }}</h2>
+              </div>
+              <p>{{ copy.workflow.text }}</p>
+            </div>
+            <ol class="about-flow-grid">
+              {% for item in copy.workflow.items %}
+                <li>
+                  <span>0{{ loop.index }}</span>
+                  <h3>{{ item[0] }}</h3>
+                  <p>{{ item[1] }}</p>
+                </li>
+              {% endfor %}
+            </ol>
+          </div>
+        </section>
+      {% endif %}
+      <section class="section-padding protected-cert-section" id="certificates">
+        <div class="container">
+          <div class="protected-cert-header">
+            <div>
+              <span class="section-kicker">{{ copy.certificates.kicker }}</span>
+              <h2 class="section-title">{{ copy.certificates.title }}</h2>
+            </div>
+            <p>{{ copy.certificates.intro }}</p>
+          </div>
+          <div class="protected-cert-grid">
+            {% for card in copy.certificates.cards %}
+              <article class="protected-cert-card">
+                <div class="protected-cert-preview{% if loop.last %} landscape{% endif %}">
+                  <img src="{{ ('assets/images/about/cert/' + card[3]) | assetUrl }}" alt="{{ card[4] }}" width="{{ card[5] }}" height="{{ card[6] }}" loading="lazy">
+                    <div class="cert-lock-overlay">
+                      <span>{{ copy.certificates.protected }}</span>
+                      <strong>{{ copy.certificates.request }}</strong>
+                    </div>
+                  </div>
+                  <div class="protected-cert-content">
+                    <span>{{ card[0] }}</span>
+                    <h3>{{ card[1] }}</h3>
+                    <p>{{ card[2] | interpolate(locale) | safe }}</p>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+            <div class="certificate-request-cta">
+              <div>
+                <h3>{{ copy.certificates.ctaTitle }}</h3>
+                <p>{{ copy.certificates.ctaText }}</p>
+              </div>
+              <a href="{{ site.contact.whatsapp.certificateRequestUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-gold">{{ copy.certificates.cta }}</a>
+            </div>
+          </div>
+        </section>

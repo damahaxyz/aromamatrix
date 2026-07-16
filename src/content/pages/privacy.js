@@ -45,7 +45,7 @@ module.exports = {
         "label": "Contact"
       }
     ],
-    "introHtml": "<strong>Buyer-first note:</strong>\n          <p>{{config.brand.name}} and this website are operated by {{config.brand.legalEntity.zh}} ({{config.brand.legalEntity.en}}), which handles brand, inquiry, quotation and international sales communication.</p>\n          <p>We use inquiry information to understand your perfume project, prepare a practical response and continue business communication. We do not sell inquiry details to unrelated third parties.</p>",
+    "introHtml": "<strong>Buyer-first note:</strong>\n          <p>{{config.brand.name}} is an international B2B perfume manufacturing program. The project team uses inquiry information to understand your perfume project, prepare a practical response and continue business communication.</p>\n          <p>We do not sell inquiry details to unrelated third parties. {{config.transaction.entityNotice.en}}</p>",
     "sections": [
       {
         "id": "privacy-scope",
@@ -90,7 +90,7 @@ module.exports = {
       {
         "id": "privacy-contact",
         "title": "9. Contact",
-        "html": "<p>For privacy questions or requests related to your business inquiry information, contact the {{config.brand.name}} project desk operated by {{config.brand.legalEntity.en}}</p>\n          <div class=\"legal-actions\">\n            <a href=\"contact.html\" class=\"btn btn-gold\">Contact Project Desk</a>\n            <a href=\"terms.html\" class=\"btn btn-outline\">Read Terms</a>\n          </div>"
+        "html": "<p>For privacy questions or requests related to your business inquiry information, contact the {{config.brand.name}} project desk. {{config.transaction.entityNotice.en}}</p>\n          <div class=\"legal-actions\">\n            <a href=\"contact.html\" class=\"btn btn-gold\">Contact Project Desk</a>\n            <a href=\"terms.html\" class=\"btn btn-outline\">Read Terms</a>\n          </div>"
       }
     ]
   },
@@ -145,7 +145,7 @@ module.exports = {
       {
         "id": "privacy-entity",
         "title": "1. 信息处理主体",
-        "html": "<p>{{ site.brand.name }} 网站由 {{ site.brand.legalEntity.zh }}运营，负责品牌、询盘、报价和国际销售沟通。项目生产评估可能需要与 {{ site.manufacturer.legalName }}协同。</p>"
+        "html": "<p>{{ site.brand.name }} 是国际 B2B 香水制造项目，项目团队负责询盘、报价和项目沟通，生产评估由 {{ site.manufacturer.legalName }}协同完成。{{ site.transaction.entityNotice.zh }}</p>"
       },
       {
         "id": "privacy-scope",

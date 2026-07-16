@@ -13,11 +13,11 @@ const config = {
   },
   brand: {
     name: brandName,
-    descriptor: 'Perfume Factory',
-    businessType: 'B2B fragrance manufacturer providing private label, OEM, ODM and contract-processing services',
-    legalEntity: {
-      zh: 'Xiamen Aroma Matrix Cosmetics Co., Ltd.',
-      en: 'Xiamen Aroma Matrix Cosmetics Co., Ltd.'
+    descriptor: 'B2B Perfume Manufacturing',
+    businessType: 'International B2B perfume manufacturing program providing private label, OEM, ODM and contract-processing services',
+    positioning: {
+      en: 'An international B2B perfume manufacturing program for brand owners, importers and distributors worldwide',
+      zh: '面向全球品牌方、进口商和分销商的国际 B2B 香水制造项目'
     },
     founded: {
       iso: '2024-11',
@@ -44,6 +44,12 @@ const config = {
     fragranceFormulaLibrary: {
       value: 10000,
       display: '10,000+'
+    }
+  },
+  transaction: {
+    entityNotice: {
+      en: 'The legal entity responsible for each transaction is specified in the applicable quotation, contract, proforma invoice and payment documents.',
+      zh: '正式交易主体以具体项目的报价、合同、形式发票及收款文件为准。'
     }
   },
   contact: {
@@ -133,7 +139,8 @@ const config = {
 config.contact.whatsapp.certificateRequestUrl = `${config.contact.whatsapp.url}?text=${encodeURIComponent(config.contact.whatsapp.certificateRequestMessage)}`;
 
 config.policies = {
-  entityRelationship: `${config.brand.name} is operated by ${config.brand.legalEntity.en} as the brand and international sales entity. Confirmed production is carried out by ${config.manufacturer.legalName}.`,
+  projectPositioning: config.brand.positioning.en,
+  entityRelationship: `${config.brand.name} is an international B2B perfume manufacturing program. ${config.transaction.entityNotice.en}`,
   moq: `Our typical starting MOQ is ${config.services.privateLabel.moq.pieces} for private label projects using suitable standard components, and ${config.services.odm.moq.pieces} for customized fragrance projects. Actual quantities depend on the formula, bottle, decoration, packaging and supplied materials. If you need a smaller pilot run, contact our team on WhatsApp so we can review the available options. Smaller quantities are evaluated case by case and cannot be guaranteed.`,
   samples: `A typical evaluation set contains ${config.samples.setDisplay} fragrance samples. Preparation normally takes ${config.samples.preparationDays.display} after the brief and sample direction are confirmed. Courier pricing is calculated by destination and approved before dispatch.`
 };

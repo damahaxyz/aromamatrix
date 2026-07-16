@@ -448,6 +448,11 @@ footer h4 {
   color: #ffffff;
 }
 
+.footer-entity-notice {
+  flex-basis: 100%;
+  margin: 0;
+}
+
 .footer-legal-links {
   display: flex;
   flex-wrap: wrap;

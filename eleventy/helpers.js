@@ -13,8 +13,11 @@ function validateSiteConfig(config = site) {
   const requiredStrings = [
     ['site.origin', config.site?.origin],
     ['brand.name', config.brand?.name],
-    ['brand.legalEntity.en', config.brand?.legalEntity?.en],
+    ['brand.positioning.en', config.brand?.positioning?.en],
+    ['brand.positioning.zh', config.brand?.positioning?.zh],
     ['manufacturer.legalName', config.manufacturer?.legalName],
+    ['transaction.entityNotice.en', config.transaction?.entityNotice?.en],
+    ['transaction.entityNotice.zh', config.transaction?.entityNotice?.zh],
     ['contact.email', config.contact?.email],
     ['contact.whatsapp.number', config.contact?.whatsapp?.number],
     ['contact.whatsapp.url', config.contact?.whatsapp?.url]
@@ -149,9 +152,8 @@ function organizationNodes(locale) {
     {
       '@type': 'Organization',
       '@id': `${site.site.origin}/#organization`,
-      name: site.brand.name,
-      legalName: site.brand.legalEntity.zh,
-      alternateName: [site.brand.legalEntity.en, `${site.brand.name} ${site.brand.descriptor}`],
+      name: site.manufacturer.legalName,
+      alternateName: [site.brand.name, `${site.brand.name} ${site.brand.descriptor}`],
       url: `${site.site.origin}/`,
       foundingDate: site.brand.founded.iso,
       email: site.contact.email,
@@ -163,12 +165,7 @@ function organizationNodes(locale) {
         url: site.contact.whatsapp.url,
         availableLanguage: ['English', 'Chinese'],
         areaServed: 'Worldwide'
-      }
-    },
-    {
-      '@type': 'Organization',
-      '@id': `${site.site.origin}/#manufacturer`,
-      name: site.manufacturer.legalName,
+      },
       address: {
         '@type': 'PostalAddress',
         addressLocality: site.manufacturer.location.locality,
@@ -205,9 +202,7 @@ function renderSeo(pageKey, locale, content, post = null) {
     description: meta.description,
     inLanguage: locale,
     isPartOf: { '@id': `${site.site.origin}/#website` },
-    about: pageKey === 'about'
-      ? [{ '@id': `${site.site.origin}/#organization` }, { '@id': `${site.site.origin}/#manufacturer` }]
-      : { '@id': `${site.site.origin}/#organization` }
+    about: { '@id': `${site.site.origin}/#organization` }
   };
   if (pageKey === 'qa') {
     pageNode.mainEntity = [...String(content).matchAll(/<details class="faq-item"[^>]*>\s*<summary>([\s\S]*?)<\/summary>\s*<div class="faq-answer">([\s\S]*?)<\/div>\s*<\/details>/gi)]
