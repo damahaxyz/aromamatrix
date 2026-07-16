@@ -61,8 +61,8 @@
     },
     "about": {
       "label": "Factory & Certificates",
-      "title": "About Our Guangzhou Perfume Factory | {brand}",
-      "description": "Meet the {brand} international B2B project team and see the Guangzhou manufacturing facility, production workflow, equipment and protected certificates.",
+      "title": "About Our Perfume Factory | {brand}",
+      "description": "Meet the {brand} international B2B project team and see the manufacturing facility, production workflow, equipment and protected certificates.",
       "image": "assets/images/seo/factory-og.webp"
     },
     "process": {

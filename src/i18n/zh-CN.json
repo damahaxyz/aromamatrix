@@ -61,8 +61,8 @@
     },
     "about": {
       "label": "工厂与证书",
-      "title": "关于广州香水生产工厂 | {brand}",
-      "description": "了解 {brand} 国际 B2B 项目团队，并查看广州香水生产场地、生产流程、设备和受保护的证书预览。",
+      "title": "关于我们的香水生产工厂 | {brand}",
+      "description": "了解 {brand} 国际 B2B 项目团队，并查看香水生产场地、生产流程、设备和受保护的证书预览。",
       "image": "assets/images/seo/factory-og.webp"
     },
     "process": {

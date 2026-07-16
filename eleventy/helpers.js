@@ -209,11 +209,11 @@ function renderSeo(pageKey, locale, content, post = null) {
   const isBlogPost = pageKey === 'blogDetail' && post;
   const meta = isBlogPost
     ? {
-        title: post.seoTitle || post.title,
-        description: post.seoDescription || post.description,
-        image: post.coverImage,
-        label: post.title
-      }
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.description,
+      image: post.coverImage,
+      label: post.title
+    }
     : translate(locale, `pages.${pageKey}`);
   const route = isBlogPost ? post.permalink : localeUrl(pageKey, locale);
   const canonical = absoluteUrl(route);
