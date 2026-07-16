@@ -3,7 +3,7 @@ module.exports = {
     key: 'en', code: 'en', hreflang: 'en', ogLocale: 'en_US', label: 'English', nativeLabel: 'English', path: '', direction: 'ltr', enabled: true
   },
   'zh-CN': {
-    key: 'zh-CN', code: 'zh-CN', hreflang: 'zh-CN', ogLocale: 'zh_CN', label: 'Chinese', nativeLabel: '中文', path: 'zh', direction: 'ltr', enabled: true
+    key: 'zh-CN', code: 'zh-CN', hreflang: 'zh-CN', ogLocale: 'zh_CN', label: 'Chinese', nativeLabel: '中文', path: 'zh', direction: 'ltr', enabled: false
   },
   es: {
     key: 'es', code: 'es', hreflang: 'es', ogLocale: 'es_ES', label: 'Spanish', nativeLabel: 'Español', path: 'es', direction: 'ltr', enabled: true
