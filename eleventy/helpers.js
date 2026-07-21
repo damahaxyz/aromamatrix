@@ -168,29 +168,38 @@ function stripHtml(value = '') {
     .trim();
 }
 
-function organizationNodes(locale) {
+function organizationNodes() {
+  const enabledLanguages = Object.values(locales)
+    .filter(item => item.enabled)
+    .map(item => item.code);
+
   return [
     {
       '@type': 'WebSite',
       '@id': `${site.site.origin}/#website`,
       url: `${site.site.origin}/`,
       name: site.brand.name,
-      inLanguage: locale,
+      alternateName: site.brand.alternateName,
+      inLanguage: enabledLanguages,
       publisher: { '@id': `${site.site.origin}/#organization` }
     },
     {
       '@type': 'Organization',
       '@id': `${site.site.origin}/#organization`,
-      name: site.manufacturer.legalName,
-      alternateName: [site.brand.name, `${site.brand.name} ${site.brand.descriptor}`],
+      name: site.brand.name,
+      legalName: site.manufacturer.legalName,
+      alternateName: site.brand.alternateName,
       url: `${site.site.origin}/`,
+      description: site.brand.businessType,
       foundingDate: site.brand.founded.iso,
       email: site.contact.email,
+      telephone: `+${site.contact.whatsapp.number}`,
       logo: absoluteUrl(`/${site.site.logoPath}`),
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'sales',
         email: site.contact.email,
+        telephone: `+${site.contact.whatsapp.number}`,
         url: site.contact.whatsapp.url,
         availableLanguage: Object.values(locales).filter(item => item.enabled).map(item => item.label),
         areaServed: 'Worldwide'
@@ -222,7 +231,7 @@ function renderSeo(pageKey, locale, content, post = null) {
   const alternates = isBlogPost
     ? post.translations.map(item => ({ locale: locales[item.locale], url: absoluteUrl(item.url) }))
     : enabledLocales.map(item => ({ locale: item, url: absoluteUrl(localeUrl(pageKey, item.key)) }));
-  const graph = organizationNodes(locale);
+  const graph = organizationNodes();
   const pageNode = {
     '@type': pageKey === 'about' ? 'AboutPage' : pageKey === 'contact' ? 'ContactPage' : pageKey === 'qa' ? 'FAQPage' : 'WebPage',
     '@id': `${canonical}#webpage`,

@@ -183,6 +183,29 @@ test('generated HTML is complete and contains valid JSON-LD', () => {
   }
 });
 
+test('homepage JSON-LD distinguishes the brand, legal name, and multilingual website', () => {
+  const html = fs.readFileSync(outputFile('index', 'en'), 'utf8');
+  const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(match => JSON.parse(match[1]))
+    .flatMap(item => item['@graph'] || []);
+  const website = graph.find(item => item['@type'] === 'WebSite');
+  const organization = graph.find(item => item['@type'] === 'Organization');
+  const enabledLanguageCodes = Object.values(locales)
+    .filter(locale => locale.enabled)
+    .map(locale => locale.code);
+
+  assert.equal(website.name, site.brand.name);
+  assert.equal(website.alternateName, site.brand.alternateName);
+  assert.deepEqual(website.inLanguage, enabledLanguageCodes);
+  assert.equal(organization.name, site.brand.name);
+  assert.equal(organization.legalName, site.manufacturer.legalName);
+  assert.equal(organization.alternateName, site.brand.alternateName);
+  assert.equal(organization.description, site.brand.businessType);
+  assert.equal(organization.telephone, `+${site.contact.whatsapp.number}`);
+  assert.equal(organization.contactPoint.telephone, `+${site.contact.whatsapp.number}`);
+  assert.equal(organization.logo, `${site.site.origin}/${site.site.logoPath}`);
+});
+
 test('core pages publish reciprocal language and canonical metadata', () => {
   for (const pageKey of Object.keys(PAGE_ROUTES)) {
     const en = fs.readFileSync(outputFile(pageKey, 'en'), 'utf8');

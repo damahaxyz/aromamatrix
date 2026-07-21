@@ -13,6 +13,7 @@ const config = {
   },
   brand: {
     name: brandName,
+    alternateName: 'Aroma Matrix',
     descriptor: 'B2B Perfume Manufacturing',
     businessType: 'International B2B perfume manufacturing program providing private label, OEM, ODM and contract-processing services',
     positioning: {
