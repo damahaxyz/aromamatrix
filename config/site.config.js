@@ -1,4 +1,4 @@
-const whatsappNumber = '85257633378';
+const whatsappNumber = '13473939021';
 const brandName = 'AROMAMATRIX';
 const privateLabelMoq = 500;
 const customProjectMoq = 1000;
@@ -59,7 +59,7 @@ const config = {
     projectDeskLocation: 'China · UTC+8',
     whatsapp: {
       number: whatsappNumber,
-      display: '+852 5763 3378',
+      display: '+1(347)393 9021',
       url: `https://wa.me/${whatsappNumber}`,
       defaultMessage: `Hello ${brandName}, I am interested in your perfume OEM/ODM services and would like to get a quote and samples.`,
       certificateRequestMessage: `Hello ${brandName}, I am evaluating your factory for a perfume manufacturing project. Please send your full ISO 22716, GMP assessment and cosmetics manufacturing license for verification.`
