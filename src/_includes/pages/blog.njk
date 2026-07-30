@@ -32,7 +32,7 @@
             <div class="blog-card-content">
               <div class="blog-meta">{{ post.dateLabel }} | {{ post.categoryLabel }}</div>
               <h3>{{ post.title }}</h3><p>{{ post.description }}</p>
-              <a href="{{ post.permalink }}" class="blog-readmore">{{ copy.readMore }}</a>
+              <a href="{{ post.publicUrl }}" class="blog-readmore">{{ copy.readMore }}</a>
             </div>
           </article>
         {% endfor %}
@@ -41,7 +41,7 @@
     {% else %}
       <div class="blog-empty-state text-center">
         <h2>{{ copy.pendingTitle }}</h2><p>{{ copy.pendingText }}</p>
-        <div class="hero-actions" style="justify-content:center;">{% if locale != 'en' %}<a href="/blog.html" class="btn btn-outline" hreflang="en">{{ copy.englishLink }}</a>{% endif %}<a href="{{ localeUrl('contact', locale) }}" class="btn btn-gold">{{ copy.contactLink }}</a></div>
+        <div class="hero-actions" style="justify-content:center;">{% if locale != 'en' %}<a href="/blog" class="btn btn-outline" hreflang="en">{{ copy.englishLink }}</a>{% endif %}<a href="{{ localeUrl('contact', locale) }}" class="btn btn-gold">{{ copy.contactLink }}</a></div>
       </div>
     {% endif %}
   </div>

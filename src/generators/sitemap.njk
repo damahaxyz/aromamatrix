@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 {% for item in collections.all %}
 {% if item.data.pageKey %}
   <url>
-    <loc>{{ site.site.origin }}{{ item.url }}</loc>
+    <loc>{{ site.site.origin }}{{ item.data.publicUrl }}</loc>
     <lastmod>{{ item.data.post.dateModified or item.data.post.date or "2026-07-15" }}</lastmod>
     {% if item.data.pageKey == "blogDetail" %}
     {% for translation in item.data.post.translations %}

@@ -9,6 +9,7 @@ permalink: "{{ variant.permalink }}"
 eleventyComputed:
   locale: "{{ variant.locale }}"
   pageKey: "{{ variant.pageKey }}"
+  publicUrl: "{{ variant.publicUrl }}"
   translationKey: "page:{{ variant.pageKey }}"
 ---
 {% set copy = variant.copy %}

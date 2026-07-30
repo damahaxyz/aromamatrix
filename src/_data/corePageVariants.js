@@ -20,13 +20,21 @@ function localizedRoute(pageKey, locale) {
   return `/${localePath}${route}`;
 }
 
+function outputPermalink(pageKey, locale) {
+  const publicUrl = localizedRoute(pageKey, locale);
+  if (publicUrl === '/') return '/index.html';
+  if (publicUrl.endsWith('/')) return `${publicUrl}index.html`;
+  return `${publicUrl}.html`;
+}
+
 module.exports = Object.entries(definitions).flatMap(([pageKey, translations]) =>
   Object.values(locales)
     .filter(locale => locale.enabled && translations[locale.key])
     .map(locale => ({
       pageKey,
       locale: locale.key,
-      permalink: localizedRoute(pageKey, locale.key),
+      publicUrl: localizedRoute(pageKey, locale.key),
+      permalink: outputPermalink(pageKey, locale.key),
       copy: translations[locale.key]
     }))
 );

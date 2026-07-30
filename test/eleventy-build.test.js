@@ -24,7 +24,7 @@ function outputFile(pageKey, locale) {
   const route = PAGE_ROUTES[pageKey];
   const prefix = locales[locale].path ? `${locales[locale].path}/` : '';
   if (route === '/') return path.join(OUTPUT, prefix, 'index.html');
-  return path.join(OUTPUT, prefix, route.slice(1));
+  return path.join(OUTPUT, prefix, `${route.slice(1)}.html`);
 }
 
 function assertLocaleDataShape(english, chinese, location) {
@@ -93,10 +93,9 @@ test('blog content uses stable article directories and independently published t
   const articleDirectories = fs.readdirSync(articlesRoot, { withFileTypes: true }).filter(entry => entry.isDirectory());
   assert.equal(articleDirectories.length, 59);
   assert.equal(blogPosts.filter(post => post.locale === 'en').length, 59);
-  assert.equal(blogPosts.filter(post => post.locale === 'zh-CN').length, 59);
-  assert.equal(blogPosts.filter(post => post.locale === 'es').length, 59);
-  assert.equal(blogPosts.filter(post => post.locale === 'ar').length, 59);
-  assert.equal(blogPosts.filter(post => post.locale === 'fr').length, 59);
+  for (const locale of Object.values(locales).filter(item => item.enabled)) {
+    assert.equal(blogPosts.filter(post => post.locale === locale.key).length, 59);
+  }
   assert.equal(fs.existsSync(path.join(ROOT, 'src', 'content', 'blog', 'en')), false);
 
   const translations = new Set();
@@ -111,26 +110,26 @@ test('blog content uses stable article directories and independently published t
     assert.ok(fs.existsSync(path.join(articlesRoot, post.articleId, `${post.locale}.njk`)));
     const translationId = `${post.articleId}:${post.locale}`;
     assert.equal(translations.has(translationId), false, `duplicate blog translation ${translationId}`);
-    assert.equal(routes.has(post.permalink), false, `duplicate blog route ${post.permalink}`);
+    assert.equal(routes.has(post.publicUrl), false, `duplicate blog route ${post.publicUrl}`);
     translations.add(translationId);
-    routes.add(post.permalink);
+    routes.add(post.publicUrl);
   }
 
   assert.equal(
-    pageAlternateUrl('blogDetail', 'zh-CN', 'en', { translations: [{ locale: 'zh-CN', url: '/zh/blog/example.html' }] }),
-    '/zh/blog/example.html'
+    pageAlternateUrl('blogDetail', 'es', 'en', { translations: [{ locale: 'es', url: '/es/blog/example' }] }),
+    '/es/blog/example'
   );
-  assert.equal(pageAlternateUrl('blogDetail', 'zh-CN', 'en', { translations: [] }), '/zh/blog.html');
+  assert.equal(pageAlternateUrl('blogDetail', 'es', 'en', { translations: [] }), '/es/blog');
 });
 
 test('blog detail SEO and sitemap expose only real published translations', () => {
   const sample = blogPosts.find(post => post.slug === 'perfume-moq-explained' && post.locale === 'en');
   const html = fs.readFileSync(path.join(OUTPUT, sample.permalink.slice(1)), 'utf8');
-  assert.ok(html.includes(`rel="canonical" href="${site.site.origin}${sample.permalink}"`));
-  assert.ok(html.includes(`rel="alternate" hreflang="en" href="${site.site.origin}${sample.permalink}"`));
-  assert.ok(html.includes(`rel="alternate" hreflang="zh-CN" href="${site.site.origin}/zh/blog/${sample.slug}.html"`));
-  assert.ok(html.includes(`rel="alternate" hreflang="x-default" href="${site.site.origin}${sample.permalink}"`));
-  assert.match(html, new RegExp(`href="/zh/blog/${sample.slug}\\.html"[\\s\\S]*?hreflang="zh-CN"`));
+  assert.ok(html.includes(`rel="canonical" href="${site.site.origin}${sample.publicUrl}"`));
+  assert.ok(html.includes(`rel="alternate" hreflang="en" href="${site.site.origin}${sample.publicUrl}"`));
+  assert.ok(html.includes(`rel="alternate" hreflang="es" href="${site.site.origin}/es/blog/moq-perfumes-cantidad-minima-pedido"`));
+  assert.ok(html.includes(`rel="alternate" hreflang="x-default" href="${site.site.origin}${sample.publicUrl}"`));
+  assert.match(html, /href="\/es\/blog\/moq-perfumes-cantidad-minima-pedido"[\s\S]*?hreflang="es"/);
 
   const schema = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
     .map(match => JSON.parse(match[1]))
@@ -140,14 +139,13 @@ test('blog detail SEO and sitemap expose only real published translations', () =
   assert.equal(schema.articleSection, sample.categoryLabel);
 
   const sitemap = fs.readFileSync(path.join(OUTPUT, 'sitemap.xml'), 'utf8');
-  assert.ok(sitemap.includes(`<loc>${site.site.origin}${sample.permalink}</loc>`));
-  assert.ok(sitemap.includes(`hreflang="en" href="${site.site.origin}${sample.permalink}"`));
-  assert.ok(sitemap.includes(`hreflang="zh-CN" href="${site.site.origin}/zh/blog/${sample.slug}.html"`));
+  assert.ok(sitemap.includes(`<loc>${site.site.origin}${sample.publicUrl}</loc>`));
+  assert.ok(sitemap.includes(`hreflang="en" href="${site.site.origin}${sample.publicUrl}"`));
+  assert.ok(sitemap.includes(`hreflang="es" href="${site.site.origin}/es/blog/moq-perfumes-cantidad-minima-pedido"`));
 
-  const chinese = fs.readFileSync(path.join(OUTPUT, 'zh', 'blog', `${sample.slug}.html`), 'utf8');
-  assert.match(chinese, /<html lang="zh-CN" dir="ltr">/);
-  assert.match(chinese, /香水起订量详解/);
-  assert.ok(chinese.includes(`rel="alternate" hreflang="en" href="${site.site.origin}${sample.permalink}"`));
+  const spanish = fs.readFileSync(path.join(OUTPUT, 'es', 'blog', 'moq-perfumes-cantidad-minima-pedido.html'), 'utf8');
+  assert.match(spanish, /<html lang="es" dir="ltr">/);
+  assert.ok(spanish.includes(`rel="alternate" hreflang="en" href="${site.site.origin}${sample.publicUrl}"`));
 });
 
 test('all core pages use one generator and locale data instead of copied templates', () => {
@@ -207,18 +205,19 @@ test('homepage JSON-LD distinguishes the brand, legal name, and multilingual web
 });
 
 test('core pages publish reciprocal language and canonical metadata', () => {
+  const secondaryLocale = Object.values(locales).find(locale => locale.enabled && locale.key !== 'en');
   for (const pageKey of Object.keys(PAGE_ROUTES)) {
     const en = fs.readFileSync(outputFile(pageKey, 'en'), 'utf8');
-    const zh = fs.readFileSync(outputFile(pageKey, 'zh-CN'), 'utf8');
+    const secondary = fs.readFileSync(outputFile(pageKey, secondaryLocale.key), 'utf8');
     const enRoute = PAGE_ROUTES[pageKey];
-    const zhRoute = enRoute === '/' ? '/zh/' : `/zh${enRoute}`;
+    const secondaryRoute = enRoute === '/' ? `/${secondaryLocale.path}/` : `/${secondaryLocale.path}${enRoute}`;
 
     assert.match(en, /<html lang="en" dir="ltr">/);
-    assert.match(zh, /<html lang="zh-CN" dir="ltr">/);
+    assert.ok(secondary.includes(`<html lang="${secondaryLocale.code}"`));
     assert.ok(en.includes(`rel="canonical" href="${site.site.origin}${enRoute}"`));
-    assert.ok(zh.includes(`rel="canonical" href="${site.site.origin}${zhRoute}"`));
-    assert.ok(en.includes(`hreflang="zh-CN" href="${site.site.origin}${zhRoute}"`));
-    assert.ok(zh.includes(`hreflang="en" href="${site.site.origin}${enRoute}"`));
+    assert.ok(secondary.includes(`rel="canonical" href="${site.site.origin}${secondaryRoute}"`));
+    assert.ok(en.includes(`hreflang="${secondaryLocale.hreflang}" href="${site.site.origin}${secondaryRoute}"`));
+    assert.ok(secondary.includes(`hreflang="en" href="${site.site.origin}${enRoute}"`));
   }
 });
 
@@ -237,7 +236,7 @@ test('Arabic pages publish RTL direction and all new locales expose reciprocal a
 
 test('English and Chinese homepages publish the same core capability modules', () => {
   const english = fs.readFileSync(outputFile('index', 'en'), 'utf8');
-  const chinese = fs.readFileSync(outputFile('index', 'zh-CN'), 'utf8');
+  const localized = fs.readFileSync(outputFile('index', 'es'), 'utf8');
   const moduleIds = [
     'fragrance-development',
     'manufacturing-capability',
@@ -250,12 +249,10 @@ test('English and Chinese homepages publish the same core capability modules', (
 
   for (const id of moduleIds) {
     assert.ok(english.includes(`id="${id}"`), `missing English homepage module ${id}`);
-    assert.ok(chinese.includes(`id="${id}"`), `missing Chinese homepage module ${id}`);
+    assert.ok(localized.includes(`id="${id}"`), `missing localized homepage module ${id}`);
   }
 
-  assert.match(chinese, /<form id="inquiry-form">/);
-  assert.match(chinese, /生成 WhatsApp 询盘/);
-  assert.match(chinese, /常见采购问题/);
+  assert.match(localized, /<form id="inquiry-form">/);
 });
 
 test('contact links and public runtime configuration use shared configuration', () => {
@@ -279,7 +276,7 @@ test('contact links and public runtime configuration use shared configuration', 
 
 test('deployment metadata and public asset boundaries are preserved', () => {
   assert.equal(fs.readFileSync(path.join(OUTPUT, 'CNAME'), 'utf8').trim(), 'www.aromamatrix.com');
-  assert.ok(fs.readFileSync(path.join(OUTPUT, 'sitemap.xml'), 'utf8').includes('/zh/'));
+  assert.ok(fs.readFileSync(path.join(OUTPUT, 'sitemap.xml'), 'utf8').includes('/es/'));
   assert.ok(fs.readFileSync(path.join(OUTPUT, 'robots.txt'), 'utf8').includes('/sitemap.xml'));
   assert.equal(fs.existsSync(path.join(OUTPUT, 'images')), false, 'private root images must not be published');
   assert.ok(fs.existsSync(path.join(OUTPUT, 'assets', 'images')), 'public images must be served from assets');

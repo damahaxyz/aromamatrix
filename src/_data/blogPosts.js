@@ -31,7 +31,7 @@ function blogPostUrl(locale, slug) {
   const localeConfig = locales[locale];
   if (!localeConfig?.enabled) throw new Error(`Unsupported or disabled blog locale: ${locale}`);
   const prefix = localeConfig.path ? `/${localeConfig.path}` : '';
-  return `${prefix}/blog/${slug}.html`;
+  return `${prefix}/blog/${slug}`;
 }
 
 function formattedDate(date, locale) {
@@ -71,9 +71,10 @@ function loadArticles() {
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(data.slug)) throw new Error(`Blog slug must use lowercase ASCII words: ${file}`);
       if (!body.trim()) throw new Error(`Blog body is empty: ${file}`);
       if (data.status !== 'published' || !locales[data.locale].enabled) continue;
-      const permalink = blogPostUrl(data.locale, data.slug);
-      if (routes.has(permalink)) throw new Error(`Duplicate blog route: ${permalink}`);
-      routes.add(permalink);
+      const publicUrl = blogPostUrl(data.locale, data.slug);
+      const permalink = `${publicUrl}.html`;
+      if (routes.has(publicUrl)) throw new Error(`Duplicate blog route: ${publicUrl}`);
+      routes.add(publicUrl);
 
       const localized = interpolateObject(data, data.locale);
       const sharedAuthor = interpolate(shared.author, data.locale);
@@ -87,6 +88,7 @@ function loadArticles() {
         authorLabel: localized.authorLabel || sharedAuthor,
         date: shared.datePublished,
         dateLabel: localized.dateLabel || formattedDate(shared.datePublished, data.locale),
+        publicUrl,
         permalink,
         translationKey: `blog:${shared.id}`,
         body: interpolate(body, data.locale)
@@ -97,11 +99,11 @@ function loadArticles() {
   const byArticle = new Map();
   for (const post of posts) {
     if (!byArticle.has(post.articleId)) byArticle.set(post.articleId, []);
-    byArticle.get(post.articleId).push({ locale: post.locale, slug: post.slug, url: post.permalink });
+    byArticle.get(post.articleId).push({ locale: post.locale, slug: post.slug, url: post.publicUrl });
   }
   for (const post of posts) {
     post.translations = byArticle.get(post.articleId);
-    post.xDefaultUrl = post.translations.find(item => item.locale === 'en')?.url || post.permalink;
+    post.xDefaultUrl = post.translations.find(item => item.locale === 'en')?.url || post.publicUrl;
   }
   return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 }

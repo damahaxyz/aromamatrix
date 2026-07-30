@@ -224,7 +224,7 @@ function renderSeo(pageKey, locale, content, post = null) {
       label: post.title
     }
     : translate(locale, `pages.${pageKey}`);
-  const route = isBlogPost ? post.permalink : localeUrl(pageKey, locale);
+  const route = isBlogPost ? post.publicUrl : localeUrl(pageKey, locale);
   const canonical = absoluteUrl(route);
   const imageUrl = absoluteUrl(`/${String(meta.image || site.site.defaultOgImage).replace(/^\//, '').replace(/^\.\.\//, '')}`);
   const enabledLocales = Object.values(locales).filter(item => item.enabled);
@@ -262,7 +262,7 @@ function renderSeo(pageKey, locale, content, post = null) {
       image: imageUrl,
       datePublished: post.date,
       dateModified: post.dateModified || post.date,
-      author: { '@type': 'Organization', name: post.authorLabel, url: absoluteUrl('/about.html') },
+      author: { '@type': 'Organization', name: post.authorLabel, url: absoluteUrl('/about') },
       publisher: { '@id': `${site.site.origin}/#organization` },
       mainEntityOfPage: { '@id': `${canonical}#webpage` },
       articleSection: post.categoryLabel,

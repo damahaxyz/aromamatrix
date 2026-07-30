@@ -40,6 +40,19 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('interpolate', (value, locale) => interpolate(value, locale));
   eleventyConfig.addFilter('assetUrl', value => `/${String(value).replace(/^\.\.\//, '').replace(/^\//, '')}`);
 
+  // Cloudflare Pages serves .html assets at extensionless canonical URLs.
+  // Normalize legacy links embedded in localized rich-text content at build time.
+  eleventyConfig.addTransform('extensionless-internal-urls', function(content) {
+    if (this.page.outputPath?.endsWith('.html')) {
+      return content.replace(/(href|action)=(["'])([^"']+)\2/g, (attribute, name, quote, url) => {
+        const isInternal = !/^[a-z][a-z\d+.-]*:/i.test(url) || url.startsWith(`${site.site.origin}/`);
+        if (!isInternal) return attribute;
+        return `${name}=${quote}${url.replace(/\.html(?=([?#]|$))/g, '')}${quote}`;
+      });
+    }
+    return content;
+  });
+
   eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPassthroughCopy({ CNAME: 'CNAME' });
 
