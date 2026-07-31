@@ -289,6 +289,7 @@ test('deployment metadata and public asset boundaries are preserved', () => {
 
 test('Cloudflare Pages receives localized custom 404 documents', () => {
   const sitemap = fs.readFileSync(path.join(OUTPUT, 'sitemap.xml'), 'utf8');
+  assert.ok(fs.existsSync(path.join(OUTPUT, 'assets', 'css', 'not-found.css')));
 
   for (const locale of Object.values(locales).filter(item => item.enabled)) {
     const prefix = locale.path ? `${locale.path}/` : '';
@@ -297,6 +298,7 @@ test('Cloudflare Pages receives localized custom 404 documents', () => {
 
     const html = fs.readFileSync(file, 'utf8');
     assert.ok(html.includes('<meta name="robots" content="noindex, follow">'));
+    assert.ok(html.includes('href="/assets/css/not-found.css"'));
     assert.doesNotMatch(html, /rel="canonical"/);
     assert.match(html, /<h1>[^<]+<\/h1>/);
     assert.ok(html.includes(`href="${localeUrl('index', locale.key)}"`));
