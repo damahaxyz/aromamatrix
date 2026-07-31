@@ -1,0 +1,29 @@
+---
+layout: layouts/not-found.njk
+pagination:
+  data: notFoundVariants
+  size: 1
+  alias: variant
+  addAllPagesToCollections: false
+permalink: "{{ variant.permalink }}"
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  locale: "{{ variant.locale }}"
+  pageKey: "notFound"
+---
+<main class="not-found-page">
+  <div class="container">
+    <div class="not-found-panel">
+      <div class="not-found-code" aria-hidden="true">404</div>
+      <div class="not-found-content">
+        <span class="not-found-kicker">{{ variant.copy.kicker }}</span>
+        <h1>{{ variant.copy.title }}</h1>
+        <p>{{ variant.copy.text }}</p>
+        <div class="not-found-actions">
+          <a href="{{ localeUrl('index', locale) }}" class="btn btn-gold">{{ variant.copy.home }}</a>
+          <a href="{{ localeUrl('contact', locale) }}" class="btn btn-outline">{{ variant.copy.contact }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

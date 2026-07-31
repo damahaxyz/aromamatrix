@@ -145,6 +145,11 @@ function localizedFact(locale, key) {
 }
 
 function pageAlternateUrl(pageKey, targetLocale, currentLocale = 'en', post = null) {
+  if (pageKey === 'notFound') {
+    const localeConfig = locales[targetLocale];
+    if (!localeConfig?.enabled) throw new Error(`Disabled 404 locale requested: ${targetLocale}`);
+    return localeConfig.path ? `/${localeConfig.path}/404` : '/404';
+  }
   if (pageKey === 'blogDetail') {
     return post?.translations?.find(item => item.locale === targetLocale)?.url || localeUrl('blog', targetLocale);
   }

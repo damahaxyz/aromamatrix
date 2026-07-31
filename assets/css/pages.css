@@ -13,6 +13,101 @@
   background-color: var(--bg-secondary);
 }
 
+/* ==========================================================================
+   404 PAGE
+   ========================================================================== */
+.not-found-page {
+  min-height: calc(100vh - 360px);
+  padding: 168px 0 96px;
+  background:
+    linear-gradient(135deg, rgba(17, 17, 17, 0.035), transparent 42%),
+    var(--bg-secondary);
+}
+
+.not-found-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: clamp(42px, 8vw, 110px);
+  min-height: 430px;
+  padding: clamp(42px, 7vw, 84px);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--box-shadow);
+}
+
+.not-found-code {
+  color: #f0f1f2;
+  font-family: var(--font-title);
+  font-size: clamp(112px, 18vw, 220px);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -12px;
+  user-select: none;
+}
+
+.not-found-kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--accent-green-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.not-found-content h1 {
+  max-width: 680px;
+  margin-bottom: 20px;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.not-found-content p {
+  max-width: 660px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+html[dir="rtl"] .not-found-code {
+  letter-spacing: -8px;
+}
+
+@media (max-width: 768px) {
+  .not-found-page {
+    padding: 126px 0 64px;
+  }
+
+  .not-found-panel {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    min-height: 0;
+    padding: 36px 24px 42px;
+  }
+
+  .not-found-code {
+    font-size: clamp(92px, 34vw, 148px);
+    letter-spacing: -8px;
+  }
+
+  .not-found-content h1 {
+    font-size: 34px;
+  }
+
+  .not-found-actions .btn {
+    width: 100%;
+  }
+}
+
 .hero-bg-overlay {
   position: absolute;
   top: 0;

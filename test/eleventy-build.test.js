@@ -7,7 +7,7 @@ const test = require('node:test');
 const site = require('../config/site.config');
 const locales = require('../config/locales');
 const blogPosts = require('../src/_data/blogPosts');
-const { PAGE_ROUTES, pageAlternateUrl, validateSiteConfig } = require('../eleventy/helpers');
+const { PAGE_ROUTES, localeUrl, pageAlternateUrl, validateSiteConfig } = require('../eleventy/helpers');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUTPUT = path.join(ROOT, 'docs');
@@ -175,6 +175,11 @@ test('generated HTML is complete and contains valid JSON-LD', () => {
     assert.doesNotMatch(html, /\{brand\}/, `unresolved translation variable in ${file}`);
     assert.doesNotMatch(html, /\.\.\/https:\/\//, `prefixed absolute URL in ${file}`);
 
+    if (path.basename(file) === '404.html') {
+      assert.ok(html.includes('<meta name="robots" content="noindex, follow">'));
+      continue;
+    }
+
     const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
     assert.ok(schemas.length > 0, `missing JSON-LD in ${file}`);
     schemas.forEach(match => assert.doesNotThrow(() => JSON.parse(match[1]), `invalid JSON-LD in ${file}`));
@@ -280,4 +285,24 @@ test('deployment metadata and public asset boundaries are preserved', () => {
   assert.ok(fs.readFileSync(path.join(OUTPUT, 'robots.txt'), 'utf8').includes('/sitemap.xml'));
   assert.equal(fs.existsSync(path.join(OUTPUT, 'images')), false, 'private root images must not be published');
   assert.ok(fs.existsSync(path.join(OUTPUT, 'assets', 'images')), 'public images must be served from assets');
+});
+
+test('Cloudflare Pages receives localized custom 404 documents', () => {
+  const sitemap = fs.readFileSync(path.join(OUTPUT, 'sitemap.xml'), 'utf8');
+
+  for (const locale of Object.values(locales).filter(item => item.enabled)) {
+    const prefix = locale.path ? `${locale.path}/` : '';
+    const file = path.join(OUTPUT, prefix, '404.html');
+    assert.ok(fs.existsSync(file), `missing ${locale.key} 404 document`);
+
+    const html = fs.readFileSync(file, 'utf8');
+    assert.ok(html.includes('<meta name="robots" content="noindex, follow">'));
+    assert.doesNotMatch(html, /rel="canonical"/);
+    assert.match(html, /<h1>[^<]+<\/h1>/);
+    assert.ok(html.includes(`href="${localeUrl('index', locale.key)}"`));
+    assert.ok(html.includes(`href="${localeUrl('contact', locale.key)}"`));
+    assert.ok(html.includes(`<html lang="${locale.code}" dir="${locale.direction}">`));
+  }
+
+  assert.doesNotMatch(sitemap, /\/404(?:\.html)?</);
 });
