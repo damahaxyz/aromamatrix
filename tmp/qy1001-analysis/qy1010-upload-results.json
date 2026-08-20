@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "id": 143,
+      "sku": "AM-FR-1010-01",
+      "name": "Midnight Intense",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/midnight-intense/",
+      "imageId": 142,
+      "productNote": "夜店黑色合金盖105ml"
+    },
+    {
+      "id": 145,
+      "sku": "AM-FR-1010-02",
+      "name": "Rose Velvet",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/rose-velvet/",
+      "imageId": 144,
+      "productNote": "夜店粉色合金盖105ml"
+    },
+    {
+      "id": 147,
+      "sku": "AM-FR-1010-03",
+      "name": "Blue Iconic",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/blue-iconic/",
+      "imageId": 146,
+      "productNote": "夜店蓝色合金盖105ml"
+    },
+    {
+      "id": 149,
+      "sku": "AM-FR-1010-04",
+      "name": "Silver Sillage",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/silver-sillage/",
+      "imageId": 148,
+      "productNote": "夜店银色合金盖105ml"
+    },
+    {
+      "id": 151,
+      "sku": "AM-FR-1010-05",
+      "name": "Prismatic Untold",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/prismatic-untold/",
+      "imageId": 150,
+      "productNote": "夜店彩色合金盖105ml"
+    },
+    {
+      "id": 153,
+      "sku": "AM-FR-1010-06",
+      "name": "Golden Woman",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/golden-woman/",
+      "imageId": 152,
+      "productNote": "夜店金色合金盖105ml"
+    },
+    {
+      "id": 155,
+      "sku": "AM-FR-1010-07",
+      "name": "Maleka Royal",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/maleka-royal/",
+      "imageId": 154,
+      "productNote": "夜店紫色合金盖105ml"
+    }
+  ]
+}

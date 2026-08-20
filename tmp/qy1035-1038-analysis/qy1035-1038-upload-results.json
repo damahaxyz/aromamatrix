@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 233,
+      "sku": "AM-FR-1035-01",
+      "name": "Citrus Veil",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/citrus-veil/",
+      "imageId": 232,
+      "productNote": "红色丝绒100ml"
+    },
+    {
+      "id": 235,
+      "sku": "AM-FR-1035-02",
+      "name": "Spice Meridian",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/spice-meridian/",
+      "imageId": 234,
+      "productNote": "黑色丝绒100ml"
+    },
+    {
+      "id": 237,
+      "sku": "AM-FR-1035-03",
+      "name": "Rose Velvet",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/rose-velvet-2/",
+      "imageId": 236,
+      "productNote": "粉色丝绒100ml Prive Rose"
+    },
+    {
+      "id": 239,
+      "sku": "AM-FR-1035-04",
+      "name": "Saffron Atlas",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/saffron-atlas/",
+      "imageId": 238,
+      "productNote": "蓝色丝绒100ml Imperium"
+    },
+    {
+      "id": 241,
+      "sku": "AM-FR-1037-01",
+      "name": "Rose Dawn",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/rose-dawn/",
+      "imageId": 240,
+      "productNote": "SABAH AL WARD 100ml"
+    },
+    {
+      "id": 243,
+      "sku": "AM-FR-1038-01",
+      "name": "Cloud Cocoa",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/cloud-cocoa/",
+      "imageId": 242,
+      "productNote": "巧克力粉色 Choco Musk Marshmallow"
+    },
+    {
+      "id": 245,
+      "sku": "AM-FR-1038-02",
+      "name": "Pistachio Cream",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/pistachio-cream-2/",
+      "imageId": 244,
+      "productNote": "巧克力绿色 Choco Musk Pistachio"
+    },
+    {
+      "id": 247,
+      "sku": "AM-FR-1038-03",
+      "name": "Cocoa Ember",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/cocoa-ember/",
+      "imageId": 246,
+      "productNote": "巧克力棕色 Choco Musk"
+    }
+  ]
+}

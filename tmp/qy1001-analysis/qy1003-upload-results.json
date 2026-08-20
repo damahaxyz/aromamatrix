@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 67,
+      "sku": "AM-FR-1003-01",
+      "name": "Ocean Violet",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/ocean-violet/",
+      "imageId": 66
+    },
+    {
+      "id": 69,
+      "sku": "AM-FR-1003-02",
+      "name": "Orange Tuberose",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/orange-tuberose/",
+      "imageId": 68
+    },
+    {
+      "id": 71,
+      "sku": "AM-FR-1003-03",
+      "name": "Solar Leather",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/solar-leather/",
+      "imageId": 70
+    }
+  ]
+}

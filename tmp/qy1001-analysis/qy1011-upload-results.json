@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 157,
+      "sku": "AM-FR-1011-01",
+      "name": "Wildcard Noir",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/wildcard-noir/",
+      "imageId": 156,
+      "productNote": "黑桃-黑 100ml"
+    },
+    {
+      "id": 159,
+      "sku": "AM-FR-1011-02",
+      "name": "Full House Azure",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/full-house-azure/",
+      "imageId": 158,
+      "productNote": "黑桃-蓝 100ml"
+    },
+    {
+      "id": 161,
+      "sku": "AM-FR-1011-03",
+      "name": "Royale Pearl",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/royale-pearl/",
+      "imageId": 160,
+      "productNote": "黑桃-白 100ml"
+    },
+    {
+      "id": 163,
+      "sku": "AM-FR-1011-04",
+      "name": "Moon Aqua",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/moon-aqua/",
+      "imageId": 162,
+      "productNote": "黑桃-浅蓝 100ml"
+    },
+    {
+      "id": 165,
+      "sku": "AM-FR-1011-05",
+      "name": "King Gold",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/king-gold/",
+      "imageId": 164,
+      "productNote": "黑桃-金 100ml"
+    }
+  ]
+}

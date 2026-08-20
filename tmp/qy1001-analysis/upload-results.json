@@ -1,0 +1,706 @@
+{
+  "parentCategory": {
+    "id": 23,
+    "name": "Fragrances",
+    "slug": "fragrances",
+    "parent": 0,
+    "description": "B2B fragrance directions available for sampling, private label development and customized production.",
+    "display": "default",
+    "image": null,
+    "menu_order": 0,
+    "count": 9,
+    "_links": {
+      "self": [
+        {
+          "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+        }
+      ]
+    }
+  },
+  "childCategories": {
+    "floral": {
+      "id": 24,
+      "name": "Floral",
+      "slug": "floral",
+      "parent": 23,
+      "description": "Floral fragrance directions centered on rose, jasmine, violet, iris and other floral accords.",
+      "display": "default",
+      "image": null,
+      "menu_order": 0,
+      "count": 1,
+      "_links": {
+        "self": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/24",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23"
+          }
+        ]
+      }
+    },
+    "fruity": {
+      "id": 25,
+      "name": "Fruity",
+      "slug": "fruity",
+      "parent": 23,
+      "description": "Fruity fragrance directions ranging from bright orchard fruits to berries and tropical fruits.",
+      "display": "default",
+      "image": null,
+      "menu_order": 0,
+      "count": 2,
+      "_links": {
+        "self": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/25",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23"
+          }
+        ]
+      }
+    },
+    "sweet-gourmand": {
+      "id": 26,
+      "name": "Sweet &amp; Gourmand",
+      "slug": "sweet-gourmand",
+      "parent": 23,
+      "description": "Sweet and gourmand fragrance directions featuring vanilla, cream, cacao, caramel and dessert-like accords.",
+      "display": "default",
+      "image": null,
+      "menu_order": 0,
+      "count": 2,
+      "_links": {
+        "self": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/26",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23"
+          }
+        ]
+      }
+    },
+    "fresh-aquatic": {
+      "id": 27,
+      "name": "Fresh &amp; Aquatic",
+      "slug": "fresh-aquatic",
+      "parent": 23,
+      "description": "Fresh, citrus, marine, mineral and aquatic fragrance directions.",
+      "display": "default",
+      "image": null,
+      "menu_order": 0,
+      "count": 2,
+      "_links": {
+        "self": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/27",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23"
+          }
+        ]
+      }
+    },
+    "amber-spicy": {
+      "id": 28,
+      "name": "Amber &amp; Spicy",
+      "slug": "amber-spicy",
+      "parent": 23,
+      "description": "Warm amber and spicy fragrance directions with resinous, peppery or aromatic depth.",
+      "display": "default",
+      "image": null,
+      "menu_order": 0,
+      "count": 2,
+      "_links": {
+        "self": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/28",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23"
+          }
+        ]
+      }
+    },
+    "woody-leather": {
+      "id": 29,
+      "name": "Woody &amp; Leather",
+      "slug": "woody-leather",
+      "parent": 23,
+      "description": "Woody and leather fragrance directions featuring dry woods, sandalwood, oud, tobacco or leather facets.",
+      "display": "default",
+      "image": null,
+      "menu_order": 0,
+      "count": 0,
+      "_links": {
+        "self": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/29",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23"
+          }
+        ]
+      }
+    },
+    "green-aromatic": {
+      "id": 30,
+      "name": "Green &amp; Aromatic",
+      "slug": "green-aromatic",
+      "parent": 23,
+      "description": "Green, herbal and aromatic fragrance directions with leafy, lavender or fougere-like freshness.",
+      "display": "default",
+      "image": null,
+      "menu_order": 0,
+      "count": 0,
+      "_links": {
+        "self": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/30",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23"
+          }
+        ]
+      }
+    },
+    "musk-powdery": {
+      "id": 31,
+      "name": "Musk &amp; Powdery",
+      "slug": "musk-powdery",
+      "parent": 23,
+      "description": "Musk, powdery, soft-clean and cosmetic-style fragrance directions.",
+      "display": "default",
+      "image": null,
+      "menu_order": 0,
+      "count": 0,
+      "_links": {
+        "self": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/31",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories"
+          }
+        ],
+        "up": [
+          {
+            "href": "https://shop.aromamatrix.com/wp-json/wc/v3/products/categories/23"
+          }
+        ]
+      }
+    }
+  },
+  "attributes": {
+    "family": {
+      "id": 1,
+      "name": "Fragrance Family",
+      "slug": "pa_fragrance-family",
+      "terms": [
+        {
+          "id": 32,
+          "name": "Floral",
+          "slug": "floral"
+        },
+        {
+          "id": 33,
+          "name": "Fruity",
+          "slug": "fruity"
+        },
+        {
+          "id": 34,
+          "name": "Gourmand",
+          "slug": "gourmand"
+        },
+        {
+          "id": 35,
+          "name": "Citrus",
+          "slug": "citrus"
+        },
+        {
+          "id": 36,
+          "name": "Aquatic",
+          "slug": "aquatic"
+        },
+        {
+          "id": 37,
+          "name": "Amber",
+          "slug": "amber"
+        },
+        {
+          "id": 38,
+          "name": "Spicy",
+          "slug": "spicy"
+        },
+        {
+          "id": 39,
+          "name": "Woody",
+          "slug": "woody"
+        },
+        {
+          "id": 40,
+          "name": "Leather",
+          "slug": "leather"
+        },
+        {
+          "id": 41,
+          "name": "Aromatic",
+          "slug": "aromatic"
+        },
+        {
+          "id": 42,
+          "name": "Musk",
+          "slug": "musk"
+        },
+        {
+          "id": 43,
+          "name": "Powdery",
+          "slug": "powdery"
+        }
+      ]
+    },
+    "positioning": {
+      "id": 2,
+      "name": "Positioning",
+      "slug": "pa_positioning",
+      "terms": [
+        {
+          "id": 44,
+          "name": "Masculine",
+          "slug": "masculine"
+        },
+        {
+          "id": 45,
+          "name": "Feminine",
+          "slug": "feminine"
+        },
+        {
+          "id": 46,
+          "name": "Unisex",
+          "slug": "unisex"
+        }
+      ]
+    },
+    "character": {
+      "id": 3,
+      "name": "Scent Character",
+      "slug": "pa_scent-character",
+      "terms": [
+        {
+          "id": 47,
+          "name": "Fresh",
+          "slug": "fresh"
+        },
+        {
+          "id": 48,
+          "name": "Sweet",
+          "slug": "sweet"
+        },
+        {
+          "id": 49,
+          "name": "Creamy",
+          "slug": "creamy"
+        },
+        {
+          "id": 50,
+          "name": "Warm",
+          "slug": "warm"
+        },
+        {
+          "id": 51,
+          "name": "Dark",
+          "slug": "dark"
+        },
+        {
+          "id": 52,
+          "name": "Clean",
+          "slug": "clean"
+        },
+        {
+          "id": 53,
+          "name": "Elegant",
+          "slug": "elegant"
+        },
+        {
+          "id": 54,
+          "name": "Playful",
+          "slug": "playful"
+        },
+        {
+          "id": 55,
+          "name": "Smoky",
+          "slug": "smoky"
+        },
+        {
+          "id": 56,
+          "name": "Rich",
+          "slug": "rich"
+        }
+      ]
+    }
+  },
+  "tags": [
+    {
+      "id": 57,
+      "name": "Tangerine",
+      "slug": "tangerine"
+    },
+    {
+      "id": 58,
+      "name": "Orchid",
+      "slug": "orchid"
+    },
+    {
+      "id": 59,
+      "name": "Tropical Fruit",
+      "slug": "tropical-fruit"
+    },
+    {
+      "id": 60,
+      "name": "Vanilla",
+      "slug": "vanilla"
+    },
+    {
+      "id": 61,
+      "name": "Musk",
+      "slug": "musk"
+    },
+    {
+      "id": 62,
+      "name": "Black Pepper",
+      "slug": "black-pepper"
+    },
+    {
+      "id": 63,
+      "name": "Tobacco",
+      "slug": "tobacco"
+    },
+    {
+      "id": 64,
+      "name": "Coffee",
+      "slug": "coffee"
+    },
+    {
+      "id": 65,
+      "name": "Amber",
+      "slug": "amber"
+    },
+    {
+      "id": 66,
+      "name": "Mango",
+      "slug": "mango"
+    },
+    {
+      "id": 67,
+      "name": "Coconut",
+      "slug": "coconut"
+    },
+    {
+      "id": 68,
+      "name": "Passionfruit",
+      "slug": "passionfruit"
+    },
+    {
+      "id": 69,
+      "name": "Jasmine",
+      "slug": "jasmine"
+    },
+    {
+      "id": 70,
+      "name": "Pear",
+      "slug": "pear"
+    },
+    {
+      "id": 71,
+      "name": "Blackcurrant",
+      "slug": "blackcurrant"
+    },
+    {
+      "id": 72,
+      "name": "Almond",
+      "slug": "almond"
+    },
+    {
+      "id": 73,
+      "name": "Strawberry",
+      "slug": "strawberry"
+    },
+    {
+      "id": 74,
+      "name": "Gardenia",
+      "slug": "gardenia"
+    },
+    {
+      "id": 75,
+      "name": "Sea Lavender",
+      "slug": "sea-lavender"
+    },
+    {
+      "id": 76,
+      "name": "Iris",
+      "slug": "iris"
+    },
+    {
+      "id": 77,
+      "name": "Incense",
+      "slug": "incense"
+    },
+    {
+      "id": 78,
+      "name": "Lavender",
+      "slug": "lavender"
+    },
+    {
+      "id": 79,
+      "name": "Plum",
+      "slug": "plum"
+    },
+    {
+      "id": 80,
+      "name": "Cacao",
+      "slug": "cacao"
+    },
+    {
+      "id": 81,
+      "name": "Nutmeg",
+      "slug": "nutmeg"
+    },
+    {
+      "id": 82,
+      "name": "Bourbon Vanilla",
+      "slug": "bourbon-vanilla"
+    },
+    {
+      "id": 83,
+      "name": "Marine",
+      "slug": "marine"
+    },
+    {
+      "id": 84,
+      "name": "Violet",
+      "slug": "violet"
+    },
+    {
+      "id": 85,
+      "name": "Seaweed",
+      "slug": "seaweed"
+    },
+    {
+      "id": 86,
+      "name": "Blackberry",
+      "slug": "blackberry"
+    }
+  ],
+  "products": [
+    {
+      "id": 19,
+      "sku": "AM-FR-1001-01",
+      "name": "Tropical Vanilla",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/tropical-vanilla/",
+      "imageId": 18
+    },
+    {
+      "id": 21,
+      "sku": "AM-FR-1001-02",
+      "name": "Black Amber",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/black-amber/",
+      "imageId": 20
+    },
+    {
+      "id": 23,
+      "sku": "AM-FR-1001-03",
+      "name": "Mango Cream",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/mango-cream/",
+      "imageId": 22
+    },
+    {
+      "id": 25,
+      "sku": "AM-FR-1001-04",
+      "name": "Pear Jasmine",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/pear-jasmine/",
+      "imageId": 24
+    },
+    {
+      "id": 27,
+      "sku": "AM-FR-1001-05",
+      "name": "Strawberry Candy",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/strawberry-candy/",
+      "imageId": 26
+    },
+    {
+      "id": 29,
+      "sku": "AM-FR-1001-06",
+      "name": "Salted Coconut",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/salted-coconut/",
+      "imageId": 28
+    },
+    {
+      "id": 31,
+      "sku": "AM-FR-1001-07",
+      "name": "Bourbon Vanilla",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/bourbon-vanilla/",
+      "imageId": 30
+    },
+    {
+      "id": 33,
+      "sku": "AM-FR-1001-08",
+      "name": "Marine Mineral",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/marine-mineral/",
+      "imageId": 32
+    },
+    {
+      "id": 35,
+      "sku": "AM-FR-1001-09",
+      "name": "Velvet Plum",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/velvet-plum/",
+      "imageId": 34
+    }
+  ]
+}

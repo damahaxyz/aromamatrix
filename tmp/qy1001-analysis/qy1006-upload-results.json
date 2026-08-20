@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "id": 90,
+      "sku": "AM-FR-1006-01",
+      "name": "Violet Aura",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/violet-aura/",
+      "imageId": 89
+    },
+    {
+      "id": 92,
+      "sku": "AM-FR-1006-02",
+      "name": "Obsidian Current",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/obsidian-current/",
+      "imageId": 91
+    },
+    {
+      "id": 94,
+      "sku": "AM-FR-1006-03",
+      "name": "Arctic Wave",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/arctic-wave/",
+      "imageId": 93
+    },
+    {
+      "id": 96,
+      "sku": "AM-FR-1006-04",
+      "name": "Crimson Ember",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/crimson-ember/",
+      "imageId": 95
+    },
+    {
+      "id": 98,
+      "sku": "AM-FR-1006-05",
+      "name": "Tropical Verde",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/tropical-verde/",
+      "imageId": 97
+    },
+    {
+      "id": 100,
+      "sku": "AM-FR-1006-06",
+      "name": "Golden Elixir",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/golden-elixir/",
+      "imageId": 99
+    },
+    {
+      "id": 102,
+      "sku": "AM-FR-1006-07",
+      "name": "Rose Candy",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/rose-candy/",
+      "imageId": 101
+    },
+    {
+      "id": 104,
+      "sku": "AM-FR-1006-08",
+      "name": "Blush Eclat",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/blush-eclat/",
+      "imageId": 103
+    },
+    {
+      "id": 106,
+      "sku": "AM-FR-1006-09",
+      "name": "Solar Grace",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/solar-grace/",
+      "imageId": 105
+    },
+    {
+      "id": 108,
+      "sku": "AM-FR-1006-10",
+      "name": "Desert Kobra",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/desert-kobra/",
+      "imageId": 107
+    },
+    {
+      "id": 110,
+      "sku": "AM-FR-1006-11",
+      "name": "Malibu Current",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/malibu-current/",
+      "imageId": 109
+    },
+    {
+      "id": 112,
+      "sku": "AM-FR-1006-12",
+      "name": "Velvet Diva",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/velvet-diva/",
+      "imageId": 111
+    }
+  ]
+}

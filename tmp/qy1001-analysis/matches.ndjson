@@ -1,0 +1,11 @@
+{"kind":"match","sheet":"产品型号表","address":"C2","value":"QY1001-1","formula":null,"match":"value"}
+{"kind":"match","sheet":"产品型号表","address":"C3","value":"QY1001-2","formula":null,"match":"value"}
+{"kind":"match","sheet":"产品型号表","address":"C4","value":"QY1001-3","formula":null,"match":"value"}
+{"kind":"match","sheet":"产品型号表","address":"C5","value":"QY1001-4","formula":null,"match":"value"}
+{"kind":"match","sheet":"产品型号表","address":"C6","value":"QY1001-5","formula":null,"match":"value"}
+{"kind":"match","sheet":"产品型号表","address":"C7","value":"QY1001-6","formula":null,"match":"value"}
+{"kind":"match","sheet":"产品型号表","address":"C8","value":"QY1001-7","formula":null,"match":"value"}
+{"kind":"match","sheet":"产品型号表","address":"C9","value":"QY1001-8","formula":null,"match":"value"}
+{"kind":"match","sheet":"产品型号表","address":"C10","value":"QY1001-9","formula":null,"match":"value"}
+{"kind":"match","sheet":"需下订单","address":"C2","value":"QY1001-8","formula":null,"match":"value"}
+{"kind":"match","sheet":"需下订单","address":"C3","value":"QY1001-9","formula":null,"match":"value"}

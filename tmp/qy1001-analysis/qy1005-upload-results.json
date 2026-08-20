@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 81,
+      "sku": "AM-FR-1005-01",
+      "name": "Creamy Eclaire",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/creamy-eclaire/",
+      "imageId": 80
+    },
+    {
+      "id": 83,
+      "sku": "AM-FR-1005-02",
+      "name": "Banana Souffle",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/banana-souffle/",
+      "imageId": 82
+    },
+    {
+      "id": 85,
+      "sku": "AM-FR-1005-03",
+      "name": "Pistachio Cream",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/pistachio-cream/",
+      "imageId": 84
+    },
+    {
+      "id": 87,
+      "sku": "AM-FR-1005-04",
+      "name": "Eclaire Trio Gift Set",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/eclaire-trio-gift-set/",
+      "imageId": 86
+    }
+  ]
+}

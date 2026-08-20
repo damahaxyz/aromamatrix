@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": 187,
+      "sku": "AM-FR-1019-01",
+      "name": "Passion Tide",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/passion-tide/",
+      "imageId": 186,
+      "productNote": "LATTAFA双开门红色"
+    },
+    {
+      "id": 189,
+      "sku": "AM-FR-1019-02",
+      "name": "Azure Tuberose",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/azure-tuberose/",
+      "imageId": 188,
+      "productNote": "LATTAFA双开门蓝色"
+    },
+    {
+      "id": 191,
+      "sku": "AM-FR-1019-03",
+      "name": "Champagne Petal",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/champagne-petal/",
+      "imageId": 190,
+      "productNote": "LATTAFA双开门粉色"
+    }
+  ]
+}

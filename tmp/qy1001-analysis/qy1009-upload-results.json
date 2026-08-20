@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "id": 129,
+      "sku": "AM-FR-1009-01",
+      "name": "Confection Aura",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/confection-aura/",
+      "imageId": 128,
+      "productNote": "巴黎角落彩色100ml"
+    },
+    {
+      "id": 131,
+      "sku": "AM-FR-1009-02",
+      "name": "Pistachio Bloom",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/pistachio-bloom/",
+      "imageId": 130,
+      "productNote": "巴黎角落绿色100ml"
+    },
+    {
+      "id": 133,
+      "sku": "AM-FR-1009-03",
+      "name": "Fusion Bloom",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/fusion-bloom/",
+      "imageId": 132,
+      "productNote": "巴黎角落粉红100ml"
+    },
+    {
+      "id": 135,
+      "sku": "AM-FR-1009-04",
+      "name": "Khair Classic",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/khair-classic/",
+      "imageId": 134,
+      "productNote": "巴黎角落灰色100ml"
+    },
+    {
+      "id": 137,
+      "sku": "AM-FR-1009-05",
+      "name": "Felicity Glow",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/felicity-glow/",
+      "imageId": 136,
+      "productNote": "巴黎角落金色100ml"
+    },
+    {
+      "id": 139,
+      "sku": "AM-FR-1009-06",
+      "name": "Vanilla Eclipse",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/vanilla-eclipse/",
+      "imageId": 138,
+      "productNote": "巴黎角落棕色100ml"
+    },
+    {
+      "id": 141,
+      "sku": "AM-FR-1009-07",
+      "name": "Peach Delight",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/peach-delight/",
+      "imageId": 140,
+      "productNote": "巴黎角落粉色100ml"
+    }
+  ]
+}

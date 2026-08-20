@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 169,
+      "sku": "AM-FR-1013-01",
+      "name": "Golden Melon",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/golden-melon/",
+      "imageId": 168,
+      "productNote": "金色皇家琥珀 100ml"
+    },
+    {
+      "id": 171,
+      "sku": "AM-FR-1013-02",
+      "name": "Saffron Ember",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/saffron-ember/",
+      "imageId": 170,
+      "productNote": "红色皇家琥珀 100ml"
+    },
+    {
+      "id": 185,
+      "sku": "AM-FR-1014-01",
+      "name": "Praline Pear",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/praline-pear/",
+      "imageId": 184,
+      "productNote": "音符 100ml"
+    },
+    {
+      "id": 173,
+      "sku": "AM-FR-1015-01",
+      "name": "Frosted Ember",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/frosted-ember/",
+      "imageId": 172,
+      "productNote": "FIRE on ICE 110ml"
+    },
+    {
+      "id": 175,
+      "sku": "AM-FR-1016-01",
+      "name": "Lagoon Cream",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/lagoon-cream/",
+      "imageId": 174,
+      "productNote": "ARMAF冰淇淋蓝色"
+    },
+    {
+      "id": 177,
+      "sku": "AM-FR-1016-02",
+      "name": "Cherry Mousse",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/cherry-mousse/",
+      "imageId": 176,
+      "productNote": "ARMAF冰淇淋粉色"
+    },
+    {
+      "id": 179,
+      "sku": "AM-FR-1017-01",
+      "name": "Velvet Tuberose",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/velvet-tuberose/",
+      "imageId": 178,
+      "productNote": "LATTAFA人头白"
+    },
+    {
+      "id": 181,
+      "sku": "AM-FR-1017-02",
+      "name": "Cedar Resolve",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/cedar-resolve/",
+      "imageId": 180,
+      "productNote": "LATTAFA人头白"
+    },
+    {
+      "id": 183,
+      "sku": "AM-FR-1018-01",
+      "name": "Berry Cloud",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/berry-cloud/",
+      "imageId": 182,
+      "productNote": "巴黎角落棉花糖"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 193,
+      "sku": "AM-FR-1020-01",
+      "name": "Aromatic Crown",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/aromatic-crown/",
+      "imageId": 192,
+      "productNote": "HABIK紫色"
+    },
+    {
+      "id": 195,
+      "sku": "AM-FR-1020-02",
+      "name": "Rose Ember",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/rose-ember/",
+      "imageId": 194,
+      "productNote": "HABIK红色"
+    },
+    {
+      "id": 197,
+      "sku": "AM-FR-1021-01",
+      "name": "Lemon Veil",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/lemon-veil/",
+      "imageId": 196,
+      "productNote": "VICTORIA"
+    },
+    {
+      "id": 199,
+      "sku": "AM-FR-1022-01",
+      "name": "Honeyed Orchid",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/honeyed-orchid/",
+      "imageId": 198,
+      "productNote": "ATHEERI蜂巢"
+    }
+  ]
+}

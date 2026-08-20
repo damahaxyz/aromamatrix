@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 73,
+      "sku": "AM-FR-1004-01",
+      "name": "Midnight Apple",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/midnight-apple/",
+      "imageId": 72
+    },
+    {
+      "id": 75,
+      "sku": "AM-FR-1004-02",
+      "name": "Azure Current",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/azure-current/",
+      "imageId": 74
+    },
+    {
+      "id": 77,
+      "sku": "AM-FR-1004-03",
+      "name": "Rebel Caramel",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/rebel-caramel/",
+      "imageId": 76
+    },
+    {
+      "id": 79,
+      "sku": "AM-FR-1004-04",
+      "name": "Ember Leather",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/ember-leather/",
+      "imageId": 78
+    }
+  ]
+}

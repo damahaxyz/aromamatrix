@@ -2,6 +2,11 @@
 
 Multilingual B2B fragrance manufacturing website built with Eleventy 3 and Nunjucks.
 
+## AI handoff documents
+
+- Store product generation, images, SKU mapping and WooCommerce workflow: [`SHOP_PRODUCT_GENERATION_GUIDE.md`](./SHOP_PRODUCT_GENERATION_GUIDE.md)
+- Main website editorial, compliance and implementation guardrails: [`AI_PROJECT_CONTEXT.md`](./AI_PROJECT_CONTEXT.md)
+
 ## Requirements
 
 - Node.js 22 or newer

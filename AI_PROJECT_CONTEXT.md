@@ -4,6 +4,8 @@ Last updated: 2026-07-15
 
 This file contains editorial, compliance and implementation guardrails for AI assistants working on the website. All changeable business facts are defined in `config/site.config.js`, which is the authoritative source when this document or old website copy differs.
 
+For `shop.aromamatrix.com` product naming, images, SKU/factory-model mapping, descriptions, taxonomies, REST imports and storefront QA, read [`SHOP_PRODUCT_GENERATION_GUIDE.md`](./SHOP_PRODUCT_GENERATION_GUIDE.md) before making product changes.
+
 ## 1. Brand and factory identity
 
 - Brand identity and descriptor: `brand.name`, `brand.descriptor`

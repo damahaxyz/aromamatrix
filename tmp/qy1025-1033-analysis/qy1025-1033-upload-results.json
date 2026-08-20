@@ -1,0 +1,148 @@
+{
+  "products": [
+    {
+      "id": 201,
+      "sku": "AM-FR-1025-01",
+      "name": "Cyan Oasis",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/cyan-oasis/",
+      "imageId": 200,
+      "productNote": "ETER蓝色"
+    },
+    {
+      "id": 203,
+      "sku": "AM-FR-1027-28",
+      "name": "Amber Vanilla",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/amber-vanilla/",
+      "imageId": 202,
+      "productNote": "KAYALI 28号"
+    },
+    {
+      "id": 205,
+      "sku": "AM-FR-1027-01",
+      "name": "Juicy Orchard",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/juicy-orchard/",
+      "imageId": 204,
+      "productNote": "KAYALI 01号"
+    },
+    {
+      "id": 207,
+      "sku": "AM-FR-1027-81",
+      "name": "Marshmallow Bloom",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/marshmallow-bloom/",
+      "imageId": 206,
+      "productNote": "KAYALI 81号"
+    },
+    {
+      "id": 209,
+      "sku": "AM-FR-1027-33",
+      "name": "Pistachio Cloud",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/pistachio-cloud/",
+      "imageId": 208,
+      "productNote": "KAYALI 33号"
+    },
+    {
+      "id": 211,
+      "sku": "AM-FR-1027-39",
+      "name": "Lychee Gleam",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/lychee-gleam/",
+      "imageId": 210,
+      "productNote": "KAYALI 39号"
+    },
+    {
+      "id": 213,
+      "sku": "AM-FR-1028-01",
+      "name": "Whiskey Cashmere",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/whiskey-cashmere/",
+      "imageId": 212,
+      "productNote": "Vulcan棕蛇100ml"
+    },
+    {
+      "id": 215,
+      "sku": "AM-FR-1028-02",
+      "name": "Mango Ember",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/mango-ember/",
+      "imageId": 214,
+      "productNote": "Vulcan蓝蛇100ml"
+    },
+    {
+      "id": 217,
+      "sku": "AM-FR-1028-03",
+      "name": "Raspberry Current",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/raspberry-current/",
+      "imageId": 216,
+      "productNote": "Vulcan粉蛇100ml"
+    },
+    {
+      "id": 219,
+      "sku": "AM-FR-1029-01",
+      "name": "Cinnamon Reserve",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/cinnamon-reserve/",
+      "imageId": 218,
+      "productNote": "Liquid棕色100ml"
+    },
+    {
+      "id": 221,
+      "sku": "AM-FR-1030-01",
+      "name": "Cosmic Cedar",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/cosmic-cedar/",
+      "imageId": 220,
+      "productNote": "LATTAFA星球100ml"
+    },
+    {
+      "id": 223,
+      "sku": "AM-FR-1031-01",
+      "name": "Blue Meridian",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/blue-meridian/",
+      "imageId": 222,
+      "productNote": "图拉蒂蓝色90ml"
+    },
+    {
+      "id": 225,
+      "sku": "AM-FR-1031-02",
+      "name": "Umber Meridian",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/umber-meridian/",
+      "imageId": 224,
+      "productNote": "图拉蒂棕色90ml"
+    },
+    {
+      "id": 227,
+      "sku": "AM-FR-1031-03",
+      "name": "Electric Meridian",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/electric-meridian/",
+      "imageId": 226,
+      "productNote": "图拉蒂珠光蓝90ml"
+    },
+    {
+      "id": 229,
+      "sku": "AM-FR-1032-01",
+      "name": "Smoke Atlas",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/smoke-atlas/",
+      "imageId": 228,
+      "productNote": "LATTAFA Fouad灰色100ml"
+    },
+    {
+      "id": 231,
+      "sku": "AM-FR-1033-01",
+      "name": "Mosaic Bloom",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/mosaic-bloom/",
+      "imageId": 230,
+      "productNote": "Ya Habibti 100ml"
+    }
+  ]
+}

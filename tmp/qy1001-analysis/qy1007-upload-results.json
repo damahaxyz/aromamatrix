@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 114,
+      "sku": "AM-FR-1007-01",
+      "name": "Mandarin Flare",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/mandarin-flare/",
+      "imageId": 113,
+      "productNote": "保温杯橙色100ml"
+    },
+    {
+      "id": 116,
+      "sku": "AM-FR-1007-02",
+      "name": "Candy Veil",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/candy-veil/",
+      "imageId": 115,
+      "productNote": "保温杯粉色100ml"
+    },
+    {
+      "id": 118,
+      "sku": "AM-FR-1007-03",
+      "name": "Solar Mega",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/solar-mega/",
+      "imageId": 117,
+      "productNote": "保温杯黄色100ml"
+    },
+    {
+      "id": 120,
+      "sku": "AM-FR-1007-04",
+      "name": "White Lavender",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/white-lavender/",
+      "imageId": 119,
+      "productNote": "保温杯紫色100ml"
+    },
+    {
+      "id": 122,
+      "sku": "AM-FR-1007-05",
+      "name": "Spectrum Pulse",
+      "status": "publish",
+      "permalink": "https://shop.aromamatrix.com/product/spectrum-pulse/",
+      "imageId": 121,
+      "productNote": "保温杯彩色100ml"
+    }
+  ]
+}
