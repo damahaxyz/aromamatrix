@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordion();
   initFaqExplorer(runtimeConfig.ui);
   initBlogExplorer(runtimeConfig.ui);
+  initFragranceExplorer(runtimeConfig.ui);
   initInquiryForm(runtimeConfig);
 });
 
@@ -193,6 +194,7 @@ function highlightActiveNav() {
   if (cleanPageName === 'about') activeId = 'nav-about';
   if (cleanPageName === 'qa') activeId = 'nav-qa';
   if (cleanPageName === 'contact') activeId = 'nav-contact';
+  if (cleanPageName === 'perfume-bottles') activeId = 'nav-products';
 
   if (cleanPageName === 'process') {
     const serviceHashes = ['#service-models', '#private-label', '#odm', '#oem'];
@@ -341,6 +343,59 @@ function initBlogExplorer(ui) {
         const active = filter === button;
         filter.classList.toggle('is-active', active);
         filter.setAttribute('aria-pressed', String(active));
+      });
+      update();
+    });
+  });
+
+  search?.addEventListener('input', update);
+  update();
+}
+
+/**
+ * Client-side search and family filters for the static fragrance directory.
+ * All catalogue information is rendered at build time, so the page remains
+ * available after the corresponding WooCommerce products are retired.
+ */
+function initFragranceExplorer(ui) {
+  const directory = document.querySelector('[data-fragrance-directory]');
+  if (!directory) return;
+
+  const search = directory.querySelector('[data-fragrance-search]');
+  const count = directory.querySelector('[data-fragrance-count]');
+  const empty = document.getElementById('fragrance-empty');
+  const cards = [...document.querySelectorAll('[data-fragrance-card]')];
+  const filters = [...directory.querySelectorAll('[data-fragrance-filter]')];
+  let category = 'all';
+
+  const update = () => {
+    const terms = (search?.value || '').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    let visible = 0;
+
+    cards.forEach(card => {
+      const matchesCategory = category === 'all' || card.dataset.fragranceCategory === category;
+      const searchable = card.dataset.fragranceSearch || card.textContent.toLocaleLowerCase();
+      const show = matchesCategory && terms.every(term => searchable.includes(term));
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    if (count) {
+      const template = visible === 1
+        ? (directory.dataset.fragranceCountOne || '{count} fragrance direction')
+        : (directory.dataset.fragranceCountMany || '{count} fragrance directions');
+      count.textContent = template.replace('{count}', visible);
+    }
+    if (empty) empty.hidden = visible !== 0;
+  };
+
+  filters.forEach(button => {
+    button.addEventListener('click', () => {
+      category = button.dataset.fragranceFilter || 'all';
+      filters.forEach(filter => {
+        const selected = filter === button;
+        filter.classList.toggle('is-active', selected);
+        filter.setAttribute('aria-pressed', String(selected));
       });
       update();
     });

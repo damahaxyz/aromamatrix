@@ -221,6 +221,20 @@ function organizationNodes() {
 
 function renderSeo(pageKey, locale, content, post = null) {
   const isBlogPost = pageKey === 'blogDetail' && post;
+  const fragranceMeta = {
+    en: { title: `Fragrance Direction Library | ${site.brand.name}`, description: 'Explore 100 fragrance directions for B2B private-label, OEM and ODM perfume development.', image: 'assets/images/seo/sample-showroom-og.webp' },
+    'zh-CN': { title: `香型方向库 | ${site.brand.name}`, description: '探索 100 款香型方向，为 B2B 私人标签、OEM 与 ODM 香水项目筛选合适的产品方向。', image: 'assets/images/seo/sample-showroom-og.webp' },
+    es: { title: `Biblioteca de Direcciones Olfativas | ${site.brand.name}`, description: 'Explore 100 direcciones olfativas para proyectos B2B de perfumería de marca privada, OEM y ODM.', image: 'assets/images/seo/sample-showroom-og.webp' },
+    ar: { title: `مكتبة الاتجاهات العطرية | ${site.brand.name}`, description: 'استكشف 100 اتجاه عطري لمشاريع العطور B2B بعلامة خاصة وOEM وODM.', image: 'assets/images/seo/sample-showroom-og.webp' },
+    fr: { title: `Bibliothèque des Directions Olfactives | ${site.brand.name}`, description: 'Explorez 100 directions olfactives pour des projets B2B de parfumerie en marque blanche, OEM et ODM.', image: 'assets/images/seo/sample-showroom-og.webp' }
+  };
+  const bottleMeta = {
+    en: { title: `Perfume Bottle Catalogue | ${site.brand.name}`, description: 'Browse perfume bottle SKUs with available capacity, neck finish and dimensions for B2B private-label, OEM and ODM projects.', image: 'assets/images/seo/sample-showroom-og.webp' },
+    'zh-CN': { title: `香水瓶目录 | ${site.brand.name}`, description: '浏览香水瓶 SKU、可提供容量、瓶口和尺寸信息，为 B2B 私人标签、OEM 与 ODM 项目筛选包装方案。', image: 'assets/images/seo/sample-showroom-og.webp' },
+    es: { title: `Catálogo de Frascos de Perfume | ${site.brand.name}`, description: 'Explore SKU de frascos de perfume con capacidad, acabado del cuello y dimensiones disponibles para proyectos B2B de marca privada, OEM y ODM.', image: 'assets/images/seo/sample-showroom-og.webp' },
+    ar: { title: `كتالوج زجاجات العطور | ${site.brand.name}`, description: 'تصفح رموز SKU لزجاجات العطور مع السعة وتشطيب العنق والأبعاد المتاحة لمشاريع العلامة الخاصة وOEM وODM.', image: 'assets/images/seo/sample-showroom-og.webp' },
+    fr: { title: `Catalogue de flacons de parfum | ${site.brand.name}`, description: 'Parcourez les SKU de flacons de parfum avec la contenance, la finition du col et les dimensions disponibles pour les projets B2B en marque blanche, OEM et ODM.', image: 'assets/images/seo/sample-showroom-og.webp' }
+  };
   const meta = isBlogPost
     ? {
       title: post.seoTitle || post.title,
@@ -228,7 +242,7 @@ function renderSeo(pageKey, locale, content, post = null) {
       image: post.coverImage,
       label: post.title
     }
-    : translate(locale, `pages.${pageKey}`);
+    : pageKey === 'fragrances' ? fragranceMeta[locale] : pageKey === 'bottles' ? bottleMeta[locale] : translate(locale, `pages.${pageKey}`);
   const route = isBlogPost ? post.publicUrl : localeUrl(pageKey, locale);
   const canonical = absoluteUrl(route);
   const imageUrl = absoluteUrl(`/${String(meta.image || site.site.defaultOgImage).replace(/^\//, '').replace(/^\.\.\//, '')}`);

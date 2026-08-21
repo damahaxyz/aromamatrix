@@ -2814,6 +2814,80 @@
   transform: translateX(3px);
 }
 
+/* Static fragrance direction directory */
+.fragrance-directory-hero { background: linear-gradient(135deg, #121718 0%, #283032 100%); color: #fff; }
+.fragrance-directory-hero .hero-title { color: #fff; }
+.fragrance-directory-hero .section-subtitle { color: #d9dfdf; }
+.fragrance-directory-section { background: #e9efed; }
+.fragrance-directory-cta { padding: 0 0 80px; background: #e9efed; }
+.fragrance-directory-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding: 48px 56px; background: #111; }
+.fragrance-directory-cta-inner > div { max-width: 780px; }
+.fragrance-directory-cta span { display: block; margin-bottom: 14px; color: #d1d5db; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.fragrance-directory-cta h2 { margin: 0 0 12px; color: #fff; font-size: clamp(28px, 3vw, 44px); line-height: 1.15; }
+.fragrance-directory-cta p { margin: 0; color: #c1c7cf; font-size: 15px; line-height: 1.65; }
+.fragrance-directory-cta .btn { flex: 0 0 auto; min-width: 250px; background: #fff; border-color: #fff; color: #111; }
+.fragrance-explorer { margin-bottom: 28px; padding: 22px; background: #fff; border: 1px solid var(--border-color); }
+.fragrance-filter-row { flex-wrap: wrap; overflow: visible; }
+.fragrance-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.fragrance-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); overflow: hidden; background: #fff; border: 1px solid #cbd6d2; box-shadow: 0 3px 12px rgba(19, 30, 32, .08); transition: transform .2s ease, box-shadow .2s ease; }
+.fragrance-card[hidden] { display: none; }
+.fragrance-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(19, 30, 32, .12); }
+.fragrance-card-overview { display: flex; flex-direction: column; }
+.fragrance-card-overview > img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #edf0ef; }
+.fragrance-card-intro { padding: 20px; }
+.fragrance-card-profile { padding: 20px; background: #f4f7f6; border-inline-start: 1px solid #d7e0dd; }
+.fragrance-card-family { margin: 0 0 7px; color: var(--accent-gold); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.fragrance-card h2 { margin: 0 0 10px; color: var(--primary-blue); font-size: 22px; line-height: 1.2; }
+.fragrance-card-intro > p:not(.fragrance-card-family) { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.65; }
+.fragrance-profile-heading { display: grid; justify-items: start; gap: 9px; padding-bottom: 14px; border-bottom: 1px solid #d7e0dd; }
+.fragrance-profile-label { margin: 0; color: var(--primary-blue); font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.fragrance-sku { display: inline-flex; align-items: center; gap: 6px; margin: 0; padding: 5px 8px; color: #50605e; background: #e8eeec; border: 1px solid #d0dbd6; border-radius: 2px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; letter-spacing: .15px; white-space: nowrap; }
+.fragrance-sku span { color: var(--primary-blue); font-family: var(--font-body); font-size: 9px; font-weight: 700; letter-spacing: .8px; }
+.fragrance-profile { margin: 10px 0 12px; }
+.fragrance-profile > div { padding: 9px 0; border-bottom: 1px solid #e9eeee; }
+.fragrance-profile dt { margin-bottom: 3px; color: var(--primary-blue); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.fragrance-profile dd { margin: 0; color: var(--text-muted); font-size: 13px; line-height: 1.55; }
+.fragrance-terms { margin: 11px 0; color: var(--text-muted); font-size: 12px; line-height: 1.55; }
+.fragrance-terms strong { color: var(--primary-blue); }
+
+@media (max-width: 1100px) { .fragrance-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .fragrance-directory-cta { padding-bottom: 48px; } .fragrance-directory-cta-inner { align-items: flex-start; flex-direction: column; gap: 26px; padding: 34px 26px; } .fragrance-directory-cta .btn { width: 100%; } .fragrance-explorer { padding: 17px; } .fragrance-card { grid-template-columns: 1fr; } .fragrance-card-profile { border-inline-start: 0; border-top: 1px solid var(--border-color); } .fragrance-card-intro, .fragrance-card-profile { padding: 17px; } .fragrance-card h2 { font-size: 20px; } }
+
+/* Static perfume bottle catalogue */
+.bottle-directory-hero { background: linear-gradient(135deg, #0f191f 0%, #233941 55%, #4b5d54 100%); color: #fff; }
+.bottle-directory-hero .hero-title { color: #fff; }
+.bottle-directory-hero .section-subtitle { max-width: 760px; margin-inline: auto; color: #e1e9e5; font-size: 16px; font-weight: 400; letter-spacing: normal; line-height: 1.7; text-transform: none; }
+.bottle-directory-section { background: #eef2f0; }
+.bottle-directory-summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 26px; padding: 17px 20px; color: #2e4039; background: #fff; border: 1px solid #d7e0dc; }
+.bottle-directory-summary p { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.bottle-directory-summary strong { color: var(--primary-blue); font-size: 14px; }
+.bottle-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.bottle-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; background: #fff; border: 1px solid #d4ded9; box-shadow: 0 3px 14px rgba(20, 40, 37, .08); }
+.bottle-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 47px; padding: 9px 10px; border-bottom: 1px solid #e2eae6; }
+.bottle-position { display: grid; flex: 0 0 24px; width: 24px; height: 24px; place-items: center; color: #63746d; background: #eff4f1; border-radius: 50%; font-size: 10px; font-weight: 700; }
+.bottle-sku { min-width: 0; margin: 0; overflow: hidden; color: #203a46; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: .1px; text-align: right; text-overflow: ellipsis; white-space: nowrap; }
+.bottle-sku span { margin-right: 5px; color: #7b8883; font-family: var(--font-body); font-size: 8px; letter-spacing: .8px; }
+.bottle-visual, .bottle-placeholder-visual { position: relative; display: grid; aspect-ratio: 4 / 5; place-items: center; overflow: hidden; background: linear-gradient(145deg, #fbfcfc, #eef3f1); }
+.bottle-visual img { display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.bottle-details { margin-top: auto; padding: 14px; border-top: 1px solid #e2eae6; }
+.bottle-details dl { margin: 0; }
+.bottle-details dl > div { padding: 8px 0; border-bottom: 1px solid #edf1ef; }
+.bottle-details dl > div:last-child { padding-bottom: 0; border-bottom: 0; }
+.bottle-details dt { margin-bottom: 3px; color: #62736c; font-size: 9px; font-weight: 700; letter-spacing: .85px; text-transform: uppercase; }
+.bottle-details dd { margin: 0; overflow-wrap: anywhere; color: #243c47; font-size: 12px; line-height: 1.45; }
+.bottle-card-placeholder { border-color: #aabbb2; border-style: dashed; }
+.bottle-card-placeholder .bottle-card-heading { background: #f7faf8; }
+.bottle-placeholder-visual { isolation: isolate; background: repeating-linear-gradient(45deg, #f6f8f7, #f6f8f7 12px, #edf2ef 12px, #edf2ef 24px); }
+.bottle-placeholder-cap, .bottle-placeholder-body { position: absolute; display: block; border: 2px solid #8b9b93; }
+.bottle-placeholder-cap { top: 54px; width: 44px; height: 29px; border-bottom: 0; border-radius: 6px 6px 0 0; }
+.bottle-placeholder-body { top: 81px; width: 120px; height: 132px; border-radius: 14px 14px 28px 28px; }
+.bottle-placeholder-visual p { position: absolute; bottom: 23px; margin: 0; color: #6a7972; font-size: 10px; font-weight: 700; letter-spacing: .9px; text-transform: uppercase; }
+.bottle-pending-note { min-height: 36px; margin: 0 0 11px; color: #6a7972; font-size: 11px; line-height: 1.45; }
+
+@media (max-width: 1100px) { .bottle-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .bottle-directory-summary { align-items: flex-start; flex-direction: column; gap: 5px; } .bottle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .bottle-details { padding: 11px; } }
+@media (max-width: 460px) { .bottle-grid { grid-template-columns: 1fr; } }
+
 /* Blog Detail */
 .blog-detail-container {
   max-width: 780px;

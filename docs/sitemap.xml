@@ -37,6 +37,78 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/" />
   </url>
   <url>
+    <loc>https://www.aromamatrix.com/fragrances</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/fragrances" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.aromamatrix.com/es/fragrances" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.aromamatrix.com/ar/fragrances" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.aromamatrix.com/fr/fragrances" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/fragrances" />
+  </url>
+  <url>
+    <loc>https://www.aromamatrix.com/es/fragrances</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/fragrances" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.aromamatrix.com/es/fragrances" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.aromamatrix.com/ar/fragrances" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.aromamatrix.com/fr/fragrances" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/fragrances" />
+  </url>
+  <url>
+    <loc>https://www.aromamatrix.com/ar/fragrances</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/fragrances" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.aromamatrix.com/es/fragrances" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.aromamatrix.com/ar/fragrances" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.aromamatrix.com/fr/fragrances" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/fragrances" />
+  </url>
+  <url>
+    <loc>https://www.aromamatrix.com/fr/fragrances</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/fragrances" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.aromamatrix.com/es/fragrances" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.aromamatrix.com/ar/fragrances" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.aromamatrix.com/fr/fragrances" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/fragrances" />
+  </url>
+  <url>
+    <loc>https://www.aromamatrix.com/perfume-bottles</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.aromamatrix.com/es/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.aromamatrix.com/ar/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.aromamatrix.com/fr/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/perfume-bottles" />
+  </url>
+  <url>
+    <loc>https://www.aromamatrix.com/es/perfume-bottles</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.aromamatrix.com/es/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.aromamatrix.com/ar/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.aromamatrix.com/fr/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/perfume-bottles" />
+  </url>
+  <url>
+    <loc>https://www.aromamatrix.com/ar/perfume-bottles</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.aromamatrix.com/es/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.aromamatrix.com/ar/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.aromamatrix.com/fr/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/perfume-bottles" />
+  </url>
+  <url>
+    <loc>https://www.aromamatrix.com/fr/perfume-bottles</loc>
+    <lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.aromamatrix.com/es/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.aromamatrix.com/ar/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.aromamatrix.com/fr/perfume-bottles" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.aromamatrix.com/perfume-bottles" />
+  </url>
+  <url>
     <loc>https://www.aromamatrix.com/about</loc>
     <lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.aromamatrix.com/about" />

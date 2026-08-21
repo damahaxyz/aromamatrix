@@ -1,0 +1,59 @@
+<section class="page-hero fragrance-directory-hero">
+  <div class="container text-center">
+    <span class="section-kicker">{{ copy.hero.kicker }}</span>
+    <h1 class="hero-title">{{ copy.hero.title }}</h1>
+    <p class="section-subtitle">{{ copy.hero.text }}</p>
+  </div>
+</section>
+
+<section class="section-padding fragrance-directory-section">
+  <div class="container">
+    <div class="fragrance-explorer" data-fragrance-directory data-fragrance-count-one="{{ copy.directory.countOne }}" data-fragrance-count-many="{{ copy.directory.countMany }}">
+      <div class="blog-search-row">
+        <label class="blog-search-control" for="fragrance-search">
+          <span>{{ copy.directory.searchLabel }}</span>
+          <input id="fragrance-search" data-fragrance-search type="search" placeholder="{{ copy.directory.searchPlaceholder }}" autocomplete="off">
+        </label>
+        <p class="blog-result-count" data-fragrance-count aria-live="polite">{{ copy.directory.countMany | replace('{count}', fragrances | length) }}</p>
+      </div>
+      <div class="blog-filter-row fragrance-filter-row" aria-label="{{ copy.directory.filterLabel }}">
+        <button type="button" class="blog-filter is-active" data-fragrance-filter="all" aria-pressed="true">{{ copy.directory.all }}</button>
+        {% for category in fragranceCategories %}
+          <button type="button" class="blog-filter" data-fragrance-filter="{{ category.name }}" aria-pressed="false">{{ category.name }}</button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="fragrance-grid">
+      {% for product in fragrances %}
+        <article class="fragrance-card" data-fragrance-card data-fragrance-category="{{ product.category }}" data-fragrance-search="{{ product.searchText | lower }}">
+          <div class="fragrance-card-overview">
+            <img src="{{ product.image | assetUrl }}" alt="{{ product.name }} fragrance direction" width="1254" height="1254" loading="lazy" decoding="async">
+            <div class="fragrance-card-intro">
+              <p class="fragrance-card-family">{{ product.category }}</p>
+              <h2>{{ product.name }}</h2>
+              <p>{{ product.summary }}</p>
+            </div>
+          </div>
+          <div class="fragrance-card-profile">
+            <div class="fragrance-profile-heading">
+              <p class="fragrance-profile-label">{{ copy.directory.details }}</p>
+              <p class="fragrance-sku"><span>{{ copy.directory.sku }}</span> {{ product.sku }}</p>
+            </div>
+            <dl class="fragrance-profile">
+              <div><dt>{{ copy.directory.top }}</dt><dd>{{ product.top }}</dd></div>
+              <div><dt>{{ copy.directory.heart }}</dt><dd>{{ product.heart }}</dd></div>
+              <div><dt>{{ copy.directory.base }}</dt><dd>{{ product.base }}</dd></div>
+            </dl>
+            <p class="fragrance-terms"><strong>{{ copy.directory.families }}:</strong> {{ product.families | join(', ') }}</p>
+            <p class="fragrance-terms"><strong>{{ copy.directory.character }}:</strong> {{ product.characters | join(', ') }}</p>
+            <p class="fragrance-terms"><strong>{{ copy.directory.tags }}:</strong> {{ product.tags | join(', ') }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    <div id="fragrance-empty" class="blog-empty" hidden><h2>{{ copy.directory.emptyTitle }}</h2><p>{{ copy.directory.emptyText }}</p></div>
+  </div>
+</section>
+
+<section class="fragrance-directory-cta"><div class="container"><div class="fragrance-directory-cta-inner"><div><span>{{ copy.hero.kicker }}</span><h2>{{ copy.directory.ctaTitle }}</h2><p>{{ copy.directory.ctaText }}</p></div><a href="{{ localeUrl('contact', locale) }}?request=fragrance#inquiry-form" class="btn btn-gold">{{ copy.directory.cta }}</a></div></div></section>

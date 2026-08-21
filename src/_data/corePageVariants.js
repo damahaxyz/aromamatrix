@@ -3,6 +3,8 @@ const routes = require('../../config/routes');
 
 const definitions = {
   index: require('../content/pages/index'),
+  fragrances: require('../content/pages/fragrances'),
+  bottles: require('../content/pages/bottles'),
   about: require('../content/pages/about'),
   process: require('../content/pages/process'),
   contact: require('../content/pages/contact'),

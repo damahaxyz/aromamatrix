@@ -1,0 +1,49 @@
+<section class="page-hero bottle-directory-hero">
+  <div class="container text-center">
+    <span class="section-kicker">{{ copy.hero.kicker }}</span>
+    <h1 class="hero-title">{{ copy.hero.title }}</h1>
+    <p class="section-subtitle">{{ copy.hero.text }}</p>
+  </div>
+</section>
+
+<section class="section-padding bottle-directory-section">
+  <div class="container">
+    <div class="bottle-directory-summary">
+      <p>{{ copy.directory.reference }}</p>
+      <strong>{{ bottleCatalog.total }} {{ copy.directory.count }}</strong>
+    </div>
+
+    <div class="bottle-grid">
+      {% for bottle in bottleCatalog.items %}
+        <article class="bottle-card{% if bottle.isPlaceholder %} bottle-card-placeholder{% endif %}" data-bottle-card data-bottle-position="{{ bottle.position }}" data-bottle-sku="{{ bottle.sku }}">
+          <div class="bottle-card-heading">
+            <span class="bottle-position">{{ bottle.position }}</span>
+            <p class="bottle-sku"><span>{{ copy.directory.model }}</span>{{ bottle.model }}</p>
+          </div>
+
+          {% if bottle.image %}
+            <div class="bottle-visual">
+              <img src="{{ bottle.image | assetUrl }}" alt="{{ bottle.sku }} perfume bottle" width="1122" height="1402" loading="lazy" decoding="async">
+            </div>
+          {% else %}
+            <div class="bottle-placeholder-visual" role="img" aria-label="{{ bottle.sku }} {{ copy.directory.placeholder }}">
+              <span class="bottle-placeholder-cap"></span><span class="bottle-placeholder-body"></span>
+              <p>{{ copy.directory.placeholder }}</p>
+            </div>
+          {% endif %}
+
+          <div class="bottle-details">
+            {% if bottle.isPlaceholder %}
+              <p class="bottle-pending-note">{{ copy.directory.placeholderDetail }}</p>
+            {% endif %}
+            <dl>
+              <div><dt>{{ copy.directory.capacity }}</dt><dd>{{ bottle.capacity or copy.directory.unavailable }}</dd></div>
+              <div><dt>{{ copy.directory.neck }}</dt><dd>{{ bottle.neck or copy.directory.unavailable }}</dd></div>
+              <div><dt>{{ copy.directory.dimensions }}</dt><dd>{{ bottle.size or copy.directory.unavailable }}</dd></div>
+            </dl>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
