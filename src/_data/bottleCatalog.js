@@ -19,7 +19,7 @@ const items = pdfOrder.map((sku, index) => {
       position: index + 1,
       sku,
       model: product.model,
-      image: `assets/images/bottles/${product['产品图片']}`,
+      image: `assets/images/bottles/${product['产品图片'].replace(/\.png$/i, '.webp')}`,
       capacity: product.capacity,
       neck: product.neck,
       size: product.size,
