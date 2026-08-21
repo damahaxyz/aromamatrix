@@ -624,6 +624,7 @@ footer h4 {
 .social-links {
   display: flex;
   gap: 12px;
+  margin-top: 20px;
 }
 
 .social-icon {
@@ -637,6 +638,23 @@ footer h4 {
   color: #94a3b8;
   font-size: 13px;
   transition: var(--transition);
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.social-icon svg rect,
+.social-icon svg circle:not(.social-icon-dot) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.social-icon .social-icon-dot {
+  fill: currentColor;
 }
 
 .social-icon:hover {

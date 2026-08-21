@@ -57,6 +57,16 @@ const config = {
     email: 'sales@aromamatrix.com',
     timeZone: 'UTC+8',
     projectDeskLocation: 'China · UTC+8',
+    social: {
+      facebook: {
+        label: 'Facebook',
+        url: 'https://www.facebook.com/people/Aromamatrix/61593590243534/'
+      },
+      instagram: {
+        label: 'Instagram',
+        url: 'https://www.instagram.com/aromamatrix999/'
+      }
+    },
     whatsapp: {
       number: whatsappNumber,
       display: '+86 13135123123',
