@@ -1,4 +1,4 @@
-const whatsappNumber = '6587400124';
+const whatsappNumber = '8613135123123';
 const brandName = 'AROMAMATRIX';
 const privateLabelMoq = 500;
 const customProjectMoq = 1000;
