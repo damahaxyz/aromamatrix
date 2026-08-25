@@ -1,7 +1,7 @@
 const whatsappNumber = '8613135123123';
 const brandName = 'AROMAMATRIX';
-const privateLabelMoq = 500;
-const customProjectMoq = 1000;
+const privateLabelMoq = 2000;
+const customProjectMoq = 3000;
 
 const config = {
   site: {
@@ -111,8 +111,8 @@ const config = {
         label: `${privateLabelMoq}–${(customProjectMoq - 1).toLocaleString('en-US')} pcs`
       },
       customProject: {
-        value: `${customProjectMoq.toLocaleString('en-US')} - 3,000 pcs`,
-        label: `${customProjectMoq.toLocaleString('en-US')}–3,000 pcs`
+        value: `${customProjectMoq.toLocaleString('en-US')} - 5,000 pcs`,
+        label: `${customProjectMoq.toLocaleString('en-US')}–5,000 pcs`
       }
     }
   },
