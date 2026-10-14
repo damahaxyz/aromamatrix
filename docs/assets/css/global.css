@@ -26,7 +26,9 @@
   --font-body: 'Inter', sans-serif;
   
   /* Layout */
-  --header-height: 80px;
+  --navigation-height: 80px;
+  --announcement-height: 42px;
+  --header-height: calc(var(--navigation-height) + var(--announcement-height));
   --max-width: 1200px;
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --border-radius: 4px;         /* Structured, clean corners */
@@ -201,14 +203,68 @@ header {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
   z-index: 1000;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 header .container {
   width: 100%;
+  height: var(--navigation-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.announcement-bar {
+  width: 100%;
+  height: var(--announcement-height);
+  flex: 0 0 var(--announcement-height);
+  color: #ffffff;
+  background: linear-gradient(90deg, #17130d 0%, #493616 50%, #17130d 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.announcement-bar a {
+  width: min(100% - 32px, var(--max-width));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+}
+
+.announcement-badge {
+  flex: 0 0 auto;
+  padding: 3px 8px;
+  color: #211707;
+  background: #f3c969;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.announcement-copy {
+  font-weight: 700;
+}
+
+.announcement-cta {
+  flex: 0 0 auto;
+  color: #f7d98e;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.announcement-bar a:hover .announcement-cta,
+.announcement-bar a:focus-visible .announcement-cta {
+  color: #ffffff;
 }
 
 .logo {
@@ -800,7 +856,23 @@ body.nav-open {
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 70px;
+    --navigation-height: 70px;
+    --announcement-height: 58px;
+  }
+
+  .announcement-bar a {
+    width: min(100% - 24px, var(--max-width));
+    gap: 9px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .announcement-copy {
+    max-width: 270px;
+  }
+
+  .announcement-cta {
+    display: none;
   }
   
   .section-padding {

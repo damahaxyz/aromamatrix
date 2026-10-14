@@ -1,5 +1,12 @@
 {
   "languageName": "English",
+  "announcement": {
+    "label": "Private label minimum order update",
+    "badge": "New",
+    "message": "Private Label MOQ reduced — now from 500 pcs",
+    "cta": "Start a project",
+    "arrow": "→"
+  },
   "nav": {
     "home": "Home",
     "products": "What We Make",

@@ -1,4 +1,11 @@
 <header>
+  <div class="announcement-bar" role="region" aria-label="{{ t(locale, 'announcement.label') }}">
+    <a href="{{ localeUrl('contact', locale) }}#inquiry-form">
+      <span class="announcement-badge">{{ t(locale, 'announcement.badge') }}</span>
+      <span class="announcement-copy">{{ t(locale, 'announcement.message') }}</span>
+      <span class="announcement-cta">{{ t(locale, 'announcement.cta') }} <span aria-hidden="true">{{ t(locale, 'announcement.arrow') }}</span></span>
+    </a>
+  </div>
   <div class="container">
     <a href="{{ localeUrl('index', locale) }}" class="logo">
       <img src="/assets/images/brand/aromamatrix-logo-square.png" width="512" height="512" alt="" class="logo-symbol" decoding="async">

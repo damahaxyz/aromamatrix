@@ -2,7 +2,7 @@
 
 .not-found-page {
   min-height: calc(100vh - 360px);
-  padding: 168px 0 96px;
+  padding: calc(var(--header-height) + 88px) 0 96px;
   background:
     linear-gradient(135deg, rgba(17, 17, 17, 0.035), transparent 42%),
     var(--bg-secondary);
@@ -68,7 +68,7 @@ html[dir="rtl"] .not-found-code {
 
 @media (max-width: 768px) {
   .not-found-page {
-    padding: 126px 0 64px;
+    padding: calc(var(--header-height) + 56px) 0 64px;
   }
 
   .not-found-panel {

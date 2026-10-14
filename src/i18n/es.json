@@ -1,5 +1,12 @@
 {
   "languageName": "Español",
+  "announcement": {
+    "label": "Actualización del pedido mínimo de marca privada",
+    "badge": "Nuevo",
+    "message": "MOQ de marca privada reducido: ahora desde 500 unidades",
+    "cta": "Iniciar proyecto",
+    "arrow": "→"
+  },
   "nav": {
     "home": "Inicio",
     "products": "Qué fabricamos",

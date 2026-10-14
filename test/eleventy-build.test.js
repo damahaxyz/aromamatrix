@@ -263,6 +263,15 @@ test('English and Chinese homepages publish the same core capability modules', (
   assert.match(localized, /<form id="inquiry-form">/);
 });
 
+test('every enabled locale publishes the 500-piece private-label announcement', () => {
+  for (const locale of Object.values(locales).filter(item => item.enabled).map(item => item.key)) {
+    const homepage = fs.readFileSync(outputFile('index', locale), 'utf8');
+    assert.match(homepage, /class="announcement-bar"/);
+    assert.match(homepage, /500/);
+    assert.ok(homepage.includes(`href="${localeUrl('contact', locale)}#inquiry-form"`));
+  }
+});
+
 test('contact links and public runtime configuration use shared configuration', () => {
   for (const locale of Object.values(locales).filter(item => item.enabled).map(item => item.key)) {
     const contact = fs.readFileSync(outputFile('contact', locale), 'utf8');

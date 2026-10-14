@@ -1,5 +1,12 @@
 {
   "languageName": "中文",
+  "announcement": {
+    "label": "私人标签起订量更新",
+    "badge": "新消息",
+    "message": "私人标签起订量已降低至 500 件",
+    "cta": "提交项目需求",
+    "arrow": "→"
+  },
   "nav": {
     "home": "首页",
     "products": "产品能力",

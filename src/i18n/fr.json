@@ -1,5 +1,12 @@
 {
   "languageName": "Français",
+  "announcement": {
+    "label": "Mise à jour du minimum de commande en marque blanche",
+    "badge": "Nouveau",
+    "message": "MOQ marque blanche réduit : désormais à partir de 500 unités",
+    "cta": "Démarrer un projet",
+    "arrow": "→"
+  },
   "nav": {
     "home": "Accueil",
     "products": "Nos fabrications",

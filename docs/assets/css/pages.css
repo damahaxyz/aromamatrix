@@ -37,7 +37,7 @@
 @media (max-width: 992px) {
   .hero {
     height: auto;
-    padding: 120px 0 60px 0;
+    padding: calc(var(--header-height) + 50px) 0 60px 0;
   }
 
   .hero-bg-overlay {
@@ -1610,7 +1610,7 @@
 }
 
 .page-hero {
-  padding: 140px 0 60px 0;
+  padding: calc(var(--header-height) + 60px) 0 60px 0;
   background-color: #ffffff;
   border-bottom: 1px solid var(--border-light);
 }
