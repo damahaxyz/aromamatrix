@@ -1,3 +1,4 @@
+const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 const site = require('./config/site.config');
@@ -14,6 +15,31 @@ const {
   renderSeo,
   translate
 } = require('./eleventy/helpers');
+
+const assetVersionCache = new Map();
+
+function cleanAssetPath(value) {
+  return String(value).replace(/^\.\.\//, '').replace(/^\//, '');
+}
+
+function versionedAssetUrl(value) {
+  const assetPath = cleanAssetPath(value);
+  const assetsRoot = path.join(__dirname, 'assets');
+  const absolutePath = path.resolve(__dirname, assetPath);
+
+  if (!absolutePath.startsWith(`${assetsRoot}${path.sep}`)) {
+    throw new Error(`Versioned assets must be inside assets/: ${assetPath}`);
+  }
+
+  const stat = fs.statSync(absolutePath);
+  const signature = `${stat.mtimeMs}:${stat.size}`;
+  const cached = assetVersionCache.get(absolutePath);
+  if (cached?.signature === signature) return `/${assetPath}?v=${cached.hash}`;
+
+  const hash = crypto.createHash('sha256').update(fs.readFileSync(absolutePath)).digest('hex').slice(0, 12);
+  assetVersionCache.set(absolutePath, { signature, hash });
+  return `/${assetPath}?v=${hash}`;
+}
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setNunjucksEnvironmentOptions({
@@ -38,7 +64,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksGlobal('blogCategories', blogCategories);
   eleventyConfig.addNunjucksGlobal('localizedBlogPosts', localizedBlogPosts);
   eleventyConfig.addFilter('interpolate', (value, locale) => interpolate(value, locale));
-  eleventyConfig.addFilter('assetUrl', value => `/${String(value).replace(/^\.\.\//, '').replace(/^\//, '')}`);
+  eleventyConfig.addFilter('assetUrl', value => `/${cleanAssetPath(value)}`);
+  eleventyConfig.addFilter('versionedAssetUrl', versionedAssetUrl);
 
   // Cloudflare Pages serves .html assets at extensionless canonical URLs.
   // Normalize legacy links embedded in localized rich-text content at build time.

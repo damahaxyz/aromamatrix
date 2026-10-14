@@ -1,5 +1,6 @@
 const assert = require('node:assert/strict');
 const { execFileSync } = require('node:child_process');
+const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
@@ -25,6 +26,10 @@ function outputFile(pageKey, locale) {
   const prefix = locales[locale].path ? `${locales[locale].path}/` : '';
   if (route === '/') return path.join(OUTPUT, prefix, 'index.html');
   return path.join(OUTPUT, prefix, `${route.slice(1)}.html`);
+}
+
+function assetHash(assetPath) {
+  return crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, assetPath))).digest('hex').slice(0, 12);
 }
 
 function assertLocaleDataShape(english, chinese, location) {
@@ -178,6 +183,12 @@ test('generated HTML is complete and contains valid JSON-LD', () => {
     assert.doesNotMatch(html, /\{brand\}/, `unresolved translation variable in ${file}`);
     assert.doesNotMatch(html, /\.\.\/https:\/\//, `prefixed absolute URL in ${file}`);
 
+    const localStylesAndScripts = [...html.matchAll(/(?:href|src)="(\/assets\/(?:css|js)\/[^"?]+\.(?:css|js)(?:\?[^" ]+)?)"/g)];
+    assert.ok(localStylesAndScripts.length >= 3, `missing local CSS or JS assets in ${file}`);
+    for (const [, assetUrl] of localStylesAndScripts) {
+      assert.match(assetUrl, /\?v=[a-f0-9]{12}$/, `unversioned local asset in ${file}: ${assetUrl}`);
+    }
+
     if (path.basename(file) === '404.html') {
       assert.ok(html.includes('<meta name="robots" content="noindex, follow">'));
       continue;
@@ -187,6 +198,16 @@ test('generated HTML is complete and contains valid JSON-LD', () => {
     assert.ok(schemas.length > 0, `missing JSON-LD in ${file}`);
     schemas.forEach(match => assert.doesNotThrow(() => JSON.parse(match[1]), `invalid JSON-LD in ${file}`));
   }
+});
+
+test('asset versions are deterministic content hashes', () => {
+  const homepage = fs.readFileSync(outputFile('index', 'en'), 'utf8');
+  const notFound = fs.readFileSync(path.join(OUTPUT, '404.html'), 'utf8');
+
+  for (const assetPath of ['assets/css/global.css', 'assets/css/pages.css', 'assets/js/main.js']) {
+    assert.ok(homepage.includes(`/${assetPath}?v=${assetHash(assetPath)}`));
+  }
+  assert.ok(notFound.includes(`/assets/css/not-found.css?v=${assetHash('assets/css/not-found.css')}`));
 });
 
 test('homepage JSON-LD distinguishes the brand, legal name, and multilingual website', () => {
@@ -310,7 +331,7 @@ test('Cloudflare Pages receives localized custom 404 documents', () => {
 
     const html = fs.readFileSync(file, 'utf8');
     assert.ok(html.includes('<meta name="robots" content="noindex, follow">'));
-    assert.ok(html.includes('href="/assets/css/not-found.css"'));
+    assert.ok(html.includes(`href="/assets/css/not-found.css?v=${assetHash('assets/css/not-found.css')}"`));
     assert.doesNotMatch(html, /rel="canonical"/);
     assert.match(html, /<h1>[^<]+<\/h1>/);
     assert.ok(html.includes(`href="${localeUrl('index', locale.key)}"`));

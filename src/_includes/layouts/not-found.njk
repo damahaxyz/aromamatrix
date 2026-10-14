@@ -9,9 +9,9 @@
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/brand/favicon-64.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/brand/apple-touch-icon.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/pages.css">
-    <link rel="stylesheet" href="/assets/css/not-found.css">
+    <link rel="stylesheet" href="{{ 'assets/css/global.css' | versionedAssetUrl }}">
+    <link rel="stylesheet" href="{{ 'assets/css/pages.css' | versionedAssetUrl }}">
+    <link rel="stylesheet" href="{{ 'assets/css/not-found.css' | versionedAssetUrl }}">
   </head>
   <body class="locale-{{ locale | lower }} not-found-body">
     {% include "components/header.njk" %}
@@ -20,7 +20,7 @@
     <script>
       window.SITE_CONFIG = {{ runtimeConfig(locale) | safe }};
     </script>
-    <script src="/assets/js/main.js"></script>
+    <script src="{{ 'assets/js/main.js' | versionedAssetUrl }}"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HP7TDGVF7"></script>
     <script>
