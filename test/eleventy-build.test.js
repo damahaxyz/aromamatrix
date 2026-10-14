@@ -57,6 +57,9 @@ test.before(() => {
 });
 
 test('site configuration validation rejects invalid public facts', () => {
+  assert.equal(site.services.privateLabel.moq.value, 500);
+  assert.equal(site.services.lowQuantityReview.threshold, 500);
+  assert.equal(site.services.quantityRanges.privateLabel.value, '500 - 2999 pcs');
   assert.equal(Object.hasOwn(site.brand, 'legalEntity'), false);
   assert.match(site.brand.positioning.en, /international B2B perfume manufacturing program/i);
   assert.match(site.brand.positioning.zh, /国际 B2B 香水制造项目/);
